@@ -1,0 +1,198 @@
+---
+title: "A meta-analysis of best management practice effects on nonpoint source pollutants."
+author:
+  - Michael Schramm ^1^, Duncan Kikoyo ^2^, Janelle Wright ^3^, Shubham Jain ^4^
+  - ^1^ Research Specialist IV, Texas Water Resources Institute, Texas A\&M AgriLife Research
+  - ^2^ Research Specialist III, Texas Water Resources Institute, Texas A\&M AgriLife Research
+  - ^3^ Graduate Research Assistant, Texas Water Resources Institute, Texas A\&M AgriLife Research
+  - ^4^ Graduate Research Assistant, Texas Water Resources Institute, Texas A\&M AgriLife Research
+date: "April 1, 2021"
+output: 
+  officedown::rdocx_document:
+    reference_docx: format.docx
+    plots:
+      style: Normal
+      align: center
+      fig.lp: 'fig:'
+      topcaption: false
+      caption:
+        style: Image Caption
+        pre: 'Figure '
+        sep: '. '
+        tnd: 0
+        tns: '-'
+        fp_text: !expr officer::fp_text_lite(bold = FALSE)
+    tables:
+      style: Table
+      layout: autofit
+      width: 1.0
+      topcaption: true
+      tab.lp: 'tab:'
+      caption:
+        style: Table Caption
+        pre: 'Table '
+        sep: '. '
+        tnd: 0
+        tns: '-'
+        fp_text: !expr officer::fp_text_lite(bold = FALSE)
+bibliography: bibliography.bib
+csl: chicago-author-date.csl
+abstract: |
+  Lorem ipsum
+  
+keywords: |
+  best management practice; water quality
+---
+
+```{r setup, include=FALSE}
+## load libraries
+library(officer)
+library(officedown)
+library(ggtext)
+library(tidyverse)
+library(flextable)
+library(ragg)
+library(targets)
+
+## this sets our default code chunk options
+knitr::opts_chunk$set(dev = "ragg_png",
+                      echo = FALSE,
+                      ## figure chunk options
+                      fig.cap = TRUE,
+                      fig.width = 6,
+                      dpi = 300)
+
+## make fonts available
+font_hoist <- function(family, silent = FALSE) {
+  font_specs <- systemfonts::system_fonts() |> 
+    filter(family == {{family}}) |> 
+    mutate(family = paste(family, style)) |> 
+    select(plain = path, name = family)
+  
+  purrr::pwalk(as.list(font_specs), systemfonts::register_font)
+
+  if (!silent)  message(paste0("Hoisted ", nrow(font_specs), " variants:\n",
+                               paste(font_specs$name, collapse = "\n")))
+}
+
+font_hoist("Manrope")
+
+## grab output from targets to use in manuscript
+store <- "../_targets"
+bac_missing_sd <- tar_read(bac_missing_sd,
+                           store = store)
+
+```
+
+
+
+
+```{r}
+## leave in, ends word document section
+## after table of abbreviations
+block_section(prop_section(type = "nextPage"))
+```
+
+# Introduction {-}
+
+The impact of land use change on hydrology and water quality is well established.
+Best management practices (BMPs) are control measures used to mitigate increased runoff volume or pollutant concentrations resulting from diffuse nonpoint sources.
+A suite of empirical approaches and mechanistic watershed models have been developed for practitioners to develop planning scenarios and forecast the hydrologic and water quality impacts of BMP implementation from site to basin scales.
+Resource managers depend on these models and global databases, such as the International Stormwater Database, to understand the performance of BMPs and plan their design and implementation within impaired watersheds.
+Despite progress in the development and implementation of BMPs, nonpoint source driven impairments remain a substantial challenge in the United States.
+Fecal indicator bacteria (FIB) and nutrients, largely driven by nonpoint sources, remain the major cause of water quality impairments in the nation's rivers and streams despite decades of work.
+In 2017, the Environmental Protection Agency (EPA) estimated 41% or more of the nation's rivers and streams rated poorly for biological condition due to excess nitrogen or phosphorus [@epaNationalWaterQuality2017].
+
+# Methods {-}
+
+## Review and data extraction {-}
+
+We conducted a systematic review of recent (2000-2022) literature to compile field studies documenting the effectiveness of best management practices on fecal indicator bacteria and nutrients concentrations. 
+The systematic review followed guidance provided in the Collaboration for Environmental Evidence systematic review guidelines [@collaborationforenvironmentalevidenceGuidelinesStandardsEvidence2018].
+In order to maximize the number of studies included in the review, we included both peer-reviewed studies and unpublished white papers to reduce potential bias against negative results.
+The inclusion criteria filtered out (1) non-field studies, (2) modelling results, (3) studies that did not evaluate specific BMPs, (4) studies conducted outside of the U.S. or published in a language other than English.
+We ran search queries in Texas A&M Library Catalog, Web of Science, and Google Scholar.
+Although results from Google Scholar are not always replicable, we utilized the service to maximize search results for studies not published in academic journals.
+
+Results from each database were first filtered to remove duplicates.
+After removal of duplicates, each member of the research team (*n* = 4) was assigned a subset of studies to evaluate if they should be included.
+**include supplementary tables with inclusion criteria and data variables**
+Each study was reviewed by two team members and differences in opinion were collectively discussed and agreed upon before progressing.
+The remaining studies were split among team members for data extraction, again with at least two team members reviewing each study. 
+If data was provided in figures, the data was extracted with the WebPlotDigitizer tool [@rohatgiWebPlotDigitizer2022].
+
+## Meta-analysis {-}
+
+Robust meta-analysis produces estimates of overall effect size of interventions by weighting individual studies using samples sizes or uncertainty estimates in the calculation of overall effect size [@hedgesMetaanalysisResponseRatios1999].
+Prior BMP reviews routinely report measures of central tendency (mean or median) of BMP efficiency values [see @agouridisLivestockGrazingManagement2005; @krogerReviewBestManagement2012; @liuEnhancingRainfallrunoffModel2015; @simpsonDevelopingBestManagement2009].
+Efficiency values are calculated as:
+
+$$
+\text{Efficiency}=\frac{x_{control}-x_{experiment}}{x_{control}}\times 100
+$$
+
+
+where *x~control~* is the pre-treatment or control pollutant concentration and *x~experiment~* is the pollutant concentration measured after the BMP intervention. 
+The resulting efficiency or percent change values are asymmetric, skewed, and are not additive [@nuzzoPercentDifferencesAnother2018; @coleStatisticsNotesWhat2017].
+Log response ratios (*R*), commonly used in ecological meta-analysis, quantifies the difference in means between the control and experimental group [@hedgesMetaanalysisResponseRatios1999]:
+
+$$
+R_i = ln\left(\frac{x_{i,control}}{x_{i,experiment}}\right) = ln(x_{i, control})-ln(x_{i, experiment})
+$$
+where *x~i,control~* and *x~i,experiment~* are the mean pollutant concentrations for experiment *i*. 
+The statistical properties of the log response ratio (normal distribution around zero and additive properties) are preferable to the more commonly reported efficiency metric [@osenbergEffectSizeEcological1997; @hedgesMetaanalysisResponseRatios1999]. 
+This required the exclusion of studies that only provided measures of BMP efficiency and not the underlying data used to derive the metric.
+
+
+The application of overall BMP efficiency values have been shown to result in inaccurate characterization of treated runoff quality due primarily to the fact that efficiency is a largely a function of influent pollutant concentration [@barrettPerformanceComparisonStructural2005]. 
+In general, higher influent concentrations yield higher efficiencies while relatively clean water yield lower efficiencies.
+We explored relationships between *R* and influent concentration using meta-analytic multi-level random effects models using the "metafor" package [@viechtbauerConductingMetaanalysesMetafor2010] in R [@rcoreteamLanguageEnvironmentStatistical2023]. 
+
+A key feature of meta-analysis is the weighting of effects based on sampling variance.
+`r paste0(round(bac_missing_sd$missing / bac_missing_sd$total * 100, 0), "%")` of effect sizes for fecal indicator bacteria were missing standard deviation required to estimate sampling variance. 
+Sampling variance for missing cases was imputed via the weighted average coefficient of variation within groups to avoid bias associated with excluding incomplete cases [@nakagawaRobustReadilyImplementable2023; @kambachConsequencesMultipleImputation2020].
+Log transformed pre-treatment pollutant concentration, BMP category, and interactions were included as fixed effects in the regression model.
+We also specified a between study random effects term and within study random effects term to account for non-independence of multiple effect sizes report within individual studies.
+The design of many BMP experiments (pre-post or upstream-downstream studies) are prone to statistical non-independence that inflates Type I error.
+To account for statistical non-independence among sampling errors we applied robust variance estimation (RVE) methods to obtain adjusted standard errors and confidence intervals [@hedgesRobustVarianceEstimation2010].
+Relative heterogeneities between and within studies were calculated using the *I^2^* metric described in @nakagawaMethodologicalIssuesAdvances2012.
+Marginal *R^2^* was used to describe the amount of variance explained by the independent variables [@nakagawaGeneralSimpleMethod2013].
+We tested for evidence of publication bias, in the form of small study effect, by using the extension of Egger's regression applied to the multilevel model framework that included adjusted sampling error as a moderator [@nakagawaQuantitativeEvidenceSynthesis2023]. 
+We did not find evidence of publication bias in the surveyed studies for fecal indicator bacteria (include z stat and p value), total nitrogen, total phosphorus, or total suspended solids. 
+Adjustments for publication bias were not included in the final models.
+We conducted a sensitivity analysis of the overall effect sizes to individual studies using leave-one-out analysis [@nakagawaQuantitativeEvidenceSynthesis2023].
+Outlier studies identified in the sensitivity analysis are highlighted in Table X and were removed prior to fitting the final models.
+
+
+
+# Results {-}
+
+```{r marginalmeans, fig.width=8, fig.height=8, fig.cap="Marginal means....", out.width="81%", dpi=300}
+tar_read(marginal_means,
+         store = store)
+```
+
+
+# Discussion {-}
+
+## Study limitations {-}
+
+**probably goes in discussion**
+Our analysis was constrained by the lack of reported sampling variation and potential confounding variables such as watershed conditions or climatic variables that can serve as independent variables in a meta-analysis context.
+@eagleMetaAnalysisConstrained2017 reported that five independent teams of researchers identified similar constraints when conducting a meta-analysis of nutrient management BMP studies.
+The lack of consistent study design and reporting standards presents a significant challenge for pooling results from different studies.
+Reporting requirements that facilitate meta-analysis are much more common in epidemiology and human health studies where meta-analysis is routinely conducted. 
+The adoption of meta-analysis in fields such as ecological science is more recent. 
+As meta-analysis becomes increasingly utilized in fields such as hydrology and watershed science, we hope that field coalesces around a standard requirement of data required for publication.**probably goes in discussion**
+
+# Conclusion {-}
+
+# Bibliography {-}
+
+<div id="refs"></div>
+
+```{r}
+## leave in, ends word document section
+## after table of abbreviations
+block_section(prop_section(type = "nextPage"))
+```

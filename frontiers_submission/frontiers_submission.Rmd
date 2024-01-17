@@ -1,0 +1,424 @@
+---
+title: "A meta-analysis of the impacts of best management practices on nonpoint source pollutants."
+runtitle: "Meta-analysis of best management practices"
+documentclass: FrontiersinHarvard # for articles in journals using the Harvard Referencing Style (Author-Date), for Frontiers Reference Styles by Journal: https://zendesk.frontiersin.org/hc/en-us/articles/360017860337-Frontiers-Reference-Styles-by-Journal
+# documentclass: FrontiersinVancouver # for articles in journals using the Vancouver Reference Style (Numbered), for Frontiers Reference Styles by Journal: https://zendesk.frontiersin.org/hc/en-us/articles/360017860337-Frontiers-Reference-Styles-by-Journal
+# documentclass: frontiersinFPHY_FAMS # Vancouver Reference Style (Numbered) for articles in the journals "Frontiers in Physics" and "Frontiers in Applied Mathematics and Statistics" 
+classoption: utf8
+author:
+  - name: Michael Schramm
+    affiliation: '1'
+    etal: Schramm # First author's last name. 
+    email: michael.schramm@ag.tamu.edu # Indicates corresponding Author
+    institution: Texas Water Resources Institute, Texas A&M AgriLife Research
+    street: 1001 Holleman Dr E.
+    city: College Station
+    state: Texas # only USA, Australia, Canada
+    zip: 77840
+    country: USA
+  - name: Duncan Kikoyo
+    affiliation: '1'
+  - name: Janelle Wright
+    affiliation: '1'
+  - name: Shubham Jain
+    affiliation: '1'
+affiliation:
+  - id: '1'
+    department: Texas Water Resources Institute
+    institution: Texas A&M AgriLife Research
+    city: College Station
+    state: Texas # only USA, Australia, Canada
+    country: USA
+
+# Abstract can also be provided at the 
+abstract: |
+  Abstract length and content varies depending on article type. Refer to 
+  <http://www.frontiersin.org/about/AuthorGuidelines> for abstract requirement
+  and length according to article type.
+keywords:
+  - best management practice
+  - water quality
+  - nonpoint source pollution
+  - fecal indicator bacteria
+  - nutrients
+output: rticles::frontiers_article
+# bib yaml is commented to manually insert in correct section
+# csl: frontiers.csl
+# bibliography: bibliography.bib
+# Match bibliostyle with the documentclass
+# biblio-style: Frontiers-Harvard # Many Frontiers journals use the Harvard referencing system (Author-date), to find the style and resources for the journal you are submitting to: https://zendesk.frontiersin.org/hc/en-us/articles/360017860337-Frontiers-Reference-Styles-by-Journal. For Humanities and Social Sciences articles please include page numbers in the in-text citations 
+# biblio-style: Frontiers-Vancouver # Many Frontiers journals use the numbered referencing system, to find the style and resources for the journal you are submitting to: https://zendesk.frontiersin.org/hc/en-us/articles/360017860337-Frontiers-Reference-Styles-by-Journal
+---
+
+```{r setup, include=FALSE}
+## load libraries
+library(flextable)
+library(ggtext)
+library(kableExtra)
+library(officer)
+library(ragg)
+library(targets)
+library(tidyverse)
+
+
+
+## this sets our default code chunk options
+knitr::opts_chunk$set(dev = "ragg_png",
+                      echo = FALSE,
+                      ## figure chunk options
+                      fig.cap = TRUE,
+                      fig.width = 6,
+                      dpi = 300)
+
+## make fonts available
+font_hoist <- function(family, silent = FALSE) {
+  font_specs <- systemfonts::system_fonts() |> 
+    filter(family == {{family}}) |> 
+    mutate(family = paste(family, style)) |> 
+    select(plain = path, name = family)
+  
+  purrr::pwalk(as.list(font_specs), systemfonts::register_font)
+
+  if (!silent)  message(paste0("Hoisted ", nrow(font_specs), " variants:\n",
+                               paste(font_specs$name, collapse = "\n")))
+}
+
+font_hoist("Manrope")
+
+## grab output from targets to use in manuscript
+store <- "../_targets"
+bac_missing_sd <- tar_read(bac_missing_sd,
+                           store = store)
+tn_missing_sd <- tar_read(tn_missing_sd,
+                           store = store)
+tp_missing_sd <- tar_read(tp_missing_sd,
+                           store = store)
+tss_missing_sd <- tar_read(tss_missing_sd,
+                           store = store)
+
+
+eggers_bac <- tar_read(bac_sse,
+                       store = store)
+## set flextable defaults
+set_flextable_defaults(fonts_ignore=TRUE)
+
+```
+
+# Introduction
+
+In the United States (U.S.), major progress towards water quality goals have been achieved through the Clean Water Act of 1972.
+This progress has been largely attributed to investments and reductions in point source discharges while reductions in nonpoint source pollutants remain a substantial challenge [@benhamLessonsLearnedTMDL2008; @nationalresearchcouncilAssessingTMDLApproach2001; @schrammTotalMaximumDaily2022].
+Increased pollutant loads and pollutant concentrations in runoff are a particular challenge when dealing with nonpoint source pollution resulting from land use change.
+The impacts of land use change on hydrology and water quality are well established [@allanLandscapesRiverscapesInfluence2004; @carpenterNonpointPollutionSurface1998; @bernhardtUnderstandingManagingMinimizing2008; @careyEvaluatingNutrientImpacts2013; @freemanImpactsUrbanizationDevelopment2019].
+Nonpoint source driven fecal indicator bacteria (FIB), nitrogen, phosphorus, and suspended sediment remain major causes of water quality impairments in U.S. rivers and streams despite decades of work.
+In 2017, the Environmental Protection Agency (EPA) estimated 41% or more of the nation's rivers and streams rated poorly for biological condition due to excess nitrogen or phosphorus [@epaNationalWaterQuality2017]. 
+FIB remains the leading cause of water body impairment on the Clean Water Act 303(d) list in the United States [@epaNationalWaterQuality2017].
+
+Best management practices (BMPs) have been the primary suite of tools for addressing nonpoint source pollution. 
+BMPs are structural or non-structural controls used to mitigate the effects of increased runoff volume, pollutant loads, or pollutant concentrations emanating from diffuse nonpoint sources. 
+BMPs control the delivery of pollutants through a few possible mechanisms. 
+Structural BMPs reduce and retard total volume of runoff, thus reducing both the volume of water and pollutant load. 
+Structural BMPs may also provide a mechanism for physical, chemical, or biological removal of pollutant constituents suspended or dissolved in runoff. 
+Non-structural BMPs (such as nutrient management or livestock management) are utilized to reduce the generation of pollutant runoff by avoiding pollutant generation during critical periods.
+
+Practitioners rely extensively on mechanistic models to plan and evaluate BMP scenarios and resulting water quality.
+@linternBestManagementPractices2020 found 43% of reviewed BMP effectiveness studies relied completely on modeled outputs, with modeled outputs almost always predicting water quality improvements following BMP implementation. 
+However, field studies are much more likely to demonstrate mixed results including net releases of pollutants under certain conditions  [@linternBestManagementPractices2020; @liuReviewEffectivenessBest2017].
+The disconnect between modeled outcomes and field studies might be attributed to (1) overly simplified or incorrect estimates of parameters that represent management practices [@ullrichApplicationSoilWater2009; @fuReviewCatchmentscaleWater2019; @linternBestManagementPractices2020], (2) failure to incorporate uncertainty in estimates [@tasdighiBayesianTotalUncertainty2018; @fuReviewCatchmentscaleWater2019; @linternBestManagementPractices2020], and (3) assumption of static performance over time [@mealsLagTimeWater2010; @liuReviewEffectivenessBest2017; @fuReviewCatchmentscaleWater2019].
+
+A source of uncertainty comes from the substantial variability of performance metrics reported in empirical BMP studies [@linternBestManagementPractices2020].
+Previous empirical reviews generally describe high variability and uncertainty in nitrogen and phosphorus removal and consistent reduction in total suspended sediment concentrations across BMP types [@linternBestManagementPractices2020;@liuReviewEffectivenessBest2017; @kochNitrogenRemovalStormwater2014; @claryBMPPerformanceAnalysis2011; @barrettComparisonBMPPerformance2008; @grudzinskiDoesRiparianFencing2020]. 
+The review literature on the effects of BMPs on FIBs are sparse but generally find extremely high variance in performance across BMPs [@claryBMPPerformanceAnalysis2011; @grudzinskiDoesRiparianFencing2020].
+Accurately characterizing BMP treated runoff quality is challenging due to the high variability in BMP performance.
+However, influent water quality, seasonality, and BMP age provide some explanatation to highliy heterogenous BMP efficiency data [@barrettPerformanceComparisonStructural2005; @liuReviewEffectivenessBest2017].  
+A recent meta-analysis demonstrated the further linkages between local climatic conditions and BMP performance on nitrogen and phosphorus concentrations [@horvathEffectsRegionalClimate2023].
+
+
+
+# Methods
+
+
+We conducted a systematic review of recent (2000-2022) literature to compile field studies documenting the effectiveness of best management practices on fecal indicator bacteria and nutrients concentrations. 
+The systematic review followed guidance provided in the Collaboration for Environmental Evidence systematic review guidelines [@collaborationforenvironmentalevidenceGuidelinesStandardsEvidence2018].
+In order to maximize the number of studies included in the review, we included both peer-reviewed studies and unpublished white papers to reduce potential bias against negative results.
+The inclusion criteria filtered out (1) non-field studies, (2) modelling results, (3) studies that did not evaluate specific BMPs, (4) studies conducted outside of the U.S. or published in a language other than English.
+We ran search queries in Texas A&M Library Catalog, Web of Science, and Google Scholar.
+Although results from Google Scholar are not always replicable, we utilized the service to maximize search results for studies not published in academic journals and presumably increase the chance of identifying studies with negative effects.
+Fecal indicator bacteria study seraches included the following query: “fecal indicator bacteria” OR “E. coli” OR “Escherichia coli” OR “enterococci” OR “enterococcus” AND “best management practices” OR “BMPs” AND “effectiveness” OR “performance”. Nutrient BMP studies utilized a similar query: “nutrient” OR “nitrogen” OR “phosphorus” OR “sediment” OR “TSS” AND “best management practices” OR “BMPs” AND “effectiveness” OR “performance”. 
+
+Results from each database were first filtered to remove duplicates.
+After removal of duplicates, each member of the research team (*n* = 4) was assigned a subset of studies to evaluate if they should be included.
+**include supplementary tables with inclusion criteria and data variables**
+Each study was reviewed by two team members and differences in opinion were collectively discussed and agreed upon before progressing.
+The remaining studies were split among team members for data extraction, again with at least two team members reviewing each study. 
+If data was provided in figures, the data was extracted with the WebPlotDigitizer tool [@rohatgiWebPlotDigitizer2022].
+
+```{r criteria}
+
+tibble(
+  "Attribute" = c("Study type", "Outcomes", "Geographical context", "Timeframe"),
+  "Inclusion Criteria" = c("Journal articles, book chapters, conference papers, unpublished research reports, thesis and dissertations, organizational and agency white papers.",
+                           "Field studies with measured effects on fecal indicator bacteria or nutrient concentrations.",
+                           "Studies conducted within the United States.",
+                           "Studies published from 2000 through 2022."),
+  "Excluision Criteria" = c("Synopsis or review studies, peports with reductions based on modeled or other estimated reductions (e.g. TMDLs, watershed plans, or modelling studies.",
+                            "Studies not explicitly linking reductions to a specific BMP or insufficient information to quantify reductions.",
+                            "Studies outside of the United States.",
+                            "Studies published prior to 2000 or after 2022.")
+) |> 
+  kableExtra::kbl(booktabs = TRUE,
+                  caption = "Criteria applied for including or excluding studies within the review database.") |> 
+  kableExtra::kable_styling(full_width = FALSE) |>
+  kableExtra::column_spec(1, width = "5em") |> 
+  kableExtra::column_spec(2, width = "15em") |> 
+  kableExtra::column_spec(3, width = "15em")
+
+```
+
+
+
+```{r datvars}
+
+tibble(Variable = c(
+  "Publication Year", "Parameter", "Runoff source", "Source type",
+  "BMP", "BMP Classification", "BMP Category", "BMP Subcategory",
+  "Study scale", "Location", "State", "Study area", "Longitude", "Latitude",
+  "Study years", "N control", "N experiment", "X control", "X experiment", 
+  "SE control", "SE experiment", "Minimum control", "Minimum experiment", 
+  "Maximum control", "Maximum experiment", "SD control", "SD experiment",
+  "Units", "Percent reduction"),
+  Description = c("Year the study was published",
+                  "The specific pollutant measured.",
+                  "Dominant source of runoff (rop fields, livestock pasture, commerical, residential",
+                  "Major categorization of runoff source: agricultural or urban",
+                  "BMP evaluated",
+                  "BMP description based on NRCS conservation practice standards and EPA BMP fact sheets",
+                  "BMP categorization based on structural or management",
+                  "BMP subcategorization based on pollutant removal processes",
+                  'Spatial scale of the study area ("lot/field", "community", "watershed")',
+                  "Location name used in the study description",
+                  "State where the study was conducted",
+                  "Drainage area in hectares",
+                  "Approximated or reported latitude coordinate",
+                  "Approximated or reported longitude coordinate",
+                  "Year or years when data were collected",
+                  "Number of control measurements",
+                  "Number of experiemental measurements",
+                  "Mean concentration for control measurements",
+                  "Mean concentration for experiemental measurements",
+                  "Standard error of control measurements",
+                  "Standard error of experimental measurements",
+                  "Minimum control measurement",
+                  "Minimum experiment measurement",
+                  "Maximum control measurement",
+                  "Maximum experiment measurement",
+                  "Standard deviation of control measreuments",
+                  "Standard deviation of experimental measurements",
+                  "Units reported by the study",
+                  "BMP efficiency for studies that only reported efficiency")
+) |> 
+  kableExtra::kbl(booktabs = TRUE,
+                  caption = "Study and effect variables extracted for review.") |> 
+  kableExtra::kable_styling(full_width = FALSE) |>
+  kableExtra::column_spec(1, width = "10em") |> 
+  kableExtra::column_spec(2, width = "25em") 
+
+```
+
+
+## Effect size calculation {-}
+
+Prior BMP reviews routinely report the effect of BMPs using efficiency values [see @agouridisLivestockGrazingManagement2005; @krogerReviewBestManagement2012; @liuEnhancingRainfallrunoffModel2015; @simpsonDevelopingBestManagement2009].
+Efficiency values are calculated as:
+
+$$
+\text{Efficiency}=\frac{x_{control}-x_{experiment}}{x_{control}}\times 100,
+$$
+
+
+where *x~control~* is the pre-treatment or control pollutant concentration and *x~experiment~* is the pollutant concentration measured after the BMP intervention. 
+There are several statistical shortcomings (distributional asymetry, skewness, and non-additive properties) when using efficiency to estimate overall effect sizes [@nuzzoPercentDifferencesAnother2018; @coleStatisticsNotesWhat2017].
+In comparision, the log ratio of means (*ROM*) provide preferable statistical properties for regression analysis [@osenbergEffectSizeEcological1997; @hedgesMetaanalysisResponseRatios1999]. 
+*ROM* quantifies the difference in means between the control and experimental group [@hedgesMetaanalysisResponseRatios1999]:
+
+$$
+ROM_i = ln\left(\frac{x_{i,control}}{x_{i,experiment}}\right) = ln(x_{i, control})-ln(x_{i, experiment}),
+$$
+where *x~i,control~* and *x~i,experiment~* are the mean pollutant concentrations for experiment *i*. 
+The statistical properties of *lnRR* (normal distribution around zero and additive properties) are preferable to the more commonly reported efficiency metric [@osenbergEffectSizeEcological1997; @hedgesMetaanalysisResponseRatios1999]. 
+Use of *ROM* required the exclusion of studies that only provided measures of BMP efficiency and not the underlying data used to derive the metric.
+
+## Statistical models
+
+We used the "rma.mv" function in the *metafor* R package to fit multilevel random effects linear models with *ROM* as the effect variable [@viechtbauerConductingMetaanalysesMetafor2010; @rcoreteamLanguageEnvironmentStatistical2023].
+Our models specified a nested random effects term accounting for heterogeneity between effect sizes from the same study and for heterogeneity between studies.
+A key feature of meta-analysis is the weighting of effects using sampling variance of individual effect sizes.
+`r paste0(round(bac_missing_sd$missing / bac_missing_sd$total * 100, 0), "%")` of fecal indicator bacteria, `r paste0(round(tn_missing_sd$missing / tn_missing_sd$total * 100, 0), "%")` of TN, `r paste0(round(tp_missing_sd$missing / tp_missing_sd$total * 100, 0), "%")` of TP, and `r paste0(round(tss_missing_sd$missing / tss_missing_sd$total * 100, 0), "%")` of TSS effect sizes were missing standard deviations required to estimate sampling variance. 
+Removal of studies due to missing variance information can introduce substantial bias [@kambachConsequencesMultipleImputation2020], so we imputed missing standard deviations using random forest based multivariate imputation with chained equations using the *mice* R package [@buurenMiceMultivariateImputation2011].
+Sampling variance was estimated with the variance estimator described in Doncaster et al. to reduce bias in small sample studies:
+
+$$
+v(ROM) = \frac{\sum_{i=1}^{K}{(CV^2_{control,i})/K}}{n_{control}} + \frac{\sum_{i=1}^{K}{(CV^2_{experiment,i})/K}}{n_{experiment}},
+$$
+
+where *v* represents the sampling variance, $CV_{control,i}$ and $CV^2_{experiment,i}$ are the coefficients of variation from the *i*th study for studies 1, 2, ..., *K*.
+
+Our initial models included log transformed pre-treatment pollutant concentration, study scale (plot/field, community, watershed), study length (*n* years), BMP subcategory (), and pollutant concentration:BMP subcategory interactions were included as fixed effect terms.
+We used an information-theoretic approach to select the most parsimonious model from the subset of candidate models based on corrected Akaike information criterion (AIC~c~) estimated with maximum likelihood [@cinarUsingInformationTheoretic2021].
+The final model was selected from candidate models, which included all combination and subsets of the full model, by eliminating candidate models until the $\Delta$*AIC~c~* reached $\leq$ 2 [@burnhamAICModelSelection2011].
+We estimated regression coefficients of the selected model using restricted maximum likelihood.
+Relative heterogeneity between and within studies were calculated using the *I^2^* metric described in @nakagawaMethodologicalIssuesAdvances2012.
+Marginal *R^2^* was used to describe the amount of variance explained by fixed effects [@nakagawaGeneralSimpleMethod2013].
+
+```{r}
+bac_z <- eggers_bac$zval[[3]] |> prettyNum(digits = 3, nsmall = 2)
+bac_p <- eggers_bac$pval[[3]] |> format.pval(eps = .01, digits = 2, nsmall = 1)
+```
+
+We tested for evidence of publication bias, in the form of small study effect, by using the extension of Egger's regression applied to the multilevel model framework that included adjusted sampling error as a moderator [@nakagawaQuantitativeEvidenceSynthesis2023]. 
+We did not identify evidence of publication bias in the surveyed studies for fecal indicator bacteria (*Z* = `r bac_z`, *p* = `r bac_p`), total nitrogen, total phosphorus, or total suspended solids; therefore, adjustments for publication bias were not included in the final models.
+We conducted a sensitivity analysis of the robustness of overall effect sizes to individual studies using leave-one-out analysis [@nakagawaQuantitativeEvidenceSynthesis2023].
+Outlier studies identified in the sensitivity analysis are highlighted in Table X and were removed prior to fitting the final models.
+
+
+<!-- Comments should be HTML-style comments -->
+
+# Results 
+
+## Summary of BMP literature
+
+
+
+
+## Regression results
+
+
+Some evidence of a relationship between input concentrations and fecal indicator bacteria reductions.
+No evidence strong evidence that the type of BMP changed the overall relationship.
+
+
+
+```{r bacsummary}
+
+tar_read(bac_table, store = store) |> 
+  pack_rows(group_label = "BMP Subcategories",
+            start_row = 2,
+            end_row = 5)
+
+```
+
+
+```{r nitsummary}
+
+tar_read(tn_table, store = store)
+
+```
+
+
+```{r phossummary}
+
+tar_read(tp_table, store = store)
+
+```
+
+
+
+## Subsection 2 
+
+Frontiers requires figures to be submitted individually, in the same order as
+they are referred to in the manuscript. Figures will then be automatically
+embedded at the bottom of the submitted manuscript. Kindly ensure that each
+table and figure is mentioned in the text and in numerical order. Permission
+must be obtained for use of copyrighted material from other sources (including
+the web). Please note that it is compulsory to follow figure instructions.
+Figures which are not according to the guidelines will cause substantial delay
+during the production process.
+
+# Discussion
+
+Linking BMP performance to watershed scale improvements remains a challenge (Tomer and Locke, Melland et al, Meals). 
+The succesful implementation and maintence of BMPs at watershed scales remains an area for more investigation (Liu et al., Lintern) 
+Long-term trans-disciplinary monitoring projects not just on BMP performance but maintance, management, and social apsects may elucidate unknown factors influencing the ability to scale BMP reductions to watershed scale improvements (Lintern et al.)
+
+Runoff volume was not incorporated into our models, largely attributed to lack of available data. However, BMP size is typically scaled to accommodate runoff volumes of a particular return period volume (1-yr or 2-yr flows for example) (Hoss et al.).
+
+# Data availability statement {-}
+
+The data and R code used in this study are deposited in Zenodo: TBD.
+
+# Disclosure/Conflict-of-Interest Statement {-}
+
+The authors declare that the research was conducted in the absence of any
+commercial or financial relationships that could be construed as a potential
+conflict of interest.
+
+# Author Contributions {-}
+
+MS: Conceptualization, Formal analysis, Funding acquisition, Methodology, Supervision, Writing—original draft, Writing—review & editing.
+DK: Conceptualization, Formal analysis, Data collection, Writing—original draft, Writing—review & editing.
+JW: Data collection, Writing—review & editing.
+SJ: Data collection; Writing—review & editing.
+
+
+# Acknowledgments {-}
+
+Funding: This project was supported by a state nonpoint source grant from the Texas State Soil and Water Conservation Board.
+
+# Supplemental Data {-}
+
+Supplementary Material should be uploaded separately on submission, if there are
+Supplementary Figures, please include the caption in the same file as the
+figure. LaTeX Supplementary Material templates can be found in the Frontiers
+LaTeX folder
+
+
+\bibliographystyle{Frontiers-Harvard}
+\bibliography{bibliography.bib}
+
+# Figure captions {-}
+
+
+```{r studymap}
+#| fig.cap: "Distribution of studies identified in the systematic review by state and parameter."
+#| fig.pos: "H"
+#| out.extra: ""
+#| out.width: "100%"
+
+knitr::include_graphics("../figures/study_map.pdf")
+
+```
+
+```{r bmpsummary}
+#| fig.cap: "Summary of (A) study scale, (B) dominant runoff source, and (C) BMPs identified in the systematic review."
+#| #| fig.pos: "H"
+#| out.extra: ""
+#| out.width: "100%"
+
+knitr::include_graphics("../figures/bmp_summary.pdf")
+
+```
+
+
+
+
+```{r overalleffect}
+#| fig.cap: "Estimated effect sizes and intervals from the null multilevel random effects model. Individual points represent studies, with size scaled by sampling variance. The point estimate with uncertaintity bars indicate the estimated overall effect, 95% confidence intervals, and 95% prediction intervals. Here, \\textit{k} indicates the number of overall effects with the number of unique studies in parenthesis."
+#| fig.pos: "H"
+#| out.extra: ""
+#| out.width: "100%"
+
+knitr::include_graphics("../figures/overall_effect.pdf")
+```
+
+
+<!-- #  -->
+<!-- # ```{r marginalmeans} -->
+<!-- # #| fig.cap: "Marginal effects of influent pollutant concentrations on the log ratio of means (\\textit{ROM}). Individual dots represent each effect size identified in the literature with the size scaled by sampling variance. The solid lines are the marginal mean effect, dashed lines are the 95% confidence interval around the mean, and the dotted lines are 95% prediction intervals. Here, *k* represents the number of effects with the number of studies in parenthesis." -->
+<!-- # #| fig.pos: "H" -->
+<!-- # #| out.extra: "" -->
+<!-- # #| out.width: "100%" -->
+<!-- #  -->
+<!-- # knitr::include_graphics("../figures/marginal_means.pdf") -->
+<!-- #  -->
+<!-- #  -->
+<!-- #``` -->
