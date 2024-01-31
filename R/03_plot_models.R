@@ -33,6 +33,8 @@ plot_marginal_effect_lnRR <- function(model,
                                       subset = NULL,
                                       sec_y_breaks = waiver(),
                                       sec_y_labels = waiver(),
+                                      ylim = NULL,
+                                      x_adj = NULL,
                                       ...) {
   
   ## use mod_results from orchaRd to generate model grid 
@@ -56,6 +58,16 @@ plot_marginal_effect_lnRR <- function(model,
                                moderator = exp(moderator)))    
   }
 
+  ## back transform centered ai data
+  if(mod == "ai") {
+    mod_table <- as.list(mod_table) |> 
+      purrr::modify_at("mod_table",
+                       ~mutate(.,
+                               moderator = moderator + x_adj)) |> 
+      purrr::modify_at("data",
+                       ~mutate(.,
+                               moderator = moderator + x_adj))    
+  }
   
   ## remove NA values from "data"
   if(!is.null(at)){
@@ -144,43 +156,22 @@ plot_marginal_effect_lnRR <- function(model,
                                     color = "black",
                                     face = "plain",
                                     size = rel(1), hjust = 0))
-  # p1 <- mod_table |>
-  #   ## use modified bubble_plot
-  #   bubble_plot(group = "StudyID", mod = mod, g = TRUE, condition.nrow = 1, ...) +
-  #   geom_hline(yintercept = 0, alpha = 0.25, linetype = "solid", color = "gray75") +
-  #   scale_y_continuous(sec.axis = sec_axis(~(1-(1/exp(.))) * 100,
-  #                                          name = "Efficiency (%)",
-  #                                          breaks = sec_y_breaks,
-  #                                          labels = sec_y_labels)) +
-    # labs(x = xlab,
-    #      y = ylab) +
-    # theme_mps_noto(base_family = "Manrope Regular") +
-    # theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
-    #       axis.title.x = element_text(hjust = 0),
-    #       axis.title.y = element_text(hjust = 1),
-    #       axis.title.y.right = element_text(hjust = 0, angle = 270),
-    #       axis.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.8)),
-    #       axis.text.y.left = element_text(hjust = 1),
-    #       axis.text.y.right = element_text(hjust = 0),
-    #       legend.position = "none",
-    #       panel.grid.major.y = element_blank(),
-    #       strip.background = element_rect(fill = "grey90",
-    #                                       color = "grey90"),
-    #       strip.text = element_text(family = "Manrope SemiBold",
-    #                                 color = "black",
-    #                                 face = "plain",
-    #                                 size = rel(1), hjust = 0))
+
   if(mod == "lnPre") {
     p1 <- p1 +
       scale_x_log10()
   }
-
+  
   if(!is.null(by)) {
     if(by == "BMP_SubCat") {
       p1 <- p1 +
         scale_fill_manual(values = pal_vals) +
         scale_color_manual(values = pal_vals)
     }    
+  }
+  if(!is.null(ylim)) {
+    p1 <- p1 +
+      coord_cartesian(ylim = ylim)
   }
 
 
@@ -202,9 +193,31 @@ patch_marginal_means <- function(plots) {
 }
 
 
+patch_bac_marginal_means <- function(p1, p2) {
+  
+  p1 <- p1 +
+    theme(axis.title.y.right = element_blank())
+  p2 <- p2 +
+    theme(axis.title.y.left = element_blank())
+  
+  p1 + p2 + patchwork::plot_annotation(tag_levels = "A")
+}
+
+patch_phos_marginal_means <- function(p1, p2) {
+  
+  p1 <- p1 +
+    theme(axis.title.y.right = element_blank())
+  p2 <- p2 +
+    theme(axis.title.y.left = element_blank())
+  
+  p1 + p2 + patchwork::plot_annotation(tag_levels = "A")
+  
+}
+
+
 plot_forest <- function(model) {
   tibble(Effect = model$yi,
-         SE = sqrt(model$vi),
+         SE = 1/model$vi,
          weight = weights(model),
          ylab = attr(model$yi, "slab"),
          BMP = model$data$BMP_SubCat) |> 
@@ -214,11 +227,11 @@ plot_forest <- function(model) {
                         xmax = Effect+(1.96 * SE),
                         size = weight)) +
     geom_vline(xintercept = 0, linetype = "dashed", alpha = 0.5) +
-    facet_grid(rows = vars(BMP),
-               scales = "free_y",
-               space = "free_y") +
-    scale_size_area(max_size = 0.75, trans = "sqrt", guide = "none") +
-    labs(x = "Log Response Ratio", y = "") +
+    facet_col(vars(BMP),
+              scales = "free",
+              space = "free") +
+    scale_size(range = c(0.05,0.75)) +
+    labs(x = "ROM", y = "") +
     theme_mps_noto(base_family = "Manrope Regular") +
     theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
           axis.title.x = element_text(hjust = 0),
@@ -554,20 +567,20 @@ bubble_plot <- function(object, mod, group = NULL, xlab = "Moderator",
 
 
 
-mult_orch_plot <- function(bac, tn, tp, tss) {
+mult_orch_plot <- function(bac, tn, tin, tp, po4, tss) {
   sec_y_breaks = c(-1000,-100,0,40,80,99)
   sec_y_labels = c("-1000","-100","0","40","80",">99")
 
   p1 <- orchaRd::orchard_plot(bac, group = "StudyID", xlab = "",
                               k.pos = -2.5) +
-    scale_x_discrete(labels = c("Fecal indicator bacteria")) +
+    scale_x_discrete(labels = c("FIB")) +
     scale_y_continuous(limits = c(-3,7.5),
                        sec.axis = sec_axis(~(1-(1/exp(.))) * 100,
                                            name = "Overall effect (Efficiency, % reduction)",
                                            breaks = sec_y_breaks,
                                            labels = sec_y_labels)) +
-    scale_color_manual(values = "#1B9E77") +
-    scale_fill_manual(values = "#1B9E77") +
+    scale_color_manual(values = "#66C2A5") +
+    scale_fill_manual(values = "#66C2A5") +
     theme_mps_noto(base_family = "Manrope Regular") +
     theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
           axis.title.x = element_text(hjust = 0),
@@ -584,14 +597,14 @@ mult_orch_plot <- function(bac, tn, tp, tss) {
                                     size = rel(1), hjust = 0))
   p2 <- orchaRd::orchard_plot(tn, group = "StudyID", xlab = "",
                               k.pos = -2.5) +
-    scale_x_discrete(labels = c("Nitrogen")) +
+    scale_x_discrete(labels = c("TN")) +
     scale_y_continuous(limits = c(-3,7.5),
                        sec.axis = sec_axis(~(1-(1/exp(.))) * 100,
                                            name = "Efficiency (%)",
                                            breaks = sec_y_breaks,
                                            labels = sec_y_labels)) +
-    scale_color_manual(values = "#D95F02") +
-    scale_fill_manual(values = "#D95F02") +
+    scale_color_manual(values = "#FC8D62") +
+    scale_fill_manual(values = "#FC8D62") +
     theme_mps_noto(base_family = "Manrope Regular") +
     theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
           axis.title.x = element_text(hjust = 0),
@@ -608,16 +621,44 @@ mult_orch_plot <- function(bac, tn, tp, tss) {
                                     color = "black", 
                                     face = "plain",
                                     size = rel(1), hjust = 0))
-  p3 <- orchaRd::orchard_plot(tp, group = "StudyID", xlab = "",
+  
+  p3 <- orchaRd::orchard_plot(tin, group = "StudyID", xlab = "",
                               k.pos = -2.5) +
-    scale_x_discrete(labels = c("Phosphorus")) +
+    scale_x_discrete(labels = c("DIN")) +
     scale_y_continuous(limits = c(-3,7.5),
                        sec.axis = sec_axis(~(1-(1/exp(.))) * 100,
                                            name = "Efficiency (%)",
                                            breaks = sec_y_breaks,
                                            labels = sec_y_labels)) +
-    scale_color_manual(values = "#7570B3") +
-    scale_fill_manual(values = "#7570B3") +
+    scale_color_manual(values = "#8DA0CB") +
+    scale_fill_manual(values = "#8DA0CB") +
+    theme_mps_noto(base_family = "Manrope Regular") +
+    theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
+          axis.title.x = element_text(hjust = 0),
+          axis.title.y = element_text(hjust = 1),
+          axis.title.x.top = element_blank(),
+          axis.text.x.bottom = element_blank(),
+          axis.text.x.top = element_blank(),
+          axis.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.7)),
+          legend.position = "none",
+          panel.grid.major.y = element_blank(),
+          strip.background = element_rect(fill = "grey90", 
+                                          color = "grey90"),
+          strip.text = element_text(family = "Manrope SemiBold",
+                                    color = "black", 
+                                    face = "plain",
+                                    size = rel(1), hjust = 0))
+  
+  p4 <- orchaRd::orchard_plot(tp, group = "StudyID", xlab = "",
+                              k.pos = -2.5) +
+    scale_x_discrete(labels = c("TP")) +
+    scale_y_continuous(limits = c(-3,7.5),
+                       sec.axis = sec_axis(~(1-(1/exp(.))) * 100,
+                                           name = "Efficiency (%)",
+                                           breaks = sec_y_breaks,
+                                           labels = sec_y_labels)) +
+    scale_color_manual(values = "#E78AC3") +
+    scale_fill_manual(values = "#E78AC3") +
     theme_mps_noto(base_family = "Manrope Regular") +
     theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
           axis.title.x = element_text(hjust = 0),
@@ -634,16 +675,44 @@ mult_orch_plot <- function(bac, tn, tp, tss) {
                                     color = "black", 
                                     face = "plain",
                                     size = rel(1), hjust = 0))
-  p4 <- orchaRd::orchard_plot(tss, group = "StudyID", xlab = "Overall effect (ROM)",
+  
+  p5 <- orchaRd::orchard_plot(po4, group = "StudyID", xlab = "",
                               k.pos = -2.5) +
-    scale_x_discrete(labels = c("Total suspended solids")) +
+    scale_x_discrete(labels = c("PO4")) +
     scale_y_continuous(limits = c(-3,7.5),
                        sec.axis = sec_axis(~(1-(1/exp(.))) * 100,
                                            name = "Efficiency (%)",
                                            breaks = sec_y_breaks,
                                            labels = sec_y_labels)) +
-    scale_color_manual(values = "#E7298A") +
-    scale_fill_manual(values = "#E7298A") +
+    scale_color_manual(values = "#A6D854") +
+    scale_fill_manual(values = "#A6D854") +
+    theme_mps_noto(base_family = "Manrope Regular") +
+    theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
+          axis.title.x = element_text(hjust = 0),
+          axis.title.x.top = element_blank(),
+          axis.title.y = element_text(hjust = 1),
+          axis.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.7)),
+          axis.text.x.bottom = element_blank(),
+          axis.text.x.top = element_blank(),
+          legend.position = "none",
+          panel.grid.major.y = element_blank(),
+          strip.background = element_rect(fill = "grey90", 
+                                          color = "grey90"),
+          strip.text = element_text(family = "Manrope SemiBold",
+                                    color = "black", 
+                                    face = "plain",
+                                    size = rel(1), hjust = 0))
+  
+  p6 <- orchaRd::orchard_plot(tss, group = "StudyID", xlab = "Overall effect (ROM)",
+                              k.pos = -2.5) +
+    scale_x_discrete(labels = c("TSS")) +
+    scale_y_continuous(limits = c(-3,7.5),
+                       sec.axis = sec_axis(~(1-(1/exp(.))) * 100,
+                                           name = "Efficiency (%)",
+                                           breaks = sec_y_breaks,
+                                           labels = sec_y_labels)) +
+    scale_color_manual(values = "#FFD92F") +
+    scale_fill_manual(values = "#FFD92F") +
     theme_mps_noto(base_family = "Manrope Regular") +
     theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
           axis.title.x = element_text(hjust = 0),
@@ -662,7 +731,7 @@ mult_orch_plot <- function(bac, tn, tp, tss) {
   # bacteria notes
   bac_preds <- TeX(sum_preds(bac), output = "character")
   bac_eff <- TeX(sum_eff(bac), output = "character")
-  p5 <- ggplot() +
+  p7 <- ggplot() +
     geom_text(aes(1,1, label = bac_preds),
               parse = TRUE,
               family = "Manrope Regular",
@@ -676,10 +745,10 @@ mult_orch_plot <- function(bac, tn, tp, tss) {
     coord_cartesian(xlim = c(1,2),
                     ylim = c(0.5,1.5)) +
     theme_void()
-  # nitrogen
+  # TN
   nit_preds <- TeX(sum_preds(tn), output = "character")
   nit_eff <- TeX(sum_eff(tn), output = "character")
-  p6 <- ggplot() +
+  p8 <- ggplot() +
     geom_text(aes(1,1, label = nit_preds),
               parse = TRUE,
               family = "Manrope Regular",
@@ -694,10 +763,28 @@ mult_orch_plot <- function(bac, tn, tp, tss) {
                     ylim = c(0.5,1.5)) +
     theme_void()
   
+  # TIN
+  tin_preds <- TeX(sum_preds(tin), output = "character")
+  tin_eff <- TeX(sum_eff(tin), output = "character")
+  p9 <- ggplot() +
+    geom_text(aes(1,1, label = tin_preds),
+              parse = TRUE,
+              family = "Manrope Regular",
+              size = 2.5,
+              hjust = 0) +
+    geom_text(aes(1,0.75, label = tin_eff),
+              parse = TRUE,
+              family = "Manrope Regular",
+              size = 2.5,
+              hjust = 0) +
+    coord_cartesian(xlim = c(1,2),
+                    ylim = c(0.5,1.5)) +
+    theme_void()
+  
   # phos
   phos_preds <- TeX(sum_preds(tp), output = "character")
   phos_eff <- TeX(sum_eff(tp), output = "character")
-  p7 <- ggplot() +
+  p10 <- ggplot() +
     geom_text(aes(1,1, label = phos_preds),
               parse = TRUE,
               family = "Manrope Regular",
@@ -712,11 +799,29 @@ mult_orch_plot <- function(bac, tn, tp, tss) {
                     ylim = c(0.5,1.5)) +
     theme_void()
   
+  # po4
+  po4_preds <- TeX(sum_preds(po4), output = "character")
+  po4_eff <- TeX(sum_eff(po4), output = "character")
+  p11 <- ggplot() +
+    geom_text(aes(1,1, label = po4_preds),
+              parse = TRUE,
+              family = "Manrope Regular",
+              size = 2.5,
+              hjust = 0) +
+    geom_text(aes(1,0.75, label = po4_eff),
+              parse = TRUE,
+              family = "Manrope Regular",
+              size = 2.5,
+              hjust = 0) +
+    coord_cartesian(xlim = c(1,2),
+                    ylim = c(0.5,1.5)) +
+    theme_void()
+  
   ## tss
   
   tss_preds <- TeX(sum_preds(tss), output = "character")
   tss_eff <- TeX(sum_eff(tss), output = "character")
-  p8 <- ggplot() +
+  p12 <- ggplot() +
     geom_text(aes(1,1, label = tss_preds),
               parse = TRUE,
               family = "Manrope Regular",
@@ -732,12 +837,15 @@ mult_orch_plot <- function(bac, tn, tp, tss) {
     theme_void()
   
   layout <- "
-  AAAAAAAEEE
-  BBBBBBBFFF
-  CCCCCCCGGG
-  DDDDDDDHHH"
+  AAAAAAGGG
+  BBBBBBHHH
+  CCCCCCIII
+  DDDDDDJJJ
+  EEEEEEKKK
+  FFFFFFLLL"
   
-  p1 + p2 + p3 + p4 + p5 + p6 + p7 + p8 +  patchwork::plot_layout(design = layout)
+  p1 + p2 + p3 + p4 + p5 + p6 + p7 + p8 + p9 + p10 + p11 + p12 +  patchwork::plot_layout(design = layout) &
+    theme(plot.margin = margin(t = 0.1, b = 0.1, unit = "pt") )
 }
 
 

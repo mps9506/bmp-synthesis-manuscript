@@ -49,3 +49,32 @@ load_df <- function(dataset) {
   }
   return(df)
 }
+
+
+# download Global Aridity data https://figshare.com/ndownloader/files/34377245
+download_aridity <- function(url) {
+  dir <- "data"
+  temp_path <- tempfile(fileext = ".zip")
+  if (file.exists(temp_path))  'file alredy exists' else httr::GET(url = url, httr::write_disk(temp_path))
+  unzip(zipfile = temp_path, exdir = dir)
+}
+
+
+
+add_aridity <- function(df) {
+  ai <- rast("data/Global-AI_ET0_v3_annual/ai_v3_yr.tif")
+  ai <- ai * 0.0001 
+  
+  df <- df |> 
+    filter(!is.na(Longitude), !is.na(Latitude))
+  ai_vals <- terra::extract(ai, vect(df, geom = c("Longitude", "Latitude"), crs ="+proj=longlat +datum=WGS84"))
+  df$ai <- ai_vals$awi_pm_sr_yr
+  
+  ai_centered <- scale(df$ai, scale = FALSE)
+  df <- df |> 
+    mutate(ai = ai_centered)
+  
+  return(list(model_df = df,
+              mean = attr(ai_centered, "scaled:center")))
+  
+}

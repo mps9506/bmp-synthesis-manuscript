@@ -1,100 +1,164 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+add_aridity|function|0be0d94882c1a8da|||||||||||||||
+ai_file_names|stem|50a8e71195f7594b|e9e2b8b07619f320|930efc6fea5defa9|-1504983976||t19740.8303449161s|28f9d9a9ef15cef2|216|rds|local|vector||ai_file_names_bcc04140*ai_file_names_a87c3593*ai_file_names_6cf2ae67*ai_file_names_04bb1b5f*ai_file_names_ae50c8a7*ai_file_names_200cff58*ai_file_names_4f03f7dc*ai_file_names_4a7a275b*ai_file_names_978fc93f*ai_file_names_02c06b92*ai_file_names_30b9af6f*ai_file_names_eda7e0fa*ai_file_names_8f38b007*ai_file_names_a428f69a*ai_file_names_e15610d1*ai_file_names_411ace4d*ai_file_names_a7b699a9|0||
 assess_missing|function|e0e6a44343e35214|||||||||||||||
 bac_conc_marginal_effect|stem|f65b66db9482d4ce|319c451ffbe311b7|0df0c06247c5432e|-985317279||t19732.8535319281s|c22c1deb4d258efc|316099|rds|local|vector|||0.47||
+bac_conc_marginal_effect_ai|stem|56e9d878294b33f5|64bd6bbd2ac2c345|dee6eb403fda4f72|1595386620||t19740.8762336625s|734452624b4695d8|427903|rds|local|vector|||0.13||
+bac_conc_marginal_effect_conc|stem|aebcd6a6641539da|08410e1a535d6c3d|74d311c86189fcf6|2046542065||t19740.876230635s||440024|rds|local|vector|||0.26||Something went wrong Nonconformable elements in reference grid.
 bac_conc_marginal_effect_efficency|stem|dc5191baa0039309|fcbc04535a39e30b|addd357e7bbc57f2|-690542041||t19733.6000263841s|edf8e675b329a749|337491|rds|local|vector|||0.09||
-bac_conc_marginal_effect_lnRR|stem|e4b875bd970c56ae|08410e1a535d6c3d|2d1c9dc27b32d583|-1798491719||t19734.8577969208s|4f4aad77b59acd72|412148|rds|local|vector|||0.15||
-bac_forest_plot|stem|b7a4dd8b7b3f2fc7|0b79fecf81112001|7834e38a8b4035dc|1744281310||t19734.8410239463s|1dc29fd45710478a|287234|rds|local|vector|||0.04||
-bac_i2|stem|a6cf8db6475b27f3|f78657e9003c3d9f|a20625e01bc75e9a|1976360601||t19734.8410243728s|bce99b594ffe2eda|128|rds|local|vector|||0||
+bac_conc_marginal_effect_lnRR|stem|d402b2c3f805a184|08410e1a535d6c3d|dee6eb403fda4f72|-1798491719||t19740.8603110524s|53884e811bc2b9f4|440014|rds|local|vector|||0.43||
+bac_forest_plot|stem|43fe962c0e2b9244|0b79fecf81112001|24bc77fa2bc1096d|1744281310||t19751.6014161795s|9d4b0b777a9e4645|256065|rds|local|vector|||0.05||
+bac_i2|stem|5ba1cf98cc90513c|f78657e9003c3d9f|0abfbfe59b55d343|1976360601||t19751.6012846769s|bce99b594ffe2eda|128|rds|local|vector|||0||
+bac_i2_null|stem|f56af9f457c0d3f6|12a75a6500ac0927|0abfbfe59b55d343|2044560814||t19751.6012843845s|7dead8e41ac4f62d|130|rds|local|vector|||0||
 bac_length_marginal_effect|stem|60b87f80b3ed0e21|93e996448057c104|0df0c06247c5432e|427928020||t19732.8535341115s|365fd63cd1c6fe36|264670|rds|local|vector|||0.11||
 bac_length_marginal_effect_efficency|stem|d32737161e8dee0e|188485666dcf69c6|addd357e7bbc57f2|1980412119||t19733.6000240058s|531a2ce19f260cad|325292|rds|local|vector|||0.38||
 bac_length_marginal_effect_llRR|stem||93e996448057c104|45f52ceec3a88890|2127535853||t19733.512829246s||0|rds|local|vector|||0||could not find function plot_marginal_effect
 bac_length_marginal_effect_lnRR|stem|e447706311adde52|0b92862344064c91|e857e6bb439c32dc|-1815273386||t19733.882038442s|1b23cccd91e2d648|346652|rds|local|vector|||0.45||
 bac_m2|stem|3a6922713d837e7c|d2c9f2d17deea0b9|2ecb3cfacd38adb3|-1837589352||t19712.7872192134s|6556730b296d7213|119|rds|local|vector|||0||
-bac_marginal_means|stem|aea6be3c77c67d4f|ec860544d5a6e18c|ef987314e7dfcdcd|-1569579115||t19732.829315688s|c0a9071dfa44d588|313160|rds|local|vector|||0.53||
-bac_missing_sd|stem|fea83a79117e8afc|66a9c6e4a1932f98|55a08c14f59e240d|-917052478||t19734.8410223696s|bf160f080fbf1dbb|99|rds|local|vector|||0||
-bac_model|stem|7873845eff2e4725|df6ed1a1796148f8|6a71f2109b7c6e75|-1106775276||t19734.8403138838s|62688b2fdb59e2d9|223078|rds|local|vector|||6.63|Number of logged events 202|
+bac_marginal_effect_ai|stem|036efa87d2639d5d|1454012b520a9012|58980508063d2357|-905707995||t19751.714625105s|ce51347dde9dbd35|324934|rds|local|vector|||0.34||
+bac_marginal_effect_conc|stem|e3d701138ac0efbc|86440455fa41aa1b|5583ec904a169ea5|1146681575||t19751.7146274368s|6eb17188809d9a21|262325|rds|local|vector|||0.08||
+bac_marginal_means|stem|706ef85d9bf5c33e|a398b9e242a5454d|aa0890435e394179|-1569579115||t19751.7146345265s|18f59e4f8335e93c|408705|rds|local|vector|||0||
+bac_marginal_means_file|stem|76b774f98da66daf|71135b0aaa718eb6|c1c6f7db3bd9f58a|-1597200598|figures/bac_predicted.pdf|t19751.7146425711s|995721cbcdd25ca8|33338|file|local|vector|||0.66||
+bac_missing_sd|stem|7eac150cb1650f02|66a9c6e4a1932f98|b686960efbf689c1|-917052478||t19751.6014145958s|bf160f080fbf1dbb|99|rds|local|vector|||0||
+bac_model|stem|e59c83a6b9fe7360|7fe30b6eabad2015|f2b629e9364946e1|-1106775276||t19751.6012178823s|ab6ef1e4863297b9|152455|rds|local|vector|||1.44||
+bac_model_df|stem|fb4bbe3742c9f2e9|6992153558450460|d00d1b21a7113438|-1286118943||t19751.6008246477s|a13a2e6488014d5b|9788|rds|local|vector|||33.1||
 bac_model_plot|stem|385b9bf798daab7e|a110a65ead8c79e1|a14c0afd85debac6|-270721335||t19710.9543617594s||253489|rds|local|vector|||0.03||Could not find variable logPre in the model.
-bac_r2|stem|3ee94c4357a5bd54|b410bdf5fc10b0ae|a20625e01bc75e9a|-523221646||t19734.8410242107s|f21b4888ae8bdafc|118|rds|local|vector|||0||
-bac_sens|stem|ec47c1666cd45576|bd6b911bb2b5ccbd|f70f9cb881922d2e|2076514654||t19734.8732923676s|a5517019688fc8c6|326994|rds|local|vector|||14.42||
-bac_sse|stem|2fd17f71432a1196|663b470e75cf864e|799262fbac6bbbf8|747248916||t19734.8731242733s|c0bb5e95d5596512|260872|rds|local|vector|||0.2||
-bac_table|stem|ae481c3f4cb65d62|0bb7b8d475ce3eb4|6aa9f92c786f9876|1735694353||t19734.8598863976s|7d645bf271ac4f66|1088|rds|local|vector|||0.03||
-bacteria_df|stem|b16f85885cb42c19|78c229553dd21504|57d23e0e79410109|1044902306||t19731.5395304424s|cf4f1323cd152d99|9666|rds|local|vector|||0.44|1m22mThere was 1 warning in mutate.1m22m36mℹ39m In argument Longitude  as.numericLongitude.Caused by warning33m39m NAs introduced by coercion|
-bmp_summary|stem|002a68849381f86b|448802345c3d7293|0c84f4b6ccdb45d2|-365978883||t19739.5162702762s|c963229f0bc975b8|232941|rds|local|vector|||0.72||
-bmp_summary_file|stem|c763da178c31a941|92bc1a7caf8405fb|34b3c47863c72c9e|-1771856167|figures/bmp_summary.pdf|t19739.5162853432s|718cae1972188b49|20899|file|local|vector|||1.14||
+bac_r2|stem|955f91e88a911e9d|b410bdf5fc10b0ae|0abfbfe59b55d343|-523221646||t19751.6014163931s|f21b4888ae8bdafc|118|rds|local|vector|||0||
+bac_sens|stem|87f6f7767186063b|bd6b911bb2b5ccbd|18a23348e6c380d6|2076514654||t19751.6014070709s|b8290f9f2a19de80|255034|rds|local|vector|||10.53||
+bac_sse|stem|72efa15b730209ef|663b470e75cf864e|c736735f0b2801a4|747248916||t19751.6014144103s|c44b536d024795ce|269181|rds|local|vector|||0.58|font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in Post|
+bac_table|stem|28dcdf43e6df0f3b|67c2a12da849fd83|f59e67cbb75f4f38|1735694353||t19751.6015782965s|5a256eea93ae1d7f|1216|rds|local|vector|||0.06||
+bacteria_df|stem|a1eeb7fec0ba81c7|78c229553dd21504|57d23e0e79410109|1044902306||t19740.8135496334s|ed687bde6fb1ad3f|9668|rds|local|vector|||6.24|package flextable was built under R version 4.3.2. package ggrepel was built under R version 4.3.2. package latex2exp was built under R version 4.3.2. package metafor was built under R version 4.3.2. package metadat was built under R version 4.3.2. package metagear was built under R version 4.3.2. package mice was built under R version 4.3.2. package officer was built under R version 4.3.2. package sf was built under R version 4.3.2. package units was built under R version 4.3.2. 1m22mThere was 1 warning in mutate.1m22m36mℹ39m In argument Longitude  as.numericLongitude.Caused by warning33m39m NAs introduced by coercion|
+bmp_summary|stem|85e342ce2d89256e|448802345c3d7293|1c0838a01daaa1d7|-365978883||t19746.7165288768s|95cb551e1dbc0276|233476|rds|local|vector|||0.56||
+bmp_summary_file|stem|019994462bfaff32|5651450aa9da4e5c|91edf52a2ffef65d|-1771856167|figures/bmp_summary.pdf|t19746.7165561844s|7b9ebff67f6742bc|22998|file|local|vector|||1.13||
+bmp_temporal|stem|1610f92176261416|09861ff314cca0de|e848f28939ae8740|-1938396845||t19753.7868544544s|8e6bd1a19beea784|187750|rds|local|vector|||0.55||
+bmp_temporal_file|stem|303eb40b56110756|ee873345e9fba7e6|a7434cceb8ed1b74|-1978626400|figures/bmp_temporal_summary.pdf|t19753.7877451733s|76302b83e09fcdea|12941|file|local|vector|||0.8||
 bubble_plot|function|8510a0c6ff343721|||||||||||||||
 coefTable.rma|function|88220ae151d46852|||||||||||||||
 cv_avg|function|860e9377e1cd7a44|||||||||||||||
-fit_bac_model|function|375b7fc037c043aa|||||||||||||||
+download_aridity|function|525e0e4d84ef99e2|||||||||||||||
+files|pattern|ced0d4653b598873|68fa2bed3b444fde||-86421757||||872108961|file|local|vector||files_09189edd*files_e73719fc*files_88a8fc89*files_40caa9b5*files_5cddd34f*files_79204002*files_64e7cd42*files_efb636db*files_e49f51b6*files_bda132b4*files_25225a7c*files_7b2ee937*files_317c4106*files_5e75a256*files_4d91a0ba*files_0f660287*files_9784f76a|0||
+files_09189edd|branch|d5760ad3f6885ad5|68fa2bed3b444fde|930efc6fea5defa9|1701069719|data/Global-AI_ET0_v3_annual/ai_v3_yr.tfw|t19740.8270254435s|40b3a10246f0095b|83|file|local|vector|files||0||
+files_0f660287|branch|03c9c81d7f93598b|68fa2bed3b444fde|930efc6fea5defa9|-448607738|data/Global-AI_ET0_v3_annual/et0_v3_yr_sd.tif.xml|t19740.8270837435s|b8beeb16c4780284|8639|file|local|vector|files||0||
+files_25225a7c|branch|a1dd834c17e0bf3d|68fa2bed3b444fde|930efc6fea5defa9|1486006288|data/Global-AI_ET0_v3_annual/et0_v3_yr_sd.tfw|t19740.8270792504s|40b3a10246f0095b|83|file|local|vector|files||0||
+files_317c4106|branch|7229e86b6842e37a|68fa2bed3b444fde|930efc6fea5defa9|-624736683|data/Global-AI_ET0_v3_annual/et0_v3_yr_sd.tif.aux.xml|t19740.8270836741s|6b7db19c93bd13b6|6596|file|local|vector|files||0||
+files_40caa9b5|branch|1b2f9e90107e0972|68fa2bed3b444fde|930efc6fea5defa9|679028299|data/Global-AI_ET0_v3_annual/ai_v3_yr.tif.xml|t19740.827063916s|bb913be0475a2173|7082|file|local|vector|files||0||
+files_4d91a0ba|branch|786fdc1bc3bbe52c|68fa2bed3b444fde|930efc6fea5defa9|37970771|data/Global-AI_ET0_v3_annual/et0_v3_yr_sd.tif.vat.dbf|t19740.8270837319s|ee96b6378cff1ff7|32858|file|local|vector|files||0||
+files_5cddd34f|branch|a1dd834c17e0bf3d|68fa2bed3b444fde|930efc6fea5defa9|-1461397891|data/Global-AI_ET0_v3_annual/et0_v3_yr.tfw|t19740.8270639394s|40b3a10246f0095b|83|file|local|vector|files||0||
+files_5e75a256|branch|a0915c78be995614|68fa2bed3b444fde|930efc6fea5defa9|2053804266|data/Global-AI_ET0_v3_annual/et0_v3_yr_sd.tif.vat.cpg|t19740.8270836972s|703a354a3d076f23|5|file|local|vector|files||0||
+files_64e7cd42|branch|b9d6d380c0d657ed|68fa2bed3b444fde|930efc6fea5defa9|798609402|data/Global-AI_ET0_v3_annual/et0_v3_yr.tif.aux.xml|t19740.8270792504s|ec35aa0b79f5803c|2941|file|local|vector|files||0||
+files_79204002|branch|1a8eb7495c0fdcc1|68fa2bed3b444fde|930efc6fea5defa9|598969624|data/Global-AI_ET0_v3_annual/et0_v3_yr.tif|t19740.8270792504s|2dcf4d7339492bd6|274376662|file|local|vector|files||0||
+files_7b2ee937|branch|bcc6d8e0fd87845b|68fa2bed3b444fde|930efc6fea5defa9|-1483287805|data/Global-AI_ET0_v3_annual/et0_v3_yr_sd.tif|t19740.8270836625s|ea719fd0bd6b9923|89317986|file|local|vector|files||0||
+files_88a8fc89|branch|cdeeb31aabd5cf75|68fa2bed3b444fde|930efc6fea5defa9|-1865525231|data/Global-AI_ET0_v3_annual/ai_v3_yr.tif.aux.xml|t19740.8270639014s|e2f29599ebb4b949|2843|file|local|vector|files||0||
+files_9784f76a|branch|267d4e730eb7d61e|68fa2bed3b444fde|930efc6fea5defa9|-279799524|data/Global-AI_ET0_v3_annual/Global-AI_PET_v3 - Readme.pdf|t19740.8270838477s|fe53a6fda80d8860|882442|file|local|vector|files||0||
+files_bda132b4|branch|40f88b76f24796ac|68fa2bed3b444fde|930efc6fea5defa9|1930887001|data/Global-AI_ET0_v3_annual/et0_v3_yr.tif.xml|t19740.8270792504s|e84b325b4a993597|8615|file|local|vector|files||0||
+files_e49f51b6|branch|a4403a3500de1439|68fa2bed3b444fde|930efc6fea5defa9|-29455542|data/Global-AI_ET0_v3_annual/et0_v3_yr.tif.vat.dbf|t19740.8270792504s|38e0419d569e7b5c|123338|file|local|vector|files||0||
+files_e73719fc|branch|e8eed0ac811c390b|68fa2bed3b444fde|930efc6fea5defa9|1296693739|data/Global-AI_ET0_v3_annual/ai_v3_yr.tif|t19740.8270638829s|414faafc9d7dcde1|507338700|file|local|vector|files||0||
+files_efb636db|branch|a0915c78be995614|68fa2bed3b444fde|930efc6fea5defa9|-1072378409|data/Global-AI_ET0_v3_annual/et0_v3_yr.tif.vat.cpg|t19740.8270792504s|703a354a3d076f23|5|file|local|vector|files||0||
+fit_bac_model|function|a65b0050cfd982b9|||||||||||||||
+fit_po4_model|function|a3b12ac6fa3ac999|||||||||||||||
 fit_sse_bac_model|function|8fe486352dacf01d|||||||||||||||
-fit_sse_model|function|8fe486352dacf01d|||||||||||||||
+fit_sse_model|function|9dac15bc08d8d03e|||||||||||||||
 fit_sse_tn_model|function|484cdbe5b98cdec1|||||||||||||||
 fit_sse_tp_model|function|3fca63d0c9a4a88f|||||||||||||||
 fit_sse_tss_model|function|aa23990b0c653867|||||||||||||||
-fit_tn_model|function|35f43b126f73a753|||||||||||||||
-fit_tp_model|function|065667d601995e77|||||||||||||||
-fit_tss_model|function|1b91469e7bc807b6|||||||||||||||
+fit_tin_model|function|becb78552c266e34|||||||||||||||
+fit_tn_model|function|b2dc9cd051a94035|||||||||||||||
+fit_tp_model|function|b7b669b028753d7a|||||||||||||||
+fit_tss_model|function|d8f42d7808ad6e67|||||||||||||||
 font_hoist|function|6a3159ad4c1a4b93|||||||||||||||
+global_ai|stem|75f03f51154e066a|54891e849ff43666|2f96e8c49a3c8af4|1161577470|data/Global-AI_ET0_v3_annual/ai_v3_yr.tfw*data/Global-AI_ET0_v3_annual/ai_v3_yr.tif*data/Global-AI_ET0_v3_annual/ai_v3_yr.tif.aux.xml*data/Global-AI_ET0_v3_annual/ai_v3_yr.tif.xml*data/Global-AI_ET0_v3_annual/et0_v3_yr.tfw*data/Global-AI_ET0_v3_annual/et0_v3_yr.tif*data/Global-AI_ET0_v3_annual/et0_v3_yr.tif.aux.xml*data/Global-AI_ET0_v3_annual/et0_v3_yr.tif.vat.cpg*data/Global-AI_ET0_v3_annual/et0_v3_yr.tif.vat.dbf*data/Global-AI_ET0_v3_annual/et0_v3_yr.tif.xml*data/Global-AI_ET0_v3_annual/et0_v3_yr_sd.tfw*data/Global-AI_ET0_v3_annual/et0_v3_yr_sd.tif*data/Global-AI_ET0_v3_annual/et0_v3_yr_sd.tif.aux.xml*data/Global-AI_ET0_v3_annual/et0_v3_yr_sd.tif.vat.cpg*data/Global-AI_ET0_v3_annual/et0_v3_yr_sd.tif.vat.dbf*data/Global-AI_ET0_v3_annual/et0_v3_yr_sd.tif.xml*data/Global-AI_ET0_v3_annual/Global-AI_PET_v3 - Readme.pdf|t19740.8270838477s|f15c017e6805d0be|872108961|file|local|vector|||50.25|package flextable was built under R version 4.3.2. package ggrepel was built under R version 4.3.2. package latex2exp was built under R version 4.3.2. package metafor was built under R version 4.3.2. package metadat was built under R version 4.3.2. package metagear was built under R version 4.3.2. package mice was built under R version 4.3.2. package officer was built under R version 4.3.2. package sf was built under R version 4.3.2. package units was built under R version 4.3.2|
+global_ai_url|stem||6e6be0c2c6835824|ef46db3751d8e999|-1564807273|https://figshare.com/ndownloader/files/34377245|t19739.9222620248s||0|url|local|vector|||||_paths_ HTTP response status code 403Could not access url  httpsapi.figshare.comv2filedownload34377245HTTP response headers  xamzrequestid  45TY68PCDE26DSJZ  xamzid2  97UdjMlRrYmydtw4XsxZjLICDG8DO61uX3X520gJtqIRQA31O2oXRXXfMIbWEjZPFyjryQjE6U  contenttype  applicationxml  date  Thu, 18 Jan 2024 194449 GMT  server  AmazonS3
 linesep|function|6311c40a866d2a14|||||||||||||||
 lnrr_laj|function|28023b1ae3390975|||||||||||||||
 load_df|function|d28297703a323dc3|||||||||||||||
 makeArgs.rma|function|c3d1a00e018eee0d|||||||||||||||
 marginal_means|stem|66dd6cbe22058030|be81689d19892252|38ff396c9d2e7307|1594987119||t19730.7617930863s||1156081|rds|local|vector|||0||object tn_marginal_means not found
 marginal_means_file|stem|69ce76b575dafcb5|c9bcb4c37319f545|d24c626d5d872db9|1107981400|figures/marginal_means.pdf|t19730.7618283672s|b2b100eede5f1f44|77078|file|local|vector|||2.28||
-mult_orch_plot|function|a3619aa13ead3b49|||||||||||||||
+mult_orch_plot|function|0fc7230255ffd02e|||||||||||||||
+nut_model_df|stem|4142b1094c8aaa04|0d97f3d1914f458e|d1e0560727f4e383|795120415||t19751.6012005041s|f361bb422e292eb9|13527|rds|local|vector|||32.43||
 nutrient_df|stem|141e6e2120f0094c|854bc5a48b86779d|57d23e0e79410109|-889250482||t19734.8723302949s|302ee8e72fa7af34|19430|rds|local|vector|||16.58|package flextable was built under R version 4.3.2. package metafor was built under R version 4.3.2. package metadat was built under R version 4.3.2. package metagear was built under R version 4.3.2. package mice was built under R version 4.3.2. package officer was built under R version 4.3.2. package units was built under R version 4.3.2|
-overall_effect|stem|616f99be3010ff7b|474c1d8e356938d5|a2db5fb0b56c3691|952458352||t19738.7777904933s|ba7115ed4d99a68f|1360542|rds|local|vector|||1.22||
-overall_effect_file|stem|023ea69c5ec100ba|84f259f726e05541|63d8d3942df18992|754361718|figures/overall_effect.pdf|t19738.7778016472s|0bdc977b61d2658c|48518|file|local|vector|||0.92|1m22mRemoved 2 rows containing missing values position_quasirandom.|
+overall_effect|stem|0474d67a1896f51f|dbf7b618385b44c5|9efc9c420ddd57dd|952458352||t19751.6015539552s|5289e1c8905152ec|915866|rds|local|vector|||1.41||
+overall_effect_file|stem|458ce722f52f4e87|c0de6d3ac17b5f24|c1ed135fca4ea822|754361718|figures/overall_effect.pdf|t19751.6015977237s|f9bb941fb6a8d47a|43755|file|local|vector|||1.34||
+patch_bac_marginal_means|function|30da9390caa4c828|||||||||||||||
 patch_marginal_means|function|ccc6b827c7043815|||||||||||||||
+patch_phos_marginal_means|function|30da9390caa4c828|||||||||||||||
+phos_marginal_means|stem|250a03326b448dec|5dd8166d870c8215|7052f3a68d8db4fb|-350772456||t19751.6890688369s|018d1feecd668877|326150|rds|local|vector|||0.02||
+phos_marginal_means_file|stem|0b55265ee733e46d|5cdbb45947ec4f14|733a4df2fa48fcda|-449777706|figures/phos_predicted.pdf|t19751.6890810873s|886ca90baa2285bc|18508|file|local|vector|||0.28||
 plot_bac_marginal_effect|function|338a2c78147c4a22|||||||||||||||
-plot_bmp_summary|function|4b84f68f38c25c58|||||||||||||||
+plot_bmp_summary|function|b72176359f68d4a4|||||||||||||||
+plot_bmp_temporal|function|17ff84ca063b93ab|||||||||||||||
 plot_conditional_effect|function|ef0c64311fc02e49|||||||||||||||
-plot_forest|function|ec5446a9ae4d93ef|||||||||||||||
-plot_map|function|c4edb18fe9ebfc90|||||||||||||||
+plot_forest|function|0cb12f4261f82cb5|||||||||||||||
+plot_map|function|eae948d53e67d389|||||||||||||||
 plot_marginal_effect|function|be3288fa02f4044b|||||||||||||||
 plot_marginal_effect_eff|function|44ebfc72f6c2b0a6|||||||||||||||
 plot_marginal_effect_llRR|function|346b92c7bdb2daf7|||||||||||||||
-plot_marginal_effect_lnRR|function|0f41fa41e9e67c5f|||||||||||||||
+plot_marginal_effect_lnRR|function|ba29b27440d52a91|||||||||||||||
+po4_conc_marginal_means|stem|a55783463b17953c|0778eccd0cf7242a|3557358cd9d08d6e|1889448365||t19751.7146298307s|2b5c82b604d86ed1|199213|rds|local|vector|||0.07||
+po4_forest_plot|stem|8367780133f58519|e8170af99c1a68e6|71493e6598de7ef3|-407762248||t19751.6014332972s|af5ebc25a41ecffd|196751|rds|local|vector|||0.02||
+po4_i2|stem|97dd594ba6661f8d|02fa13e4618b24f9|7c60fdf1bf8adf8a|1484786310||t19751.6014335654s|f02b269bc80ae470|129|rds|local|vector|||0||
+po4_i2_null|stem|4ee26670af58f7ca|18e295066a564567|7c60fdf1bf8adf8a|-1556883159||t19751.601433807s|f02b269bc80ae470|129|rds|local|vector|||0||
+po4_missing_sd|stem|e799f1d97211b5ae|ea58e485de6f3bc1|517859cb1cc3103d|247840452||t19751.6014169057s|bf160f080fbf1dbb|99|rds|local|vector|||0||
+po4_model|stem|c34290794a8d840e|4b7374bce8a08319|cca7b97a3d708128|-1064355705||t19751.6012380942s|68d345e619de0d48|55406|rds|local|vector|||0.61|Redundant predictors dropped from the model.. Redundant predictors dropped from the model.|
+po4_r2|stem|08531de1a30f352e|b4decfee788777dc|7c60fdf1bf8adf8a|-847868223||t19751.6014165371s|6556730b296d7213|119|rds|local|vector|||0||
+po4_sens|stem|8481344429ecab5c|5006d13608f8c688|e7b7c38f56fceb2c|1411821726||t19751.6014319511s|636e249e53ab835a|114709|rds|local|vector|||0.87||
+po4_sse|stem|37fc5dbdaf16543d|fe1c9bf741128b2e|9548dcbbb15bab61|135299680||t19751.6014192844s|861b4ba57e48e3fe|138096|rds|local|vector|||0.17|font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database|
+po4_table|stem|b1629f33c9f53ef9|0280a3a44b9c8481|913ebb4b4e7eb669|428566778||t19751.601579243s|9d68b91b65b49305|838|rds|local|vector|||0||
 read_data|function|e2bcdbe32e231f0a|||||||||||||||
 run_bac_sensitvity|function|41b208eeb8cdf70d|||||||||||||||
-run_sensitvity|function|41b208eeb8cdf70d|||||||||||||||
+run_sensitvity|function|2179c72cf79a0a34|||||||||||||||
 run_tn_sensitvity|function|c02494d976c4b811|||||||||||||||
 run_tp_sensitvity|function|5b3bd6a3cdc96e5e|||||||||||||||
 run_tss_sensitvity|function|175a02a081ae9c3e|||||||||||||||
 single_pal|object|922dc05ea86110ea|||||||||||||||
-study_map|stem|7ef0b40741f03abb|22d64cdc987ef833|f2c7290143f6e5d5|934061817||t19738.7170888463s|3575276511975a3b|18952684|rds|local|vector|||4.4||
-study_map_file|stem|0e1b132b04535fc2|4c01024e9a52fdb7|e84ce3f109a6f7ff|-24829114|figures/study_map.pdf|t19738.7171513252s|1ac41e70f43d643d|4457386|file|local|vector|||5.3|1m22mRemoved 143 rows containing missing values geom_text_repel.|
+study_count|stem|cc1315d3da231bf4|015679cba9c5ac81|5465ab0ae28fe99d|-765036984||t19753.7852762866s|edce0efd19a3c370|219|rds|local|vector|||0.14||
+study_count_summary|function|463cf8bead841a8e|||||||||||||||
+study_map|stem|e99b55c375b10586|22d64cdc987ef833|ae8dac12a00d9b23|934061817||t19751.7609149827s|b5109d36a045fbc0|4535572|rds|local|vector|||8.24||
+study_map_file|stem|35d5d8e48ec867a1|36c0373cdbf578bd|7c760406577da056|-24829114|figures/study_map.pdf|t19751.7609572247s|27605367502ce9cf|709675|file|local|vector|||2.47|1m22mRemoved 228 rows containing missing values geom_text_repel.|
 sum_eff|function|c4c5e02513447009|||||||||||||||
 sum_preds|function|056ba1dbc6a6bd5a|||||||||||||||
-tidy_metafor|function|1be2453797c79a94|||||||||||||||
+tidy_metafor|function|c42b25a50179add5|||||||||||||||
 tidy_metafor_bac|function|1be2453797c79a94|||||||||||||||
-tn_conc_marginal_means|stem|bed6f3375ff468ac|6ead73110c742122|6991e56f186a3c11|-337651459||t19734.9021566846s|f6f8481536624425|649794|rds|local|vector|||0.33||
-tn_forest_plot|stem|2c07e41c4d73e339|a363603be86dfd18|635ed42e9341bd5a|-2068397648||t19734.9015669228s|bf12a7d832ed30cd|605430|rds|local|vector|||0.04||
-tn_i2|stem|a108cb7d4460f654|e34d2f24e0df0391|b5e212e31f2b9a00|1294500116||t19734.9021511508s|f02b269bc80ae470|129|rds|local|vector|||0||
+tin_forest_plot|stem|cc575b6282682d89|b15d56b35514b542|c8f4316f2cb7f061|-755895957||t19751.6014351748s|1432e3c8cf8636f0|231985|rds|local|vector|||0.01||
+tin_i2|stem|1dbdd1c55cf0e379|e50dbb44bc17c26d|1efd705ca9b1ea9b|-1857501044||t19751.601435403s|f02b269bc80ae470|129|rds|local|vector|||0||
+tin_i2_null|stem|1dbdd1c55cf0e379|46c3d74111583eb6|1efd705ca9b1ea9b|-1421589098||t19751.601434064s|f02b269bc80ae470|129|rds|local|vector|||0||
+tin_missing_sd|stem|b993771f6ea139b6|5f1015996324e064|fafff0a5dea7fca7|-980943054||t19751.6014712419s|bf160f080fbf1dbb|99|rds|local|vector|||0||
+tin_model|stem|c45c24ae44b6f089|9f84f3ffa6118e5e|102289d5871e3210|150198571||t19751.601246068s|2e2652c462431384|109493|rds|local|vector|||0.64|Redundant predictors dropped from the model.. Redundant predictors dropped from the model.. Redundant predictors dropped from the model.. Redundant predictors dropped from the model.|
+tin_r2|stem|78627efd819dffc5|44192d35357a3bf5|d381094dbb8fbb46|1422985227||t19751.6015756362s|bf0d8caacacad815|112|rds|local|vector|||0||
+tin_sens|stem|6c5d6fcade1eb208|d0d522fcc26b31c3|e6f14930ef99a7f0|1361475585||t19751.6014679897s|2a87a1def62075b7|191229|rds|local|vector|||2.77||
+tin_sse|stem|816ab038187f7b88|02801d44f9fd4c00|39bdc0bfff7df970|91492234||t19751.6014709833s|d4f2c82f1150da80|206900|rds|local|vector|||0.17|font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database|
+tin_table|stem|b74c12597eb4d2e6|fce6391d82d45208|9a7fd6694b4669a2|1772752317||t19751.6015813409s|17e52fc935cb043d|774|rds|local|vector|||0.02||
+tn_conc_marginal_means|stem|babc261076464531|6ead73110c742122|acfe67601b586129|-337651459||t19740.9061292397s|d0ea185508dbbe3e|649817|rds|local|vector|||0.07||
+tn_forest_plot|stem|647f277f5abfb590|a363603be86dfd18|cd4c917e44c0d3d9|-2068397648||t19751.6015328364s|462eeec552d36434|214486|rds|local|vector|||0.02||
+tn_i2|stem|ede817951dd741e3|7f22ef2da4da5cb8|d381094dbb8fbb46|1294500116||t19751.601533085s|f02b269bc80ae470|129|rds|local|vector|||0||
+tn_i2_null|stem|ede817951dd741e3|eeaeb90d5bdff8c3|d381094dbb8fbb46|-1826593579||t19751.6015754366s|f02b269bc80ae470|129|rds|local|vector|||0||
 tn_marginal_means|stem|bf332297a6fdf5eb|972b41d18ca210f9|c2b2eb324c96ff29|1234678774||t19730.7617695946s||296345|rds|local|vector|||0.03||Something went wrong Nonconformable elements in reference grid.
-tn_missing_sd|stem|57302b7aa0f219f8|afde71744d843949|603568699b8a6fd2|1920454441||t19734.9021507887s|bf160f080fbf1dbb|99|rds|local|vector|||0.01||
-tn_model|stem|e3c4855bd7b7d904|f27e210b966d773e|53051a504ecc3087|-953909791||t19734.901556923s|37be930d3e1867fe|614122|rds|local|vector|||12.82|Number of logged events 204|
-tn_r2|stem|83d63451390ab56c|58e39b82c224f525|b5e212e31f2b9a00|-2022349084||t19734.9021509697s|6556730b296d7213|119|rds|local|vector|||0||
-tn_sens|stem|5f99bce9ee14491c|ba4274f6000544b4|91203fd82cd7b892|-1402311578||t19734.902150352s|f3a2dd63a8294401|765144|rds|local|vector|||50.24||
-tn_sse|stem|16bda21927a24d0f|7694dafc141296d8|4e0368d24a584cfc|-1512847906||t19734.9015646125s|18cab44e0de16476|679920|rds|local|vector|||0.5||
-tn_table|stem|7bcc418de5d18650|a3bcdd5d14757f26|4d1257bd1ad7c3df|2104643872||t19734.9021581483s|bad639f7a08f9f23|952|rds|local|vector|||0.08||
-tp_conc_marginal_means|stem|2702a4353c4aef71|4602aaaf3413bd70|0f2ca1646252db3c|-353756878||t19734.8977844952s|6dd762fe926cc7ec|347737|rds|local|vector|||0.35||
-tp_forest_plot|stem|6cc8e5a8f4fff1a1|8375e6b137a62362|6f9a8647b964551d|-421241197||t19734.8977903176s|cb1a8acb6c621b50|307164|rds|local|vector|||0.05||
-tp_i2|stem|4ade20302290941a|809cd255079ad15a|878cdb0a8d1d3256|-756958170||t19734.8974596202s|82334e57b39f02e1|127|rds|local|vector|||0||
+tn_missing_sd|stem|980868ddd12ef1be|afde71744d843949|42665bc74892f57a|1920454441||t19751.6015758909s|bf160f080fbf1dbb|99|rds|local|vector|||0||
+tn_model|stem|772a78026a888de9|8df2c75ef3ca08d4|4764857e283f5482|-953909791||t19751.6012760946s|da61492045f738d9|81257|rds|local|vector|||0.7|Redundant predictors dropped from the model.. Redundant predictors dropped from the model.. Redundant predictors dropped from the model.. Redundant predictors dropped from the model.. Redundant predictors dropped from the model.. Redundant predictors dropped from the model.|
+tn_r2|stem|78627efd819dffc5|44192d35357a3bf5|d381094dbb8fbb46|-2022349084||t19751.6015332936s|bf0d8caacacad815|112|rds|local|vector|||0||
+tn_sens|stem|659b612c7aa6ed4e|ba4274f6000544b4|f4451cb2ad387c4e|-1402311578||t19751.6015752297s|7f1f1a9fa5fbb251|152055|rds|local|vector|||1.53||
+tn_sse|stem|5315e929e9a351a2|7694dafc141296d8|3ff3856cee1d2a96|-1512847906||t19751.6015568647s|4abee43c8c599c5c|173601|rds|local|vector|||0.19|font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database|
+tn_table|stem|6668fdf2d2531dda|ef0166c84705cec7|8762b2f50a8dfef6|2104643872||t19751.6015819689s|8bdba1c2c514760d|775|rds|local|vector|||0.03||
+tp_conc_marginal_means|stem|73e9fb330b85ecb6|f719d5aa225cae8d|95f78a0f5b78cddb|-353756878||t19751.7146323352s|e0e9d258ad438b0e|226615|rds|local|vector|||0.09||
+tp_forest_plot|stem|b92442c7c949f45a|8375e6b137a62362|b0947b6f58993c1c|-421241197||t19751.6014729978s|d208b9e1fe8537db|221339|rds|local|vector|||0.01||
+tp_i2|stem|7c7ce384aa120896|809cd255079ad15a|97b44753cb82f252|-756958170||t19751.6014979323s|7dead8e41ac4f62d|130|rds|local|vector|||0||
+tp_i2_null|stem|f8ed9b59610e6b92|a2c6d154372e928a|97b44753cb82f252|357617684||t19751.601471665s|7dead8e41ac4f62d|130|rds|local|vector|||0||
 tp_marginal_means|stem|6b7a7cc0c11df90d|9e03508b73d81732|f19cd2078efb61a7|-368287602||t19731.7036128227s|a3ce3d757502e71f|310425|rds|local|vector|||0.47||
-tp_missing_sd|stem|157a8080ce5e605b|476577d86f408cb5|10769480ad07d7f6|578734674||t19734.8977906791s|bf160f080fbf1dbb|99|rds|local|vector|||0.02||
-tp_model|stem|e467fca8c099a8e7|0cc933bb23079793|c981c243096dcd92|-673337743||t19734.8972433556s|f61609561d4200bc|262663|rds|local|vector|||8.55|Number of logged events 205|
-tp_r2|stem|73edd68f18a64fec|4d94336455fb22f1|878cdb0a8d1d3256|2121794748||t19734.8974599198s|758d7d51407f572d|117|rds|local|vector|||0||
-tp_sens|stem|91abb44bdbcd53b5|27e1e599a5a74f11|12ba5ec58d3cbec2|-357565149||t19734.8977788548s|0d2e7b7cfc251d1f|387329|rds|local|vector|||27.47||
-tp_sse|stem|a8b8a2c6eacd26db|f770a284fc174533|aa127300f53c3505|1913840200||t19734.8977888577s|4803d4eef1549060|312835|rds|local|vector|||0.32||
-tp_table|stem|2d2ea0e2b961cf99|eaeaf81a20d31c2c|09fa7ddce543f25f|-1900370218||t19734.8983217918s|6fb3b1e9fcff11ca|877|rds|local|vector|||0.05||
-tss_forest_plot|stem|bec0f684d427a4f6|b0bdf98273213eee|39b4de86794b0ab8|-465241865||t19734.9041775075s|b3a8d9af383cfdac|222326|rds|local|vector|||0.05||
-tss_i2|stem|6f9eed28f5fea39a|8fe3366ad340d3ca|6ff68f839a40917e|-1535153546||t19734.9041779823s|bce99b594ffe2eda|128|rds|local|vector|||0||
-tss_marginal_means|stem|53995f99a1f81884|45cf0585230d1941|4921ed3e7ecb42dc|17227800||t19734.9125603042s|392b2811ac89019a|249496|rds|local|vector|||0.37||
-tss_missing_sd|stem|91a99071fab20f70|ea8d74eb81de283e|7971450737da59a3|-1716449408||t19734.9042350843s|bf160f080fbf1dbb|99|rds|local|vector|||0||
-tss_model|stem|4f5292185f681f7a|65fdab9d38694a1a|aa3e610354523414|1980732327||t19734.8974592828s|5f5eeb076f90b0ef|131001|rds|local|vector|||6.4|Number of logged events 246|
-tss_r2|stem|3e50a9338a72bbbe|accf8feff160d1fc|6ff68f839a40917e|-1873122320||t19734.9042353575s|f21b4888ae8bdafc|118|rds|local|vector|||0||
-tss_sens|stem|d5566b904f71f872|feb9c9c8d8012c43|c35f0ba2aa875912|1578001953||t19734.9042348049s|7d29804e32256417|204741|rds|local|vector|||4.84||
-tss_sse|stem|00be3f75e46c8a08|4d20c2f647d85209|da58d4015bf0bcdc|-1335584637||t19734.9042372554s|274962055d795ac5|149782|rds|local|vector|||0.13||
-tss_table|stem|3a2823af130652d7|1b9d92ca8e745aec|2c6e380462f7b8b6|1598766372||t19734.9135523703s|5910c7405d142d73|851|rds|local|vector|||0.06||
+tp_missing_sd|stem|fd8e4439a00fa2b9|476577d86f408cb5|c295e268e0cf78af|578734674||t19751.6014720134s|bf160f080fbf1dbb|99|rds|local|vector|||0.01||
+tp_model|stem|bdc60bd3619053b7|415b02d5d13a5e58|2c59b8efe00a9b75|-673337743||t19751.6012558147s|e8784a43feb517a8|94792|rds|local|vector|||0.81|Redundant predictors dropped from the model.. Redundant predictors dropped from the model.. Redundant predictors dropped from the model.. Redundant predictors dropped from the model.. Redundant predictors dropped from the model.. Redundant predictors dropped from the model.|
+tp_r2|stem|f3ece7de73542dd7|4d94336455fb22f1|97b44753cb82f252|2121794748||t19751.6014980944s|6556730b296d7213|119|rds|local|vector|||0||
+tp_sens|stem|3570ee20fa25a507|27e1e599a5a74f11|5602ea1443182b33|-357565149||t19751.6014977283s|2186866051178589|171159|rds|local|vector|||2.08||
+tp_sse|stem|2d0c8a40bdc0e3e5|f770a284fc174533|1b8cb5814edeebcc|1913840200||t19751.6015025092s|cf2fe3f33f5e68e7|192142|rds|local|vector|||0.17|font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database|
+tp_table|stem|fdabdd66e5acc893|a6d9812b97507017|2ffef67930228b0c|-1900370218||t19751.6015787557s|657d480088037280|839|rds|local|vector|||0.01||
+tss_forest_plot|stem|3e0e43e06a2bd17a|b0bdf98273213eee|52727411a888f3c8|-465241865||t19751.6015038575s|6930df4a9e234f7d|206930|rds|local|vector|||0.02||
+tss_i2|stem|e08871233dfe0d25|8fe3366ad340d3ca|319317a868febc75|-1535153546||t19751.6015027225s|82334e57b39f02e1|127|rds|local|vector|||0||
+tss_i2_null|stem|e08871233dfe0d25|87c934676b8da7ab|319317a868febc75|-122019543||t19751.6015044929s|82334e57b39f02e1|127|rds|local|vector|||0||
+tss_marginal_means|stem|29c213d15f85df63|45cf0585230d1941|731b44746b2c6e64|17227800||t19740.9061259862s|d4d93896dd078cec|249501|rds|local|vector|||0.41||
+tss_missing_sd|stem|b5dfbf775ecb6bdc|ea8d74eb81de283e|d830fe613ce493e0|-1716449408||t19751.6015041509s|bf160f080fbf1dbb|99|rds|local|vector|||0.01||
+tss_model|stem|11617f3337deb509|3995d138b68a5773|4fa4e2099ccafae2|1980732327||t19751.6012675428s|34ae0c7f98254437|71929|rds|local|vector|||0.98|Redundant predictors dropped from the model.. Redundant predictors dropped from the model.|
+tss_r2|stem|9fd8a39dd18a1282|accf8feff160d1fc|319317a868febc75|-1873122320||t19751.6015043074s|bf0d8caacacad815|112|rds|local|vector|||0||
+tss_sens|stem|819e52c0ab0a0c93|feb9c9c8d8012c43|3d9fa58141ab1722|1578001953||t19751.6015314344s|ba269c71eaf6c49b|133487|rds|local|vector|||2.01||
+tss_sse|stem|35cb7f5e69f30282|4d20c2f647d85209|f185ffc337e62c43|-1335584637||t19751.6015075721s|a106317c2f27cd35|155993|rds|local|vector|||0.2|font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database|
+tss_table|stem|a025359033e2ed5c|061b688112c99158|1e5be0007c3add58|1598766372||t19751.6015809789s|6318f75f0c574ef2|763|rds|local|vector|||0.03||
 v_lnrr_laj|function|f8e29d3342d5e1c5|||||||||||||||
 weighted_CV|function|f08c3ac577802032|||||||||||||||
