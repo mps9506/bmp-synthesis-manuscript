@@ -1,0 +1,268 @@
+---
+title: "Supplementary Materials"
+author:
+  - name: Michael Schramm
+    affiliation: '1'
+    etal: Schramm # First author's last name. 
+    email: michael.schramm@ag.tamu.edu # Indicates corresponding Author
+    institution: Texas Water Resources Institute, Texas A&M AgriLife Research
+    street: 1001 Holleman Dr E.
+    city: College Station
+    state: Texas # only USA, Australia, Canada
+    zip: 77840
+    country: USA
+  - name: Duncan Kikoyo
+    affiliation: '1'
+  - name: Janelle Wright
+    affiliation: '1'
+  - name: Shubham Jain
+    affiliation: '1'
+affiliation:
+  - id: '1'
+    department: Texas Water Resources Institute
+    institution: Texas A&M AgriLife Research
+    city: College Station
+    state: Texas # only USA, Australia, Canada
+    country: USA
+output: 
+  bookdown::pdf_book:
+    template: template.tex
+# bib yaml is commented to manually insert in correct section
+# csl: frontiers.csl
+# bibliography: bibliography.bib
+# Match bibliostyle with the documentclass
+# biblio-style: Frontiers-Harvard # Many Frontiers journals use the Harvard referencing system (Author-date), to find the style and resources for the journal you are submitting to: https://zendesk.frontiersin.org/hc/en-us/articles/360017860337-Frontiers-Reference-Styles-by-Journal. For Humanities and Social Sciences articles please include page numbers in the in-text citations 
+# biblio-style: Frontiers-Vancouver # Many Frontiers journals use the numbered referencing system, to find the style and resources for the journal you are submitting to: https://zendesk.frontiersin.org/hc/en-us/articles/360017860337-Frontiers-Reference-Styles-by-Journal
+---
+
+```{r setup, include=FALSE}
+## load libraries
+library(ggtext)
+library(kableExtra)
+library(officer)
+library(ragg)
+library(targets)
+library(tidyverse)
+
+
+
+## this sets our default code chunk options
+knitr::opts_chunk$set(dev = "ragg_png",
+                      echo = FALSE,
+                      ## figure chunk options
+                      fig.cap = TRUE,
+                      fig.width = 6,
+                      dpi = 300)
+
+## make fonts available
+font_hoist <- function(family, silent = FALSE) {
+  font_specs <- systemfonts::system_fonts() |> 
+    filter(family == {{family}}) |> 
+    mutate(family = paste(family, style)) |> 
+    select(plain = path, name = family)
+  
+  purrr::pwalk(as.list(font_specs), systemfonts::register_font)
+
+  if (!silent)  message(paste0("Hoisted ", nrow(font_specs), " variants:\n",
+                               paste(font_specs$name, collapse = "\n")))
+}
+
+font_hoist("Manrope")
+
+## grab output from targets to use in manuscript
+store <- "../_targets"
+
+
+```
+
+
+
+
+
+```{r bacsummary}
+
+tar_read(bac_table, store = store) |> 
+  pack_rows(group_label = "BMP Subcategories",
+            start_row = 3,
+            end_row = 5) |> 
+  pack_rows(group_label = "Arididty:BMP Subcategory Interaction",
+            start_row = 7,
+            end_row = 9)  
+
+```
+
+
+```{r tnsummary}
+
+tar_read(tn_table, store = store)
+
+```
+
+
+```{r dinsummary}
+
+tar_read(tin_table, store = store)
+
+```
+
+
+```{r tpsummary}
+
+tar_read(tp_table, store = store)
+
+```
+
+```{r po4summary}
+
+tar_read(po4_table, store = store)
+
+```
+
+
+```{r tsssummary}
+
+tar_read(tss_table, store = store)
+
+```
+
+
+
+```{r bacpub}
+#| fig.cap: "Plot of adjusted sampling error and predicted effect size for FIB multilevel random effects model with moderators. Slope and 95% confidence interval of the adjusted sampling error term is annoted."
+#| fig.height: 3
+#| fig.width: 6
+tar_read(bac_sse, store = store)$plot
+```
+
+```{r tnpub}
+#| fig.cap: "Plot of adjusted sampling error and predicted effect size for TN multilevel random effects model with moderators. Slope and 95% confidence interval of the adjusted sampling error term is annoted."
+#| fig.height: 3
+#| fig.width: 6
+tar_read(tn_sse, store = store)$plot
+```
+
+```{r dinpub}
+#| fig.cap: "Plot of adjusted sampling error and predicted effect size for DIN multilevel random effects model with moderators. Slope and 95% confidence interval of the adjusted sampling error term is annoted."
+#| fig.height: 3
+#| fig.width: 6
+tar_read(tin_sse, store = store)$plot
+```
+
+```{r tppub}
+#| fig.cap: "Plot of adjusted sampling error and predicted effect size for TP multilevel random effects model with moderators. Slope and 95% confidence interval of the adjusted sampling error term is annoted."
+#| fig.height: 3
+#| fig.width: 6
+tar_read(tp_sse, store = store)$plot
+```
+
+```{r po4pub}
+#| fig.cap: "Plot of adjusted sampling error and predicted effect size for PO\\textsubscript{4} multilevel random effects model with moderators. Slope and 95% confidence interval of the adjusted sampling error term is annoted."
+#| fig.height: 3
+#| fig.width: 6
+tar_read(po4_sse, store = store)$plot
+```
+
+```{r tsspub}
+#| fig.cap: "Plot of adjusted sampling error and predicted effect size for TSS multilevel random effects model with moderators. Slope and 95% confidence interval of the adjusted sampling error term is annoted."
+#| fig.height: 3
+#| fig.width: 6
+tar_read(tn_sse, store = store)$plot
+```
+
+```{r bacsens}
+#| fig.cap: "Plot of intercept estimates from sensitivity analysis for the FIB regression model. Individual points are the intercept estimates with 95% confince intervals for the regression model fit leaving out the study value indicated on the y-axis. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any study values outside of the full model confidence intervals would be considered and outlier."
+#| fig.height: 8
+#| fig.width: 8
+#| out.width: "100%"
+tar_read(bac_sens, store = store)$p1
+```
+
+```{r tnsens}
+#| fig.cap: "Plot of intercept estimates from sensitivity analysis for the TN regression model. Individual points are the intercept estimates with 95% confince intervals for the regression model fit leaving out the study value indicated on the y-axis. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any study values outside of the full model confidence intervals would be considered and outlier."
+#| fig.height: 5.5
+#| fig.width: 8
+#| out.width: "100%"
+tar_read(tn_sens, store = store)$p1
+```
+
+```{r dinsens}
+#| fig.cap: "Plot of intercept estimates from sensitivity analysis for the DIN regression model. Individual points are the intercept estimates with 95% confince intervals for the regression model fit leaving out the study value indicated on the y-axis. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any study values outside of the full model confidence intervals would be considered and outlier."
+#| fig.height: 7
+#| fig.width: 8
+#| out.width: "100%"
+tar_read(tin_sens, store = store)$p1
+```
+
+```{r tpsens}
+#| fig.cap: "Plot of intercept estimates from sensitivity analysis for the TP regression model. Individual points are the intercept estimates with 95% confince intervals for the regression model fit leaving out the study value indicated on the y-axis. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any study values outside of the full model confidence intervals would be considered and outlier."
+#| fig.height: 5.5
+#| fig.width: 8
+#| out.width: "100%"
+tar_read(tp_sens, store = store)$p1
+```
+
+```{r po4sens}
+#| fig.cap: "Plot of intercept estimates from sensitivity analysis for the PO\\textsubscript{4} regression model. Individual points are the intercept estimates with 95% confince intervals for the regression model fit leaving out the study value indicated on the y-axis. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any study values outside of the full model confidence intervals would be considered and outlier."
+#| fig.height: 4
+#| fig.width: 8
+#| out.width: "100%"
+tar_read(po4_sens, store = store)$p1
+```
+
+```{r tsssens}
+#| fig.cap: "Plot of intercept estimates from sensitivity analysis for the TSS regression model. Individual points are the intercept estimates with 95% confince intervals for the regression model fit leaving out the study value indicated on the y-axis. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any study values outside of the full model confidence intervals would be considered and outlier."
+#| fig.height: 4.5
+#| fig.width: 8
+#| out.width: "100%"
+tar_read(tss_sens, store = store)$p1
+```
+
+```{r bacforest}
+#| fig.cap: "Forest plot of FIB effect size estimates and 95% confidence intervals. Size of points are scaled to inverse of the sampling variance."
+#| fig.height: 8
+#| fig.width: 8
+#| out.width: "100%"
+tar_read(bac_forest_plot, store = store)
+```
+
+```{r tnforest}
+#| fig.cap: "Forest plot of TN effect size estimates and 95% confidence intervals. Size of points are scaled to inverse of the sampling variance."
+#| fig.height: 8
+#| fig.width: 8
+#| out.width: "100%"
+tar_read(tn_forest_plot, store = store)
+```
+
+```{r dinforest}
+#| fig.cap: "Forest plot of DIN effect size estimates and 95% confidence intervals. Size of points are scaled to inverse of the sampling variance."
+#| fig.height: 8
+#| fig.width: 8
+#| out.width: "100%"
+tar_read(tin_forest_plot, store = store)
+```
+
+
+```{r tpforest}
+#| fig.cap: "Forest plot of TP effect size estimates and 95% confidence intervals. Size of points are scaled to inverse of the sampling variance."
+#| fig.height: 8
+#| fig.width: 8
+#| out.width: "100%"
+tar_read(tp_forest_plot, store = store)
+```
+
+```{r po4forest}
+#| fig.cap: "Forest plot of PO\\textsubscript{4} effect size estimates and 95% confidence intervals. Size of points are scaled to inverse of the sampling variance."
+#| fig.height: 8
+#| fig.width: 8
+#| out.width: "100%"
+tar_read(bac_forest_plot, store = store)
+```
+
+
+```{r tssforest}
+#| fig.cap: "Forest plot of TSS effect size estimates and 95% confidence intervals. Size of points are scaled to inverse of the sampling variance."
+#| fig.height: 8
+#| fig.width: 8
+#| out.width: "100%"
+tar_read(tss_forest_plot, store = store)
+```
