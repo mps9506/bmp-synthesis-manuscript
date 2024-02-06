@@ -321,17 +321,17 @@ list(
                                              height = 3.5,
                                              units = "in"),
              format = "file"),
-  # tar_target(marginal_means, patch_marginal_means(plots = list(bac_marginal_means,
-  #                                                              tn_marginal_means,
-  #                                                              tp_marginal_means,
-  #                                                              tss_marginal_means))),
-  # tar_target(marginal_means_file, ggsave("figures/marginal_means.pdf",
-  #                                        plot = marginal_means,
-  #                                        device = cairo_pdf,
-  #                                        width = 8.5,
-  #                                        height = 8.5,
-  #                                        units = "in"),
-  #            format = "file"),
+  
+  tar_target(aridity_density, plot_ai_summary(bac_model_df,
+                                              nut_model_df)),
+  
+  tar_target(aridity_file, ggsave("figures/aridity_density.pdf",
+                                  plot = aridity_density,
+                                  device = cairo_pdf,
+                                  width = 4.5,
+                                  height = 3.5,
+                                  units = "in"),
+             format = "file"),
 
   NULL
   )

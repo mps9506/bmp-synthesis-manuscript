@@ -1,6 +1,8 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 add_aridity|function|0be0d94882c1a8da|||||||||||||||
 ai_file_names|stem|50a8e71195f7594b|e9e2b8b07619f320|930efc6fea5defa9|-1504983976||t19740.8303449161s|28f9d9a9ef15cef2|216|rds|local|vector||ai_file_names_bcc04140*ai_file_names_a87c3593*ai_file_names_6cf2ae67*ai_file_names_04bb1b5f*ai_file_names_ae50c8a7*ai_file_names_200cff58*ai_file_names_4f03f7dc*ai_file_names_4a7a275b*ai_file_names_978fc93f*ai_file_names_02c06b92*ai_file_names_30b9af6f*ai_file_names_eda7e0fa*ai_file_names_8f38b007*ai_file_names_a428f69a*ai_file_names_e15610d1*ai_file_names_411ace4d*ai_file_names_a7b699a9|0||
+aridity_density|stem|d2e6192675164526|b0468b6ba88dd9ff|81edecbc9f1d5305|-284821510||t19755.7591209199s|2e7385d1f3b2d626|61919530|rds|local|vector|||38.39||
+aridity_file|stem|c0a2d658f51d62f7|95625aea183d614a|e65515bf08b6e953|-1993047730|figures/aridity_density.pdf|t19755.7636028841s|fd3a19ca72594f9b|12528|file|local|vector|||7.94||
 assess_missing|function|e0e6a44343e35214|||||||||||||||
 bac_conc_marginal_effect|stem|f65b66db9482d4ce|319c451ffbe311b7|0df0c06247c5432e|-985317279||t19732.8535319281s|c22c1deb4d258efc|316099|rds|local|vector|||0.47||
 bac_conc_marginal_effect_ai|stem|56e9d878294b33f5|64bd6bbd2ac2c345|dee6eb403fda4f72|1595386620||t19740.8762336625s|734452624b4695d8|427903|rds|local|vector|||0.13||
@@ -30,8 +32,8 @@ bac_table|stem|28dcdf43e6df0f3b|67c2a12da849fd83|f59e67cbb75f4f38|1735694353||t1
 bacteria_df|stem|a1eeb7fec0ba81c7|78c229553dd21504|57d23e0e79410109|1044902306||t19740.8135496334s|ed687bde6fb1ad3f|9668|rds|local|vector|||6.24|package flextable was built under R version 4.3.2. package ggrepel was built under R version 4.3.2. package latex2exp was built under R version 4.3.2. package metafor was built under R version 4.3.2. package metadat was built under R version 4.3.2. package metagear was built under R version 4.3.2. package mice was built under R version 4.3.2. package officer was built under R version 4.3.2. package sf was built under R version 4.3.2. package units was built under R version 4.3.2. 1m22mThere was 1 warning in mutate.1m22m36mℹ39m In argument Longitude  as.numericLongitude.Caused by warning33m39m NAs introduced by coercion|
 bmp_summary|stem|85e342ce2d89256e|448802345c3d7293|1c0838a01daaa1d7|-365978883||t19746.7165288768s|95cb551e1dbc0276|233476|rds|local|vector|||0.56||
 bmp_summary_file|stem|019994462bfaff32|5651450aa9da4e5c|91edf52a2ffef65d|-1771856167|figures/bmp_summary.pdf|t19746.7165561844s|7b9ebff67f6742bc|22998|file|local|vector|||1.13||
-bmp_temporal|stem|1610f92176261416|09861ff314cca0de|e848f28939ae8740|-1938396845||t19753.7868544544s|8e6bd1a19beea784|187750|rds|local|vector|||0.55||
-bmp_temporal_file|stem|303eb40b56110756|ee873345e9fba7e6|a7434cceb8ed1b74|-1978626400|figures/bmp_temporal_summary.pdf|t19753.7877451733s|76302b83e09fcdea|12941|file|local|vector|||0.8||
+bmp_temporal|stem|861922177db74688|09861ff314cca0de|3c911367297aabb4|-1938396845||t19755.7585516347s|09966e2742c3011c|184131|rds|local|vector|||0.5||
+bmp_temporal_file|stem|9082c9db0536deb8|567b38be42533b74|d9e21bb2655aabd0|-1978626400|figures/bmp_temporal_summary.pdf|t19755.7591343454s|76302b83e09fcdea|12941|file|local|vector|||0.91||
 bubble_plot|function|8510a0c6ff343721|||||||||||||||
 coefTable.rma|function|88220ae151d46852|||||||||||||||
 cv_avg|function|860e9377e1cd7a44|||||||||||||||
@@ -84,9 +86,10 @@ patch_marginal_means|function|ccc6b827c7043815|||||||||||||||
 patch_phos_marginal_means|function|30da9390caa4c828|||||||||||||||
 phos_marginal_means|stem|250a03326b448dec|5dd8166d870c8215|7052f3a68d8db4fb|-350772456||t19751.6890688369s|018d1feecd668877|326150|rds|local|vector|||0.02||
 phos_marginal_means_file|stem|0b55265ee733e46d|5cdbb45947ec4f14|733a4df2fa48fcda|-449777706|figures/phos_predicted.pdf|t19751.6890810873s|886ca90baa2285bc|18508|file|local|vector|||0.28||
+plot_ai_summary|function|68bed6580c8b17ac|||||||||||||||
 plot_bac_marginal_effect|function|338a2c78147c4a22|||||||||||||||
 plot_bmp_summary|function|b72176359f68d4a4|||||||||||||||
-plot_bmp_temporal|function|17ff84ca063b93ab|||||||||||||||
+plot_bmp_temporal|function|f176103ca0d8b374|||||||||||||||
 plot_conditional_effect|function|ef0c64311fc02e49|||||||||||||||
 plot_forest|function|0cb12f4261f82cb5|||||||||||||||
 plot_map|function|eae948d53e67d389|||||||||||||||

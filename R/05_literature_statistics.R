@@ -511,3 +511,69 @@ plot_bmp_temporal <- function(bac_df, nut_df) {
   return(list(p1 = p1,
               stdy_len_stats = stdy_len_stats))
 }
+
+
+plot_ai_summary <- function(bac_df, nut_df) {
+
+  ai <- rast("data/Global-AI_ET0_v3_annual/ai_v3_yr.tif")
+  ai <- ai * 0.0001 
+  
+  
+  us_file <- tigris::states(cb = TRUE, progress_bar = FALSE)
+  
+  us_file <- us_file |> 
+    filter(!(NAME %in% c("Alaska",
+                         "American Samoa",
+                         "Guam",
+                         "Commonwealth of the Northern Mariana Islands",
+                         "United States Virgin Islands")))
+  
+  us_file_trans <- us_file |> 
+    vect() |> 
+    project(ai)
+  
+  
+  cropped_ai <- crop(ai, us_file_trans) |> 
+    mask(us_file_trans)
+  
+  plot(cropped_ai)
+  
+  cropped_ai_tibble <- as_tibble(cropped_ai, na.rm = TRUE)
+  
+  bac_ai <- tibble(awi_pm_sr_yr = bac_df$model_df$ai[,1] + bac_df$mean,
+                   label = "BMP AI Values")
+  
+  nut_ai <- tibble(awi_pm_sr_yr = nut_df$model_df$ai[,1] + bac_df$mean,
+                   label = "BMP AI Values")
+  
+  
+  
+  cropped_ai_tibble |> 
+    mutate(label = "U.S. AI Values") |> 
+    bind_rows(bac_ai) |> 
+    bind_rows(nut_ai) |> 
+    ggplot() +
+    geom_density(aes(awi_pm_sr_yr,
+                     color = label,
+                     fill = label),
+                 alpha = 0.5,
+                 trim = TRUE,
+                 bw = "bcv") +
+    scale_y_continuous(expand = expansion(mult = c(0,0.05))) +
+    scale_x_continuous(expand = expansion(mult = c(0,0.05))) +
+    scale_color_brewer("", palette = "Dark2") +
+    scale_fill_brewer("", palette = "Dark2") +
+    coord_cartesian(xlim = c(0,4)) +
+    labs(x = "Aridity index", y = "Density") +
+    theme_mps_noto(base_family = "Manrope Regular") +
+    theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
+          axis.title.x = element_text(hjust = 0),
+          axis.title.y = element_text(hjust = 1),
+          panel.grid = element_blank(),
+          strip.background = element_rect(fill = "grey90",
+                                          color = "grey90"),
+          strip.text = element_text(family = "Manrope SemiBold",
+                                    color = "black",
+                                    face = "plain",
+                                    size = rel(1), hjust = 0))
+}

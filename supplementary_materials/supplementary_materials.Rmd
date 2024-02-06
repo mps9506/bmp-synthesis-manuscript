@@ -76,8 +76,27 @@ store <- "../_targets"
 ```
 
 
+```{r roses1}
+#| fig.cap: "RepOrting standards for Systematic Evidence Syntheses (ROSES) flow diagram for review process of fecal indicator bacteria (FIB) best management practice (BMP) studies."
+#| fig.pos: "H"
+#| out.extra: ""
+#| out.width: "80%"
 
 
+knitr::include_graphics("../figures/roses_bac.pdf")
+
+```
+
+```{r roses2}
+#| fig.cap: "RepOrting standards for Systematic Evidence Syntheses (ROSES) flow diagram for review process of nutrient and sediment best management practice (BMP) studies."
+#| fig.pos: "H"
+#| out.extra: ""
+#| out.width: "80%"
+
+
+knitr::include_graphics("../figures/roses_nut.pdf")
+
+```
 
 ```{r bacsummary}
 
