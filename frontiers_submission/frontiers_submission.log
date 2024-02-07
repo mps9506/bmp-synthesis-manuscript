@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.25)  6 FEB 2024 17:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.25)  7 FEB 2024 16:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -735,35 +735,28 @@ Underfull \hbox (badness 10000) detected at line 136
 []
  []
 
-
-Underfull \hbox (badness 2680) in paragraph at lines 138--141
-[]\OT1/phv/m/n/12 (+20) Abstract length and content varies depending on article type. Refer to []$\OT1/pcr/m/n/12 http : / /
- []
-
 [1
 
 
 
 {c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc} <./logo1-eps-converted-to.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <11> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 203.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 186.
 
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
 [2]
-LaTeX Font Info:    Trying to load font information for OML+ptm on input line 210.
+LaTeX Font Info:    Trying to load font information for OML+ptm on input line 208.
 (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/omlptm.fd
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 210.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 208.
 
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
 [3]
-Overfull \hbox (3.35056pt too wide) in paragraph at lines 254--254
+Overfull \hbox (3.35056pt too wide) in paragraph at lines 252--252
 []|\OT1/ptm/m/n/12 (-20) Geographical 
  []
 
@@ -771,16 +764,13 @@ Overfull \hbox (3.35056pt too wide) in paragraph at lines 254--254
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
 [4]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \vbox (3.49998pt too high) has occurred while \output is active []
-
-[5]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 325.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 323.
 (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
+Overfull \vbox (3.49998pt too high) has occurred while \output is active []
+
+[5]
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
 [6]
@@ -795,50 +785,56 @@ Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 [9]
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[10] (./frontiers_submission.bbl
+[10]
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[11]
+[11] (./frontiers_submission.bbl
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
 [12]
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[13])
-<../figures/bmp_summary.pdf, id=518, 433.62pt x 469.755pt>
+[13]
+Overfull \vbox (3.49998pt too high) has occurred while \output is active []
+
+[14]
+Overfull \vbox (3.49998pt too high) has occurred while \output is active []
+
+[15])
+<../figures/bmp_summary.pdf, id=578, 433.62pt x 469.755pt>
 File: ../figures/bmp_summary.pdf Graphic file (type pdf)
 <use ../figures/bmp_summary.pdf>
-Package pdftex.def Info: ../figures/bmp_summary.pdf  used on input line 550.
+Package pdftex.def Info: ../figures/bmp_summary.pdf  used on input line 569.
 (pdftex.def)             Requested size: 504.0pt x 546.0272pt.
-<../figures/bmp_temporal_summary.pdf, id=519, 433.62pt x 469.755pt>
+<../figures/bmp_temporal_summary.pdf, id=579, 433.62pt x 469.755pt>
 File: ../figures/bmp_temporal_summary.pdf Graphic file (type pdf)
 <use ../figures/bmp_temporal_summary.pdf>
-Package pdftex.def Info: ../figures/bmp_temporal_summary.pdf  used on input line 554.
+Package pdftex.def Info: ../figures/bmp_temporal_summary.pdf  used on input line 573.
 (pdftex.def)             Requested size: 504.0pt x 546.0272pt.
-<../figures/study_map.pdf, id=520, 433.62pt x 469.755pt>
+<../figures/study_map.pdf, id=580, 433.62pt x 469.755pt>
 File: ../figures/study_map.pdf Graphic file (type pdf)
 <use ../figures/study_map.pdf>
-Package pdftex.def Info: ../figures/study_map.pdf  used on input line 558.
+Package pdftex.def Info: ../figures/study_map.pdf  used on input line 577.
 (pdftex.def)             Requested size: 504.0pt x 546.0272pt.
-<../figures/overall_effect.pdf, id=521, 469.755pt x 469.755pt>
+<../figures/overall_effect.pdf, id=581, 469.755pt x 469.755pt>
 File: ../figures/overall_effect.pdf Graphic file (type pdf)
 <use ../figures/overall_effect.pdf>
-Package pdftex.def Info: ../figures/overall_effect.pdf  used on input line 562.
+Package pdftex.def Info: ../figures/overall_effect.pdf  used on input line 581.
 (pdftex.def)             Requested size: 504.0pt x 504.00195pt.
-<../figures/bac_predicted.pdf, id=522, 614.295pt x 361.35pt>
+<../figures/bac_predicted.pdf, id=582, 614.295pt x 361.35pt>
 File: ../figures/bac_predicted.pdf Graphic file (type pdf)
 <use ../figures/bac_predicted.pdf>
-Package pdftex.def Info: ../figures/bac_predicted.pdf  used on input line 566.
+Package pdftex.def Info: ../figures/bac_predicted.pdf  used on input line 585.
 (pdftex.def)             Requested size: 504.0pt x 296.47433pt.
-<../figures/phos_predicted.pdf, id=523, 614.295pt x 252.945pt>
+<../figures/phos_predicted.pdf, id=583, 614.295pt x 252.945pt>
 File: ../figures/phos_predicted.pdf Graphic file (type pdf)
 <use ../figures/phos_predicted.pdf>
-Package pdftex.def Info: ../figures/phos_predicted.pdf  used on input line 570.
+Package pdftex.def Info: ../figures/phos_predicted.pdf  used on input line 589.
 (pdftex.def)             Requested size: 504.0pt x 207.53203pt.
-<../figures/aridity_density.pdf, id=524, 325.215pt x 252.945pt>
+<../figures/aridity_density.pdf, id=584, 325.215pt x 252.945pt>
 File: ../figures/aridity_density.pdf Graphic file (type pdf)
 <use ../figures/aridity_density.pdf>
-Package pdftex.def Info: ../figures/aridity_density.pdf  used on input line 574.
+Package pdftex.def Info: ../figures/aridity_density.pdf  used on input line 593.
 (pdftex.def)             Requested size: 252.0pt x 196.00333pt.
 
 Package caption Warning: Unused \captionsetup[sub] on input line 18.
@@ -847,34 +843,34 @@ See the caption package documentation for explanation.
 
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[14]
+[16]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[15 <../figures/bmp_summary.pdf>]
+[17 <../figures/bmp_summary.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[16 <../figures/bmp_temporal_summary.pdf>]
+[18 <../figures/bmp_temporal_summary.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[17 <../figures/study_map.pdf>]
+[19 <../figures/study_map.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[18 <../figures/overall_effect.pdf>]
+[20 <../figures/overall_effect.pdf>]
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[19 <../figures/bac_predicted.pdf> <../figures/phos_predicted.pdf
+[21 <../figures/bac_predicted.pdf> <../figures/phos_predicted.pdf
 
 pdfTeX warning: pdflatex.exe (file ../figures/phos_predicted.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
@@ -883,7 +879,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[20 <../figures/aridity_density.pdf>] (./frontiers_submission.aux)
+[22 <../figures/aridity_density.pdf>] (./frontiers_submission.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -892,18 +888,18 @@ Package rerunfilecheck Info: File `frontiers_submission.out' has not changed.
 (rerunfilecheck)             Checksum: AF7938AD76CD04A25660F67C28391642;2328.
  ) 
 Here is how much of TeX's memory you used:
- 18947 strings out of 476162
- 320273 string characters out of 5791933
+ 19036 strings out of 476162
+ 323049 string characters out of 5791933
  1949978 words of memory out of 5000000
- 40116 multiletter control sequences out of 15000+600000
- 608783 words of font info for 310 fonts, out of 8000000 for 9000
+ 40171 multiletter control sequences out of 15000+600000
+ 610875 words of font info for 324 fonts, out of 8000000 for 9000
  18 hyphenation exceptions out of 8191
- 87i,13n,131p,1028b,720s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,13n,131p,1237b,774s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on frontiers_submission.pdf (20 pages, 1090479 bytes).
+Output written on frontiers_submission.pdf (22 pages, 1098995 bytes).
 PDF statistics:
- 790 PDF objects out of 1000 (max. 8388607)
- 680 compressed objects within 7 object streams
- 125 named destinations out of 1000 (max. 500000)
- 84145 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 852 PDF objects out of 1000 (max. 8388607)
+ 739 compressed objects within 8 object streams
+ 138 named destinations out of 1000 (max. 500000)
+ 86193 words of extra memory for PDF output out of 89155 (max. 10000000)
 
