@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.25)  7 FEB 2024 16:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.25)  19 FEB 2024 09:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -764,13 +764,16 @@ Overfull \hbox (3.35056pt too wide) in paragraph at lines 252--252
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
 [4]
+Overfull \vbox (3.49998pt too high) has occurred while \output is active []
+
+[5]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 323.
 (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Overfull \vbox (3.49998pt too high) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[5]
+
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
 [6]
@@ -801,40 +804,40 @@ Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
 [15])
-<../figures/bmp_summary.pdf, id=578, 433.62pt x 469.755pt>
+<../figures/bmp_summary.pdf, id=580, 433.62pt x 469.755pt>
 File: ../figures/bmp_summary.pdf Graphic file (type pdf)
 <use ../figures/bmp_summary.pdf>
-Package pdftex.def Info: ../figures/bmp_summary.pdf  used on input line 569.
+Package pdftex.def Info: ../figures/bmp_summary.pdf  used on input line 568.
 (pdftex.def)             Requested size: 504.0pt x 546.0272pt.
-<../figures/bmp_temporal_summary.pdf, id=579, 433.62pt x 469.755pt>
+<../figures/bmp_temporal_summary.pdf, id=581, 433.62pt x 469.755pt>
 File: ../figures/bmp_temporal_summary.pdf Graphic file (type pdf)
 <use ../figures/bmp_temporal_summary.pdf>
-Package pdftex.def Info: ../figures/bmp_temporal_summary.pdf  used on input line 573.
+Package pdftex.def Info: ../figures/bmp_temporal_summary.pdf  used on input line 572.
 (pdftex.def)             Requested size: 504.0pt x 546.0272pt.
-<../figures/study_map.pdf, id=580, 433.62pt x 469.755pt>
+<../figures/study_map.pdf, id=582, 433.62pt x 469.755pt>
 File: ../figures/study_map.pdf Graphic file (type pdf)
 <use ../figures/study_map.pdf>
-Package pdftex.def Info: ../figures/study_map.pdf  used on input line 577.
+Package pdftex.def Info: ../figures/study_map.pdf  used on input line 576.
 (pdftex.def)             Requested size: 504.0pt x 546.0272pt.
-<../figures/overall_effect.pdf, id=581, 469.755pt x 469.755pt>
+<../figures/overall_effect.pdf, id=583, 469.755pt x 469.755pt>
 File: ../figures/overall_effect.pdf Graphic file (type pdf)
 <use ../figures/overall_effect.pdf>
-Package pdftex.def Info: ../figures/overall_effect.pdf  used on input line 581.
+Package pdftex.def Info: ../figures/overall_effect.pdf  used on input line 580.
 (pdftex.def)             Requested size: 504.0pt x 504.00195pt.
-<../figures/bac_predicted.pdf, id=582, 614.295pt x 361.35pt>
+<../figures/bac_predicted.pdf, id=584, 614.295pt x 361.35pt>
 File: ../figures/bac_predicted.pdf Graphic file (type pdf)
 <use ../figures/bac_predicted.pdf>
-Package pdftex.def Info: ../figures/bac_predicted.pdf  used on input line 585.
+Package pdftex.def Info: ../figures/bac_predicted.pdf  used on input line 584.
 (pdftex.def)             Requested size: 504.0pt x 296.47433pt.
-<../figures/phos_predicted.pdf, id=583, 614.295pt x 252.945pt>
+<../figures/phos_predicted.pdf, id=585, 614.295pt x 252.945pt>
 File: ../figures/phos_predicted.pdf Graphic file (type pdf)
 <use ../figures/phos_predicted.pdf>
-Package pdftex.def Info: ../figures/phos_predicted.pdf  used on input line 589.
+Package pdftex.def Info: ../figures/phos_predicted.pdf  used on input line 588.
 (pdftex.def)             Requested size: 504.0pt x 207.53203pt.
-<../figures/aridity_density.pdf, id=584, 325.215pt x 252.945pt>
+<../figures/aridity_density.pdf, id=586, 325.215pt x 252.945pt>
 File: ../figures/aridity_density.pdf Graphic file (type pdf)
 <use ../figures/aridity_density.pdf>
-Package pdftex.def Info: ../figures/aridity_density.pdf  used on input line 593.
+Package pdftex.def Info: ../figures/aridity_density.pdf  used on input line 592.
 (pdftex.def)             Requested size: 252.0pt x 196.00333pt.
 
 Package caption Warning: Unused \captionsetup[sub] on input line 18.
@@ -888,18 +891,18 @@ Package rerunfilecheck Info: File `frontiers_submission.out' has not changed.
 (rerunfilecheck)             Checksum: AF7938AD76CD04A25660F67C28391642;2328.
  ) 
 Here is how much of TeX's memory you used:
- 19036 strings out of 476162
- 323049 string characters out of 5791933
+ 19048 strings out of 476162
+ 323298 string characters out of 5791933
  1949978 words of memory out of 5000000
- 40171 multiletter control sequences out of 15000+600000
- 610875 words of font info for 324 fonts, out of 8000000 for 9000
+ 40178 multiletter control sequences out of 15000+600000
+ 611488 words of font info for 327 fonts, out of 8000000 for 9000
  18 hyphenation exceptions out of 8191
- 87i,13n,131p,1237b,774s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,13n,131p,1237b,777s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on frontiers_submission.pdf (22 pages, 1098995 bytes).
+Output written on frontiers_submission.pdf (22 pages, 1100603 bytes).
 PDF statistics:
- 852 PDF objects out of 1000 (max. 8388607)
- 739 compressed objects within 8 object streams
- 138 named destinations out of 1000 (max. 500000)
- 86193 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 855 PDF objects out of 1000 (max. 8388607)
+ 742 compressed objects within 8 object streams
+ 139 named destinations out of 1000 (max. 500000)
+ 88241 words of extra memory for PDF output out of 89155 (max. 10000000)
 

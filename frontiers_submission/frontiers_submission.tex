@@ -144,8 +144,8 @@ We conducted a systematic review of published nonpoint source water quality best
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-In the United States (U.S.), major improvement in water quality has been achieved under the Clean Water Act of 1972.
-This progress has been largely attributed to investments and reductions in point source discharges while reductions in nonpoint source pollutants remain a substantial challenge \citep{nationalresearchcouncilAssessingTMDLApproach2001, benhamLessonsLearnedTMDL2008, schrammTotalMaximumDaily2022}.
+In the United States (U.S.), major improvements in water quality have been achieved under the Clean Water Act of 1972.
+This progress has been largely attributed to investments and reductions in point source discharges while reduction in nonpoint source pollutants remains a substantial challenge \citep{nationalresearchcouncilAssessingTMDLApproach2001, benhamLessonsLearnedTMDL2008, schrammTotalMaximumDaily2022}.
 Increased pollutant loads and concentrations in runoff resulting from land use changes are a particular challenge.
 The impacts of land use change on hydrology and water quality are well established \citep{allanLandscapesRiverscapesInfluence2004, carpenterNonpointPollutionSurface1998, bernhardtUnderstandingManagingMinimizing2008, careyEvaluatingNutrientImpacts2013, freemanImpactsUrbanizationDevelopment2019}.
 Nonpoint source driven fecal indicator bacteria (FIB), nitrogen, phosphorus, and suspended sediment remain major causes of water quality impairments in U.S. rivers and streams despite decades of work.
@@ -155,7 +155,7 @@ FIB remains the leading cause of water body impairment on the Clean Water Act 30
 Best management practices (BMPs) have been the primary suite of tools for addressing nonpoint source pollution.
 BMPs are structural or non-structural controls used to mitigate the effects of increased runoff volume, pollutant loads, or pollutant concentrations emanating from diffuse nonpoint sources.
 BMPs control the delivery of pollutants through a few possible mechanisms.
-Structural BMPs reduce and retard total volume of runoff, thus reducing both the volume of water and pollutant load.
+Structural BMPs (detention pond or vegetated filter strips as examples) reduce and retard total volume of runoff, thus reducing both the volume of water and pollutant load.
 Structural BMPs may also provide a mechanism for physical, chemical, or biological removal of pollutant constituents suspended or dissolved in runoff.
 Non-structural BMPs (such as nutrient management or livestock management) are utilized to reduce the generation of pollutant runoff by avoiding pollutant generation during critical periods.
 
@@ -205,7 +205,7 @@ ROM_i = ln\left(\frac{x_{i,control}}{x_{i,experiment}}\right) = ln(x_{i, control
 
 where \emph{x\textsubscript{i,control}} and \emph{x\textsubscript{i,experiment}} are the mean pollutant concentrations for experiment \emph{i}.
 The statistical properties of \emph{ROM} (normal distribution around zero and additive properties) are preferable to using BMP efficiency \citep{osenbergEffectSizeEcological1997, hedgesMetaanalysisResponseRatios1999}.
-\emph{ROM} \textgreater 0 indicates higher percent reductions and \emph{ROM} \textless indicates pollutant leaching.
+\emph{ROM} \textgreater 0 indicates higher percent reductions and \emph{ROM} \textless 0 indicates pollutant leaching.
 One advantage of \emph{ROM} is that the statistical results calculated using \emph{ROM} are easily transformed to BMP efficiency for interpretation:
 
 \[
@@ -219,7 +219,7 @@ Based on the existing literature we hypothesized that influent pollutant concent
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
 
-We conducted a systematic review of recent (2000-2022) literature to compile field studies documenting the effectiveness of best management practices on fecal indicator bacteria and nutrients concentrations.
+We conducted a systematic review of recent (2000-2022) literature to compile U.S. field studies documenting the effectiveness of best management practices on fecal indicator bacteria, nutrient, and TSS concentrations.
 Prior meta-analysis have utilized data reported in the International Stormwater BMP Database (\url{https://bmpdatabase.org/}), which consists of self-reported and quality checked BMP data \citep{claryBMPPerformanceAnalysis2011, kochNitrogenRemovalStormwater2014, horvathEffectsRegionalClimate2023}.
 The International Stormwater BMP Database only recently added agricultural BMPs and has relatively sparse FIB data \citep{claryBMPPerformanceAnalysis2011, kochNitrogenRemovalStormwater2014}.
 Since we had interest in both FIB performance and agricultural BMPs we chose to utilize a systematic review.
@@ -237,7 +237,7 @@ Each study was reviewed by two team members and differences in opinion were coll
 The remaining studies were split among team members for data extraction (Table \ref{tab:datvars}), again with at least two team members reviewing each study.
 If data was provided in figures, the data was extracted with the WebPlotDigitizer tool \citep{rohatgiWebPlotDigitizer2022}.
 Searches, review, and data extractions were conducted separately for FIB and nutrient related parameters.
-See Figure S1 and S2 for ROSES diagram.
+See Figure S1 and S2 for ROSES diagram. BMP data from the systematic review is available in \citet{kikoyoTWRINPSBMPDB2024}.
 
 \begin{table}
 
@@ -247,7 +247,7 @@ See Figure S1 and S2 for ROSES diagram.
 \toprule
 Attribute & Inclusion Criteria & Excluision Criteria\\
 \midrule
-Study type & Journal articles, book chapters, conference papers, unpublished research reports, thesis and dissertations, organizational and agency white papers. & Synopsis or review studies, peports with reductions based on modeled or other estimated reductions (e.g. TMDLs, watershed plans, or modelling studies.\\
+Study type & Journal articles, book chapters, conference papers, unpublished research reports, thesis and dissertations, organizational and agency white papers. & Synopsis or review studies, reports with reductions based on modeled or other estimated reductions (e.g. TMDLs, watershed plans, or modelling studies.\\
 Outcomes & Field studies with measured effects on fecal indicator bacteria or nutrient concentrations. & Studies not explicitly linking reductions to a specific BMP or insufficient information to quantify reductions.\\
 Geographical context & Studies conducted within the United States. & Studies outside of the United States.\\
 Timeframe & Studies published from 2000 through 2022. & Studies published prior to 2000 or after 2022.\\
@@ -264,15 +264,15 @@ Timeframe & Studies published from 2000 through 2022. & Studies published prior 
 Variable & Description\\
 \midrule
 Publication Year & Year the study was published\\
-Parameter & The specific pollutant measured.\\
-Runoff source & Dominant source of runoff (crop fields, livestock pasture, commerical, residential\\
+Parameter & The specific pollutant measured\\
+Runoff source & Dominant source of runoff (crop fields, livestock pasture, commerical, residential)\\
 Source type & Major categorization of runoff source: agricultural or urban\\
 BMP & BMP evaluated\\
 \addlinespace
 BMP Classification & BMP description based on NRCS conservation practice standards and EPA BMP fact sheets\\
 BMP Category & BMP categorization based on structural or management\\
 BMP Subcategory & BMP subcategorization based on pollutant removal processes\\
-Study scale & Spatial scale of the study area ("lot/field", "community", "watershed")\\
+Study scale & Spatial scale of the study area (lot/field, community, watershed)\\
 Location & Location name used in the study description\\
 \addlinespace
 State & State where the study was conducted\\
@@ -318,7 +318,7 @@ Sampling variance was estimated utilizing the average squared CV across all stud
 v(ROM) = \frac{\sum_{i=1}^{K}{(CV^2_{control,i})/K}}{n_{control}} + \frac{\sum_{i=1}^{K}{(CV^2_{experiment,i})/K}}{n_{experiment}},
 \]
 
-where \emph{v} represents the sampling variance, \(CV_{control,i}\) and \(CV^2_{experiment,i}\) are the coefficients of variation from the \emph{i}th study for studies 1, 2, \ldots, \emph{K}.
+where \emph{v} represents the sampling variance, \(CV_{control,i}\) and \(CV^2_{experiment,i}\) are the coefficients of variation from the \emph{i}th study for studies 1, 2, \ldots, \emph{K}. \emph{n\textsubscript{control}} and \emph{n\textsubscript{experiment}} are the number of samples in the control (pre-treatment) trial or experimental (post-treatment) trial respectively.
 
 Our initial models included log transformed influent concentration, BMP subcategory (drainage modification, crop field management, livestock management, filtration, treatment, detention, or infiltration), aridity index (mean-centered), influent concentration\texttimes BMP subcategory interactions, and aridity index\texttimes BMP subcategory interactions were included as fixed effect terms.
 Aridity index was the only moderator not obtained directly in the systematic review (Table \ref{tab:datvars}).
@@ -345,14 +345,14 @@ We did not identify evidence of outliers or overly influential studies for any o
 \hypertarget{summary-of-bmp-literature}{%
 \subsection{Summary of BMP literature}\label{summary-of-bmp-literature}}
 
-Our systematic review identified a total of 33 studies and 125 effect sizes on FIB, 24 studies and 50 effect sizes on TN, 31 studies and 88 effect sizes for DIN, 31 studies and 61 effect sizes for TP, 17 studies and 36 effects for PO\textsubscript{4}, and 33 studies with 125 effect sizes for TSS.
+Our systematic review identified a total of 33 studies and 125 effect sizes on FIB, 24 studies and 50 effect sizes on TN, 31 studies and 88 effect sizes for DIN, 31 studies and 61 effect sizes for TP, 17 studies and 36 effect sizes for PO\textsubscript{4}, and 33 studies with 125 effect sizes for TSS.
 The majority of studies were identified as smaller scaled lot or field studies (Figure \ref{fig:bmpsummary} A).
-FIB studies had a roughly equal proportion large watershed/catchment studies and studies conducted at the commuity/farm scale or smaller.
+FIB studies had a roughly equal proportion of large watershed/catchment studies and studies conducted at the community/farm scale or smaller.
 We also identified that the majority of studies (all parameters) were conducted on urban or non-agricultural runoff (Figure \ref{fig:bmpsummary} B).
 We did identify a wide variety of BMPs in the review, but it did not appear that any particular type of BMP was responsible for the majority of studies for any given parameter (Figure \ref{fig:bmpsummary} C).
-Our review was resticted to studies published after 1999.
+Our review was restricted to studies published after between 1999 and 2023.
 The number of studies published for each parameter were roughly uniformly distributed over time (Figure \ref{fig:bmptemporal} A) and are not indicative of increases or decreases in the number of published studies.
-Study length was strongly skewed for all parameters (Figure \ref{fig:bmptemporal} B). Median study lengths were 3 (DIN), 2 (FIB), 2.5 (PO\textasciitilde4), 2.5 (TN), 2.5 (TP), and 2 (TSS).
+Study length was strongly skewed for all parameters (Figure \ref{fig:bmptemporal} B). Median study lengths were 3 (DIN), 2 (FIB), 2.5 (PO\textasciitilde4), 2.5 (TN), 2.5 (TP), and 2 (TSS) years.
 There appears to be a strong clustering of BMP studies in the mid-Atlantic region (North Carolina, Virginia, Maryland) with other states sparsely represented or completely absent from the review (Figure \ref{fig:studymap}).
 
 \hypertarget{regression-models}{%
@@ -397,7 +397,7 @@ Total heterogeneity was moderate with a relatively large amount of heterogeneity
 
 AICc scores included log transformed influent concentration and the aridity index\texttimes BMP subcategory interaction as moderators for the FIB model (Table \ref{tab:modelaic}).
 Moderator terms and interactions explained a high proportion of effect size variance (\textit{R\textsuperscript{2}\textsubscript{marginal}} =0.89) in the FIB model.
-Increased influent concentrations (\(\beta\) = 0.25, 95\% CI {[}0.14, 0.37{]}) resulted in significantly larger ROM effect for FIB (Figure \ref{fig:fibeffect}.
+Increased influent concentrations (\(\beta\) = 0.25, 95\% CI {[}0.14, 0.37{]}) resulted in significantly larger ROM effect for FIB (Figure \ref{fig:fibeffect}).
 Compared to the baseline aridity index\texttimes detention BMP subcategory interaction, infiltration (\(\beta\) = -29.90, 95\% CI {[}-50.34, -9.47{]}), livestock management (\(\beta\) = -30.37, 95\% CI {[}-50.93, -9.81{]}), and treatment (\(\beta\) = -30.33, 95\% CI {[}-49.62, -11.03{]}) interactions had significantly smaller slopes.
 However, the data had uneven coverage of BMP subcategories across the aridity index.
 Effects for detention BMPs were clustered in humid climates (aridity index \textgreater{} 0.65) and the resulting estimate for the baseline interaction (\(\beta\) = 32.63, 95\% CI {[}12.57, 52.69{]}) may not be reliable.
@@ -433,14 +433,12 @@ Similar to nitrogen, we did not find strong evidence linking any of the tested m
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
 
-\textbf{Not complete}
-
-Our systematic review revealed strong spatial disparities in published BMP studies (Figure \ref{fig:studymap}.
+Our systematic review revealed strong spatial disparities in published BMP studies (Figure \ref{fig:studymap}).
 Similar spatial disparities have been identified and discussed in \citet{kochNitrogenRemovalStormwater2014}, \citet{grudzinskiDoesRiparianFencing2020} and can be problematic for extrapolating results to other regions of interest.
 Inconsistent spatial coverage presents a challenge for disentangling confounding spatially correlated predictors such as climate and soil due to poor representation within the dataset.
 \citet{horvathEffectsRegionalClimate2023} found overlapping BMP type and climate groups within their dataset that reduce the ability to distinguish effects due to either BMP type or climate.
-Similarly, we found detention type BMPs clustered only in humid climates (high aridity index) which reduces our confidence in extrapolating the interaction between BMP types and aridity index for FIB (Figure \ref{fig:fibeffect}.
-Not only were there spatially disparities, but we observed that the relative distribution of aridity index values does not resemble the distribution of aridity values across the U.S. (Figure \ref{fig:aiindex}.
+Similarly, we found detention type BMPs clustered only in humid climates (high aridity index) which reduces our confidence in extrapolating the interaction between BMP types and aridity index for FIB (Figure \ref{fig:fibeffect}).
+Not only were there spatially disparities, but we observed that the relative distribution of aridity index values does not resemble the distribution of aridity values across the U.S. (Figure \ref{fig:aiindex}).
 Our review indicates that BMP studies are over represented in the generally humid regions of the country and underrepresented the more arid regions.
 Study scale, runoff sources and BMP types appeared well distributed, with the caveat that we are not aware of the actual distribution of these values in BMPs deployed across the country.
 
@@ -455,10 +453,10 @@ Relatively little work has been published investigating how the performance of B
 While securing long term support for BMP monitoring and maintenance is a substantial hurdle \citep{heidariGreenStormwaterInfrastructure2023}, unmaintained BMPs may see reduced performance \citep{kochNitrogenRemovalStormwater2014, liuReviewEffectivenessBest2017}.
 
 Study design prevented us from properly assessing BMP effectiveness as a function of age.
-Conducting a meta-analysis of BMP effectivness over time is hampered both by the lack of long-term studies and lack of standardized reporting mechanisms.
-Some studies simply describe the change in pollutant concentrations or loads at the beginning and end of the study as a percent change \citep{haileHydraulicPerformancePollutant2016} which presents statistical problems, espcially when sampling variance is not reported.
+Conducting a meta-analysis of BMP effectiveness over time is hampered both by the lack of long-term studies and lack of standardized reporting mechanisms.
+Some studies simply describe the change in pollutant concentrations or loads at the beginning and end of the study as a percent change \citep{haileHydraulicPerformancePollutant2016} which presents statistical problems, especially when sampling variance is not reported.
 Changes in performance can also be described using a linear regression using date (transformed as a numeric variable) as an independent variable and log-transformed water quality as the dependent variable \citep{mitschCreatingWetlandsPrimary2012, mitschValidationEcosystemServices2014, pausAssessmentHydraulicToxic2014}.
-Slopes are a valid effect size for use in meta-analysis but the set of covariates used between studies should be the same since the coeffecient of interest is adjusted to account for other terms in the the regression model \citep{beckerSynthesisRegressionSlopes2007}.
+Slopes are a valid effect size for use in meta-analysis but the set of covariates used between studies should be the same since the coefficient of interest is adjusted to account for other terms in the the regression model \citep{beckerSynthesisRegressionSlopes2007}.
 It would be reasonable to assume that regressions equations vary between studies to adjust results for seasonality, flow rates, and other variables.
 Future efforts for assessing the performance of BMPs over time would benefit not only from more studies, but a more standardized method for providing comparable results.
 
@@ -476,10 +474,10 @@ However, relatively few studies have compared human pathogen and FIB removal rat
 
 While we observed a strong relationship between FIB influent concentration and FIB removal across all BMPs, we anticipated this relationship to vary by BMP subcategory.
 The reliance on certain removal processes by BMP subcategories was expected to effect the ability of the BMP to retain FIB at higher or lower concentrations.
-We did have some evidence of differing BMP subcateogy removal under different ariditiy indecies.
+We did have some evidence of differing BMP subcategory removal under different aridity.
 The impact of aridity might be due to differential fate and transport processes in arid versus humid environments.
 On one hand, we assume that arid conditions might be less hospitable to FIBs due to increased UV exposure and osmotic stress.
-Conversly, these conditions are also less hospitable to the protoza, bacteriophages, and micro-zooplankton that can play a strong role in predating on and controlling FIB concentrations within BMP media \citep{zhangCaptureDestructionEscherichia2010, burtchettMicrozooplanktonGrazingMeans2017, deanMetaanalysisAddressingImplications2022}.
+Conversely, these conditions are also less hospitable to the protozoa, bacteriophages, and micro-zooplankton that can play a strong role in predating on and controlling FIB concentrations within BMP media \citep{zhangCaptureDestructionEscherichia2010, burtchettMicrozooplanktonGrazingMeans2017, deanMetaanalysisAddressingImplications2022}.
 Site specific conditions (such as retained soil moisture, turbidity, vegetation, and other factors) play an important role in bacteria survival as well as for influencing the filtration and attachment processes that retain FIB within BMP media.
 For example, the presence or absence of a submerged zone within a bioretention BMP has a strong effect on FIB removal \citep{rippyMeetingCriteriaLinking2015, pengIndicatorPathogenRemoval2016}.
 While our models capture some of the variance due to these differences as between study effects, including these variables as fixed effect moderators in a meta-regression model would be valuable but these details are under reported in BMP studies.
@@ -524,7 +522,8 @@ However, we emphasize the need for convergent research approaches that better al
 \section*{Data availability statement}\label{data-availability-statement}}
 \addcontentsline{toc}{section}{Data availability statement}
 
-The data and R code used in this study are deposited in Zenodo: TBD.
+Raw data from the systematic review is deposited on Zenodo: \url{https://zenodo.org/doi/10.5281/zenodo.8302472}.
+R code used in the analysis is also deposited on Zenodo: TBD.
 
 \hypertarget{disclosureconflict-of-interest-statement}{%
 \section*{Disclosure/Conflict-of-Interest Statement}\label{disclosureconflict-of-interest-statement}}
