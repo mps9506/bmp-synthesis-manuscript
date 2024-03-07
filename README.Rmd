@@ -1,0 +1,29 @@
+---
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This repository contains the data and analysis used in the draft manuscript *"A  meta-analysis  of  the  impacts  of  best management  practices  on  nonpoint  source pollutant  concentration,"* by Schramm et al.
+
+This project uses `{targets}` as the main organizing workflow. The `_targets.R` file defines the steps of the project workflow amd functions for those setps are stored in the `R/` directory. `renv` is used to manage package versions. To reproduce locally, clone or download this project to your computer. Open the project with RStudio or other IDE.
+
+In the console:
+
+```r
+renv::restore()
+```
+
+then use `targets::tar_make()` to execute the project pipeline. Each step in the pipeline can be accessed with the `targets::tar_read()` function. For example, `targets::tar_read(tn_model)` will access the model object we fit to the total nitrogen data.
+
+## Funding Statement
+
+This project was funded by a nonpoint source grant from the Texas State Soil and Water Conservation Board.
+
+## Working Environment Info
+
+```{r}
+sessioninfo::session_info()
+```

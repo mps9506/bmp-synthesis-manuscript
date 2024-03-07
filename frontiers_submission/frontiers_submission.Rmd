@@ -634,6 +634,10 @@ We confirm that inconsistent reporting among studies complicates data extraction
 The International Stormwater BMP Database addresses some of these concerns through a standardized reporting format.
 Our future efforts will incorporate data from the International Stormwater BMP Database with data retrieved through a systematic review.
 
+Scaling BMP pollutant reductions to basin wide water quality improvement remains a substantial challenge [@tomerChallengeDocumentingWater2011; @mellandEffectsAgriculturalLand2018; @mealsLagTimeWater2010].
+The major identified challenges include the lack of long term studies, inadequate data collected on BMP management, and incomplete understanding of BMP function [@linternBestManagementPractices2020; @liuReviewEffectivenessBest2017].
+There is a clear need to fill knowledge gaps through additional long-term spatially relevant BMP studies.
+However, we emphasize the need for convergent research approaches that better align study design and reporting that produces data aligned with data synthesis and modeling approaches. 
 
 In summary, we used multi-level random effects meta-regression models to estimate overall BMP effectiveness from systematically reviewed studies. 
 Although there was relatively high variance between studies, we found strong evidence that BMPs reduce overall mean FIB, TN, TP, and TSS concentrations.
@@ -643,11 +647,9 @@ Most likely, site specific design and climate variables not captured in our revi
 Future efforts should seek to retrieve more detailed study information.
 Furthermore, our systematic review highlights the poor spatial coverage of BMP studies. 
 The reviewed studies therefore fail to incorporate the range of soil, climate, and runoff conditions needed to adequately link BMP performance to local predictors.
+To adequately estimate the effects of moderating variable on BMP performance we suggest that there is a need for additional aligned BMP studies across regions and conditions.
 
-Scaling BMP pollutant reductions to basin wide water quality improvement remains a substantial challenge [@tomerChallengeDocumentingWater2011; @mellandEffectsAgriculturalLand2018; @mealsLagTimeWater2010].
-The major identified challenges include the lack of long term studies, inadequate data collected on BMP management, and incomplete understanding of BMP function [@linternBestManagementPractices2020; @liuReviewEffectivenessBest2017].
-There is a clear need to fill knowledge gaps through additional long-term spatially relevant BMP studies.
-However, we emphasize the need for convergent research approaches that better align study design and reporting that produces data aligned with data synthesis and modeling approaches. 
+
 
 
 # Data availability statement {-}
@@ -675,10 +677,7 @@ Funding: This project was supported by a state nonpoint source grant from the Te
 
 # Supplemental Data {-}
 
-Supplementary Material should be uploaded separately on submission, if there are
-Supplementary Figures, please include the caption in the same file as the
-figure. LaTeX Supplementary Material templates can be found in the Frontiers
-LaTeX folder
+Supplementary Material for this article has been uploaded with the submission.
 
 
 \bibliographystyle{Frontiers-Harvard}
