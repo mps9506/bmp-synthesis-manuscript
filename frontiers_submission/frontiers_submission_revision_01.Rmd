@@ -239,7 +239,9 @@ Each study was reviewed by two team members and differences in opinion were coll
 The remaining studies were split among team members for data extraction (Table \@ref(tab:datvars)), again with at least two team members reviewing each study. 
 If data was provided in figures, the data was extracted with the WebPlotDigitizer tool [@rohatgiWebPlotDigitizer2022]. 
 Searches, review, and data extractions were conducted separately for FIB and nutrient related parameters.
-See Figure S1 and S2 for ROSES diagram. BMP data from the systematic review is available in @kikoyoTWRINPSBMPDB2024.
+See Figure S1 and S2 for RepOrting standards for Systematic Evidence Syntheses 
+(ROSES) diagram. 
+BMP data from the systematic review is available in @kikoyoTWRINPSBMPDB2024.
 
 ```{r criteria}
 
@@ -300,7 +302,7 @@ tibble(Variable = c(
                   "Minimum experiment measurement",
                   "Maximum control measurement",
                   "Maximum experiment measurement",
-                  "Standard deviation of control measreuments",
+                  "Standard deviation of control measurements",
                   "Standard deviation of experimental measurements",
                   "Units reported by the study",
                   "BMP efficiency for studies that only reported efficiency")
@@ -319,7 +321,7 @@ tibble(Variable = c(
 
 ## Statistical models
 
-We used the "rma.mv" function in the *metafor* R package to fit multilevel random effects regression models with *ROM* as the effect variable [@viechtbauerConductingMetaanalysesMetafor2010; @rcoreteamLanguageEnvironmentStatistical2023].
+We used the "rma.mv" function in the *metafor* R package (R version 4.3.1) to fit multilevel random effects regression models with *ROM* as the effect variable [@viechtbauerConductingMetaanalysesMetafor2010; @rcoreteamLanguageEnvironmentStatistical2023].
 We fit separate models for FIB, total nitrogen (TN), dissolved inorganic nitrogen (DIN), total phosphorus (TP), orthophosphate (PO~4~), and total suspended sediment (TSS).
 Our models specified a nested random effects term accounting for heterogeneity between effect sizes from the same study and for heterogeneity between studies.
 *ROM* was used as the effect size which required the exclusion of studies that only provided measures of BMP efficiency and not the underlying data used to derive the metric.
@@ -333,12 +335,12 @@ $$
 v(ROM) = \frac{\sum_{i=1}^{K}{(CV^2_{control,i})/K}}{n_{control}} + \frac{\sum_{i=1}^{K}{(CV^2_{experiment,i})/K}}{n_{experiment}},
 $$
 
-where *v* represents the sampling variance, $CV_{control,i}$ and $CV^2_{experiment,i}$ are the coefficients of variation from the *i*th study for studies 1, 2, ..., *K*. *n~control~* and *n~experiment~* are the number of samples in the control (pre-treatment) trial or experimental (post-treatment) trial respectively.
+where *v* represents the sampling variance, $CV^2_{control,i}$ and $CV^2_{experiment,i}$ are the squared coefficients of variation from the *i*th study for studies 1, 2, ..., *K*. *n~control~* and *n~experiment~* are the number of samples in the control (pre-treatment) trial or experimental (post-treatment) trial respectively.
 
 Our initial models included log transformed influent concentration, BMP subcategory (drainage modification, crop field management, livestock management, filtration, treatment, detention, or infiltration), aridity index (mean-centered), influent concentration\texttimes BMP subcategory interactions, and aridity index\texttimes BMP subcategory interactions were included as fixed effect terms.
 Aridity index was the only moderator not obtained directly in the systematic review (Table \@ref(tab:datvars)).
 We mapped study location coordinates to aridity index values published in the "Global Aridity Index and Potential Evapotranspiration Database - Version 3" (Global-AI_PET_v3) which provides gridded 30 arc-second annual average precipitation and potential evapotranspiration estimates [@zomerVersionGlobalAridity2022].
-The aridity index is calculated as the ratio of mean annual precipitation to mean annual evapotraspiration with values between 0 and 0.5 considered hyper to semi-arid, and values above 0.65 as humid.   
+The aridity index is calculated as the ratio of mean annual precipitation to mean annual potential (or reference) evapotranspiration with values between 0 and 0.5 considered hyper to semi-arid, and values above 0.65 as humid.   
 
 
 We used an information-theoretic approach to select the most parsimonious model from the subset of candidate models based on corrected Akaike information criterion (AIC~c~) estimated with maximum likelihood [@cinarUsingInformationTheoretic2021].
@@ -371,9 +373,9 @@ The majority of studies were identified as smaller scaled lot or field studies (
 FIB studies had a roughly equal proportion of large watershed/catchment studies and studies conducted at the community/farm scale or smaller.
 We also identified that the majority of studies (all parameters) were conducted on urban or non-agricultural runoff (Figure \@ref(fig:bmpsummary) B).
 We did identify a wide variety of BMPs in the review, but it did not appear that any particular type of BMP was responsible for the majority of studies for any given parameter (Figure \@ref(fig:bmpsummary) C).
-Our review was restricted to studies published after between 1999 and 2023.
+Our review was restricted to studies published from 2000 through 2022.
 The number of studies published for each parameter were roughly uniformly distributed over time (Figure \@ref(fig:bmptemporal) A) and are not indicative of increases or decreases in the number of published studies.
-Study length was strongly skewed for all parameters (Figure \@ref(fig:bmptemporal) B). Median study lengths were 3 (DIN), 2 (FIB), 2.5 (PO~4), 2.5 (TN), 2.5 (TP), and 2 (TSS) years. 
+Study length was strongly skewed for all parameters (Figure \@ref(fig:bmptemporal) B). Median study lengths were 3 (DIN), 2 (FIB), 2.5 (PO~4~), 2.5 (TN), 2.5 (TP), and 2 (TSS) years. 
 There appears to be a strong clustering of BMP studies in the mid-Atlantic region (North Carolina, Virginia, Maryland) with other states sparsely represented or completely absent from the review (Figure \@ref(fig:studymap)).
 
 
@@ -584,7 +586,7 @@ Study design prevented us from properly assessing BMP effectiveness as a functio
 Conducting a meta-analysis of BMP effectiveness over time is hampered both by the lack of long-term studies and lack of standardized reporting mechanisms.
 Some studies simply describe the change in pollutant concentrations or loads at the beginning and end of the study as a percent change [@haileHydraulicPerformancePollutant2016] which presents statistical problems, especially when sampling variance is not reported.
 Changes in performance can also be described using a linear regression using date (transformed as a numeric variable) as an independent variable and log-transformed water quality as the dependent variable [@mitschCreatingWetlandsPrimary2012; @mitschValidationEcosystemServices2014; @pausAssessmentHydraulicToxic2014].
-Slopes are a valid effect size for use in meta-analysis but the set of covariates used between studies should be the same since the coefficient of interest is adjusted to account for other terms in the the regression model [@beckerSynthesisRegressionSlopes2007].
+Slopes are a valid effect size for use in meta-analysis but the set of covariates used between studies should be the same since the coefficient of interest is adjusted to account for other terms in the regression model [@beckerSynthesisRegressionSlopes2007].
 It would be reasonable to assume that regressions equations vary between studies to adjust results for seasonality, flow rates, and other variables.
 Future efforts for assessing the performance of BMPs over time would benefit not only from more studies, but a more standardized method for providing comparable results.
 
@@ -688,7 +690,7 @@ Supplementary Material for this article has been uploaded with the submission.
 
 
 ```{r bmpsummary}
-#| fig.cap: "Summary of (A) study scale, (B) dominant runoff source, and (C) BMPs identified in the systematic review."
+#| fig.cap: "Summary of (A) study scale and (B) dominant runoff source. Water quality parameters include total suspended sediment (TSS), total phosphorus (TP), total nitrogen (TN), orthophosphate (PO\\textsubscript{4}), fecal indicator bacteria (FIB), and dissolved inorganic nitrogen (DIN)."
 #| #| fig.pos: "p"
 #| out.extra: ""
 #| out.width: "100%"
@@ -697,8 +699,18 @@ knitr::include_graphics("../figures/bmp_summary.pdf")
 
 ```
 
+```{r bmpsummaryparam}
+#| fig.cap: "Summary BMPs identified in the systematic review by tested parameter. Water quality parameters include total suspended sediment (TSS), total phosphorus (TP), total nitrogen (TN), orthophosphate (PO\\textsubscript{4}), fecal indicator bacteria (FIB), and dissolved inorganic nitrogen (DIN)."
+#| #| fig.pos: "p"
+#| out.extra: ""
+#| out.width: "100%"
+
+knitr::include_graphics("../figures/bmp_summary_param.pdf")
+
+```
+
 ```{r bmptemporal}
-#| fig.cap: "Number of studies identified in the systematic review summarized by (A) publication date and (B) study length."
+#| fig.cap: "Number of studies identified in the systematic review summarized by (A) publication date and (B) study length. Water quality parameters include total suspended sediment (TSS), total phosphorus (TP), total nitrogen (TN), orthophosphate (PO\\textsubscript{4}), fecal indicator bacteria (FIB), and dissolved inorganic nitrogen (DIN)."
 #| #| fig.pos: "p"
 #| out.extra: ""
 #| out.width: "100%"
@@ -708,7 +720,7 @@ knitr::include_graphics("../figures/bmp_temporal_summary.pdf")
 ```
 
 ```{r studymap}
-#| fig.cap: "Distribution of studies identified in the systematic review by state and parameter."
+#| fig.cap: "Distribution of studies identified in the systematic review by state and parameter. Water quality parameters include total suspended sediment (TSS), total phosphorus (TP), total nitrogen (TN), orthophosphate (PO\\textsubscript{4}), fecal indicator bacteria (FIB), and dissolved inorganic nitrogen (DIN)."
 #| fig.pos: "p"
 #| out.extra: ""
 #| out.width: "100%"
@@ -720,7 +732,7 @@ knitr::include_graphics("../figures/study_map.pdf")
 
 
 ```{r overalleffect}
-#| fig.cap: "Estimated effect sizes and intervals from the intercept only multilevel random effects model. Individual points represent studies, with size scaled by sampling variance. The point estimate with uncertaintity bars indicate the estimated overall effect, 95% confidence intervals, and 95% prediction intervals. Here, \\textit{k} indicates the number of overall effects with the number of unique studies in parenthesis."
+#| fig.cap: "Estimated effect sizes and intervals from the intercept only multilevel random effects model. Individual points represent studies, with size scaled by sampling variance. The point estimate with uncertaintity bars indicate the estimated overall effect, 95% confidence intervals, and 95% prediction intervals. Here, \\textit{k} indicates the number of overall effects with the number of unique studies in parenthesis. Water quality parameters include total suspended sediment (TSS), total phosphorus (TP), total nitrogen (TN), orthophosphate (PO\\textsubscript{4}), fecal indicator bacteria (FIB), and dissolved inorganic nitrogen (DIN)."
 #| fig.pos: "p"
 #| out.extra: ""
 #| out.width: "100%"
@@ -731,7 +743,7 @@ knitr::include_graphics("../figures/overall_effect.pdf")
 
 
 ```{r fibeffect}
-#| fig.cap: "Predicted marignal effect of influent FIB and aridity index (conditioned on BMP subcategory). Solid lines are the predicted mean effect, dashed lines are the 95% confidence intervals, and the dotted lines are the 95% prediction intervals. Individual dots represent each effect size identified in the literature with the size scaled by sampling variance."
+#| fig.cap: "Predicted marginal effect of influent fecal indicator bacteria (FIB; Panel A) and aridity index (conditioned on BMP subcategory; Panel B). Solid lines are the predicted mean effect, dashed lines are the 95% confidence intervals, and the dotted lines are the 95% prediction intervals. Individual dots represent each effect size identified in the literature with the size scaled by sampling variance. Higher aridity index (mean annual precipition/evapotranspiration) indicates more humid conditions."
 #| fig.pos: "p"
 #| out.extra: ""
 #| out.width: "100%"
@@ -742,7 +754,7 @@ knitr::include_graphics("../figures/bac_predicted.pdf")
 
 
 ```{r phoseffect}
-#| fig.cap: "Predicted marignal effect of influent pollutant concentration on TP (Panel A) and PO\\textsubscript{4} (Panel B) reductions. Solid lines are the predicted mean effect, dashed lines are the 95% confidence intervals, and the dotted lines are the 95% prediction intervals. Individual dots represent each effect size identified in the literature with the size scaled by sampling variance."
+#| fig.cap: "Predicted marignal effect of influent pollutant concentration on total phosphorus (TP; Panel A) and orthophosphate (PO\\textsubscript{4}; Panel B) reductions. Solid lines are the predicted mean effect, dashed lines are the 95% confidence intervals, and the dotted lines are the 95% prediction intervals. Individual dots represent each effect size identified in the literature with the size scaled by sampling variance."
 #| fig.pos: "p"
 #| out.extra: ""
 #| out.width: "100%"
@@ -751,7 +763,7 @@ knitr::include_graphics("../figures/phos_predicted.pdf")
 ```
 
 ```{r aiindex}
-#| fig.cap: "Comparison of the relative distributions (density) of aridity index values across the U.S. against aridity index values for studies in the systematic review."
+#| fig.cap: "Comparison of the relative distributions (density) of aridity index values (mean annual precipition/evapotranspiration) across the U.S., across U.S. agricultural and developed land uses, and for BMP study locations. Higher aridity index values indicate more humid conditions."
 #| fig.pos: "p"
 #| out.extra: ""
 #| out.width: "50%"

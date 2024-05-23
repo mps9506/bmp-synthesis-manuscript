@@ -110,7 +110,7 @@ plot_map <- function(bac_df,
                     stat = "sf_coordinates", bg.color = "white", bg.r = 0.15,
                     family = "Manrope SemiBold", fontface = "plain",
                     force = 0) +
-    scale_fill_distiller(palette = "Greens", direction = 1, na.value = "grey80",
+    scale_fill_distiller(palette = "Greens", direction = 1, na.value = "transparent",
                          trans = "log10") +
     facet_wrap(~Parameter, ncol = 2) +
     labs(x = "", y = "") +
@@ -128,6 +128,80 @@ plot_map <- function(bac_df,
                                     color = "black",
                                     face = "plain",
                                     size = rel(1), hjust = 0))
+  
+}
+
+plot_bmp_param_summary <- function(bac_df, nut_df) {
+
+
+  ## BMPs
+  bmp_bac <- bac_df |> 
+    group_by(StudyID, BMP_Class) |> 
+    summarize(n = 1) |> 
+    ungroup() |> 
+    group_by(BMP_Class) |> 
+    summarise(n = sum(n)) |> 
+    mutate(Parameter = "FIB")
+
+
+  bmp_df <- nut_df |>
+    mutate(Parameter = case_when(
+      Parameter %in% c("TN") ~ "TN",
+      Parameter %in% c("NO3", "NOX", "NH3") ~ "DIN",
+      Parameter %in% c("TP") ~ "TP",
+      Parameter %in% c("PO4") ~ "PO4",
+      Parameter == "TSS" ~ "TSS",
+      .default = NA
+    )) |>
+    filter(!is.na(Parameter)) |>
+    group_by(StudyID, Parameter, BMP_Class) |>
+    summarize(n = 1) |>
+    ungroup() |>
+    group_by(Parameter, BMP_Class) |>
+    summarise(n = sum(n)) |>
+    bind_rows(bmp_bac) |>
+    mutate(BMP_Class = stringr::str_to_sentence(BMP_Class)) |>
+    mutate(BMP_Class = case_when(
+      BMP_Class == "Swale" ~ "Swales",
+      BMP_Class == "Proprietary" ~ "Proprietary devices",
+      BMP_Class == "Drainage systems" ~ "Drainage water management",
+      .default = BMP_Class
+    )) |>
+    ungroup() |>
+    mutate(BMP_Class = reorder(BMP_Class,
+                               n,
+                               FUN = sum))
+  
+
+  shadow <- bmp_df |> 
+    group_by(BMP_Class) |> 
+    summarise(n = sum(n))
+  
+  ggplot() +
+    geom_col(data = shadow, aes(x = n, y = BMP_Class), alpha = 0.25) +
+    geom_col(data = bmp_df, aes(x = n, y = BMP_Class, fill = Parameter)) +
+    facet_wrap(facets = vars(Parameter)) +
+    scale_fill_brewer("Parameter:", palette = "Dark2",
+                      guide = guide_legend(reverse = TRUE)) +
+    scale_x_continuous("Studies (n)", expand = expansion(mult = c(0,0.1))) +
+    labs(y = "") +
+    theme_mps_noto(base_family = "Manrope Regular") +
+    theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
+          axis.title.x = element_text(hjust = 0),
+          axis.title.x.top = element_blank(),
+          axis.title.y = element_text(hjust = 1),
+          axis.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.7)),
+          axis.text.x.bottom = element_blank(),
+          axis.text.x.top = element_blank(),
+          axis.text.y.left = element_text(hjust = 1),
+          legend.position = "none",
+          panel.grid.major.y = element_blank(),
+          strip.background = element_rect(fill = "grey90",
+                                          color = "grey90"),
+          strip.text = element_text(family = "Manrope SemiBold",
+                                    color = "black",
+                                    face = "bold",
+                                    size = rel(0.8), hjust = 0))
   
 }
 
@@ -175,7 +249,7 @@ plot_bmp_summary <- function(bac_df, nut_df) {
                     bg.color = "#FFFFFF33", bg.r = 0.15,
                     family = "Manrope SemiBold", fontface = "plain",
                     force = 0, size = 3) +
-    scale_x_continuous("Studies (n)", expand = expansion(mult = c(0, 0.1))) +
+    scale_x_continuous("Studies (n)", expand = expansion(mult = c(0, 0.65))) +
     scale_y_discrete("") +
     scale_fill_manual("Study Scale:", values = c("#1B9E77","#D95F02","#7570B3"),
                       guide = guide_legend(reverse = TRUE)) +
@@ -185,14 +259,16 @@ plot_bmp_summary <- function(bac_df, nut_df) {
           axis.title.y = element_text(hjust = 1),
           axis.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.8)),
           axis.text.y.left = element_text(family = "Manrope Light", face = "plain", size = rel(0.8), hjust = 1),
-          legend.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.8)),
-          legend.position = "right",
+          legend.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.6)),
+          legend.title = element_text(size = rel(0.8), hjust = 0),
+          legend.position = c(0.7, 0.5),
           legend.direction = "vertical",
           panel.grid.major.y = element_blank(),
           plot.tag = element_text(family = "Manrope SemiBold",
                                   color = "black", 
                                   face = "bold",
                                   size = rel(0.8), hjust = 0),
+          plot.tag.position = c(0.1, 0.95),
           strip.background = element_rect(fill = "grey90", 
                                           color = "grey90"),
           strip.text = element_text(family = "Manrope SemiBold",
@@ -234,7 +310,7 @@ plot_bmp_summary <- function(bac_df, nut_df) {
                     bg.color = "#FFFFFF33", bg.r = 0.15,
                     family = "Manrope SemiBold", fontface = "plain",
                     force = 0, size = 3) +
-    scale_x_continuous("Studies (n)", expand = expansion(mult = c(0, 0.1))) +
+    scale_x_continuous("Studies (n)", expand = expansion(mult = c(0, 0.6))) +
     scale_y_discrete("") +
     scale_fill_manual("Runoff Source:", values = c("#1B9E77","#D95F02"),
                       guide = guide_legend(reverse = TRUE)) +
@@ -244,14 +320,16 @@ plot_bmp_summary <- function(bac_df, nut_df) {
           axis.title.y = element_text(hjust = 1),
           axis.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.8)),
           axis.text.y.left = element_text(family = "Manrope Light", face = "plain", size = rel(0.8), hjust = 1),
-          legend.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.8)),
-          legend.position = "right",
+          legend.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.6)),
+          legend.title = element_text(size = rel(0.8), hjust = 0),
+          legend.position = c(0.7, 0.5),
           legend.direction = "vertical",
           panel.grid.major.y = element_blank(),
           plot.tag = element_text(family = "Manrope SemiBold",
                                   color = "black", 
                                   face = "bold",
                                   size = rel(0.8), hjust = 0),
+          plot.tag.position = c(0.1, 0.95),
           strip.background = element_rect(fill = "grey90", 
                                           color = "grey90"),
           strip.text = element_text(family = "Manrope SemiBold",
@@ -269,82 +347,23 @@ plot_bmp_summary <- function(bac_df, nut_df) {
     summarise(n = sum(n)) |> 
     mutate(Parameter = "FIB")
   
-  bmp_df <- nut_df |> 
-    mutate(Parameter = case_when(
-      Parameter %in% c("TN") ~ "TN",
-      Parameter %in% c("NO3", "NOX", "NH3") ~ "DIN",
-      Parameter %in% c("TP") ~ "TP",
-      Parameter %in% c("PO4") ~ "PO4",
-      Parameter == "TSS" ~ "TSS",
-      .default = NA
-    )) |> 
-    filter(!is.na(Parameter)) |> 
-    group_by(StudyID, Parameter, BMP_Class) |> 
-    summarize(n = 1) |> 
-    ungroup() |> 
-    group_by(Parameter, BMP_Class) |> 
-    summarise(n = sum(n)) |> 
-    bind_rows(bmp_bac) |> 
-    mutate(BMP_Class = stringr::str_to_sentence(BMP_Class)) |> 
-    mutate(BMP_Class = case_when(
-      BMP_Class == "Swale" ~ "Swales",
-      BMP_Class == "Proprietary" ~ "Proprietary devices",
-      BMP_Class == "Drainage systems" ~ "Drainage water management",
-      .default = BMP_Class
-    )) |> 
-    ungroup() |> 
-    mutate(BMP_Class = reorder(BMP_Class,
-                               n,
-                               FUN = sum))
   
-  p3 <- ggplot(bmp_df) +
-    geom_col(aes(n,  BMP_Class, fill = Parameter)) +
-    scale_fill_brewer("Parameter:", palette = "Dark2",
-                      guide = guide_legend(reverse = TRUE)) +
-    scale_x_continuous("Studies (n)", expand = expansion(mult = c(0,0.1))) +
-    labs(y = "") +
-    theme_mps_noto(base_family = "Manrope Regular") +
-    theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
-          axis.title.x = element_text(hjust = 0),
-          axis.title.y = element_text(hjust = 1),
-          axis.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.8)),
-          axis.text.y.left = element_text(family = "Manrope Light", face = "plain", size = rel(0.8), hjust = 1),
-          legend.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.8)),
-          legend.position = "right",
-          legend.direction = "vertical",
-          panel.grid.major.y = element_blank(),
-          plot.tag = element_text(family = "Manrope SemiBold",
-                                  color = "black", 
-                                  face = "bold",
-                                  size = rel(0.8), hjust = 0),
-          strip.background = element_rect(fill = "grey90", 
-                                          color = "grey90"),
-          strip.text = element_text(family = "Manrope SemiBold",
-                                    color = "black", 
-                                    face = "bold",
-                                    size = rel(0.8), hjust = 0))
-  
+
   
   layout <- "
-  AAAA
-  AAAA
-  AAAA
-  BBBB
-  BBBB
-  BBBB
-  CCCC
-  CCCC
-  CCCC
-  CCCC
-  CCCC
-  CCCC"
+  AAAABBBB
+  AAAABBBB
+  AAAABBBB
+"
   
-  p1 + p2 + p3 + patchwork::plot_annotation(tag_levels = "A") +
+  p1 + p2 + patchwork::plot_annotation(tag_levels = "A") +
     patchwork::plot_layout(design = layout)
   
   
   
 }
+
+
 
 
 plot_bmp_temporal <- function(bac_df, nut_df) {
@@ -512,9 +531,42 @@ plot_bmp_temporal <- function(bac_df, nut_df) {
               stdy_len_stats = stdy_len_stats))
 }
 
+## returns spatrast with aridity index values masked using land cover data 
+crop_aridity_to_land_use <- function() {
+  ## read NLCD
+  nlcd <- rast("data/nlcd/nlcd_2021_land_cover_l48_20230630.img")
+  ## reclassify values non developed and agriculture values to NA
+  m <- c(0, NA,
+         11, NA,
+         12, NA,
+         31, NA,
+         41, NA,
+         42, NA,
+         43, NA,
+         52, NA,
+         71, NA,
+         90, NA,
+         95, NA)
+  rclmat <- matrix(m, ncol=2, byrow=TRUE)
+  nlcd_class <- classify(nlcd, rclmat)
+  
+  ## read aridity
+  ai <- rast("data/Global-AI_ET0_v3_annual/ai_v3_yr.tif")
+  ai <- ai * 0.0001
+  
+  ## project nlcd data and change res to match aridity raster
+  nlcd_class_proj <- project(nlcd_class, ai,
+                             method = "near",
+                             threads = TRUE,
+                             use_gdal = TRUE,
+                             by_util = FALSE)
+  ai_masked <- mask(ai, nlcd_class_proj) 
+  return(as_tibble(ai_masked, na.rm = TRUE))
+  
+}
 
-plot_ai_summary <- function(bac_df, nut_df) {
-
+plot_ai_summary <- function(bac_df, nut_df, aridity_landuse) {
+  
   ai <- rast("data/Global-AI_ET0_v3_annual/ai_v3_yr.tif")
   ai <- ai * 0.0001 
   
@@ -536,15 +588,17 @@ plot_ai_summary <- function(bac_df, nut_df) {
   cropped_ai <- crop(ai, us_file_trans) |> 
     mask(us_file_trans)
   
-  plot(cropped_ai)
   
   cropped_ai_tibble <- as_tibble(cropped_ai, na.rm = TRUE)
   
-  bac_ai <- tibble(awi_pm_sr_yr = bac_df$model_df$ai[,1] + bac_df$mean,
+  bac_ai <- tibble(awi_pm_sr_yr = bac_df$model_df$ai_uncentered,
                    label = "BMP AI Values")
   
-  nut_ai <- tibble(awi_pm_sr_yr = nut_df$model_df$ai[,1] + bac_df$mean,
+  nut_ai <- tibble(awi_pm_sr_yr = nut_df$model_df$ai_uncentered,
                    label = "BMP AI Values")
+  
+  landuse_ai <- tibble(awi_pm_sr_yr = aridity_landuse$awi_pm_sr_yr,
+                       label = "Developed and Agricultural AI Values")
   
   
   
@@ -552,23 +606,31 @@ plot_ai_summary <- function(bac_df, nut_df) {
     mutate(label = "U.S. AI Values") |> 
     bind_rows(bac_ai) |> 
     bind_rows(nut_ai) |> 
+    bind_rows(landuse_ai) |> 
     ggplot() +
-    geom_density(aes(awi_pm_sr_yr,
-                     color = label,
-                     fill = label),
-                 alpha = 0.5,
-                 trim = TRUE,
-                 bw = "bcv") +
-    scale_y_continuous(expand = expansion(mult = c(0,0.05))) +
-    scale_x_continuous(expand = expansion(mult = c(0,0.05))) +
+    geom_density_ridges(aes(x = awi_pm_sr_yr,
+                            y = label,
+                            color = label,
+                            fill = label,
+                            height = after_stat(density)),
+                        stat = "density",
+                        scale = 1,
+                        alpha = 0.5,
+                        trim = TRUE,
+                        bw = "bcv") +
+    scale_y_discrete(labels = c("BMP Study Locations", "Developed and\nAgricultural Land", "U.S."),
+                     expand = c(0, 0)) +
+    scale_x_continuous(expand = expansion(mult = c(0.02,0.05))) +
     scale_color_brewer("", palette = "Dark2") +
     scale_fill_brewer("", palette = "Dark2") +
     coord_cartesian(xlim = c(0,4)) +
-    labs(x = "Aridity index", y = "Density") +
+    labs(x = "Aridity index", y = "") +
     theme_mps_noto(base_family = "Manrope Regular") +
-    theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
+    theme(axis.text.y = element_text(hjust = 1),
+          axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
           axis.title.x = element_text(hjust = 0),
           axis.title.y = element_text(hjust = 1),
+          legend.position = "none",
           panel.grid = element_blank(),
           strip.background = element_rect(fill = "grey90",
                                           color = "grey90"),

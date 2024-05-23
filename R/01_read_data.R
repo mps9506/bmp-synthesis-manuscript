@@ -60,6 +60,19 @@ download_aridity <- function(url) {
 }
 
 
+# download 2021 NLCD data https://s3-us-west-2.amazonaws.com/mrlc/nlcd_2021_land_cover_l48_20230630.zip
+download_nlcd <- function(url) {
+  options(timeout = max(3600, getOption("timeout")))
+  dir <- "data/nlcd"
+  temp_path <- tempfile()
+  if (file.exists(temp_path))  'file alredy exists' else download.file(url = url, 
+                                                                       destfile = temp_path,
+                                                                       method = "libcurl",
+                                                                       mode = "wb") 
+  unzip(zipfile = temp_path, exdir = dir)
+}
+
+
 
 add_aridity <- function(df) {
   ai <- rast("data/Global-AI_ET0_v3_annual/ai_v3_yr.tif")
@@ -72,6 +85,7 @@ add_aridity <- function(df) {
   
   ai_centered <- scale(df$ai, scale = FALSE)
   df <- df |> 
+    mutate(ai_uncentered = ai) |> 
     mutate(ai = ai_centered)
   
   return(list(model_df = df,

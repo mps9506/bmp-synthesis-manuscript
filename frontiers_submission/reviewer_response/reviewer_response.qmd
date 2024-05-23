@@ -1,0 +1,309 @@
+---
+title: "Response to reviewer comments"
+format:
+  hikmah-response-typst: default
+---
+
+Thank you for giving us the opportunity to revise our manuscript. Reviewer comments were especially constructive and have improved the manuscript. The Reviewers' comments are cited or summarized in [red italicized text]{.memo-reviewer-inline}, and our responses are in black Roman text. We include excerpts from our revised manuscript in [blue]{.memo-excerpt-inline}.
+
+# Reviewer 2
+
+::: {.memo-reviewer}
+***Reviewer 2***: The reported work only used BMP category and large-scale 
+spatial indicators as predictors of their performance, but the parameters of 
+BMPs (e.g., the size of infiltration) are missing. This may be why the model 
+has a high variance.
+:::
+
+We generally found that specific BMP parameters such as infiltration size, 
+drainage area, infiltration media/soil types, and other factors relevant to BMP 
+performance were not well reported across studies. 
+Our characterization of BMPs is further complicated by inclusion of BMPs that
+rely on completely different pollutant removal or prevention mechanisms. 
+For example, nutrient management BMPs do not rely on a infiltration area
+and we would not be able to include these types of management BMPs if 
+infiltration size were a regression moderator.
+This is certainly a limitation of the study, but the purpose of the project
+is a broad scale look at BMPs. Further studies investigating specific BMP types
+with common removal mechanisms are certainly appropriate. 
+To address the Reviewer's concerns, we have added the following to the Discussion:
+
+::: {.memo-excerpt}
+Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+:::
+
+---
+
+::: {.memo-reviewer}
+***Reviewer 2***: The heterogeneity of FIB, TN, TP, TSS are high, the study 
+require subgroup analysis or sensitivity analysis on this issue.
+:::
+
+I appreciate this comment, but want to caution against extensive subgroup 
+analysis/sensitivity analysis. While heterogeneity was indeed high, 
+the primary purpose of the meta-regression models are to investigate how much
+of the variance that a set of pre-determined moderators explain. Meta-regression
+were conducted in lieu of traditional subgroup analysis. While additional 
+subgroup analysis could be conducted based on additional moderators, we risk 
+conducting a "data-dredging" study. 
+
+::: {.memo-excerpt}
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+:::
+
+# Reviewer 3
+
+::: {.memo-reviewer}
+***Reviewer 3***: Is there any moderating effects of study area size or scale (i.e., field, farm, and watershed) and urban versus agricultural source on the performance of BMPs?
+:::
+
+---
+
+::: {.memo-reviewer}
+***Reviewer 3***:  What is the temporal coverage of the aridity index? Does it reflect long-term climate patterns or only a single year? Using a snapshot of the climate variable would be less optimal.
+:::
+
+---
+
+::: {.memo-reviewer}
+***Reviewer 3***:  Since the locations of the studies are not precisely defined in many cases, please provide more details on how to spatially link studies to the aridity index map to obtain aridity values.
+:::
+
+---
+
+::: {.memo-reviewer}
+***Reviewer 3***:  Have you examined the effects of soil biophysical properties in addition to aridity? Can you obtain more detailed spatial locations of the various studies so to link these studies to local soil conditions in addition to climate?
+:::
+
+---
+
+
+::: {.memo-reviewer}
+***Reviewer 3***:  Could you please elaborate more on the topic “scaling BMP pollutant reductions to basin wide water quality improvement remains a substantial challenge”. This is a very interesting point, what modeling or mixed approaches exist to achieve this goal?
+:::
+
+---
+
+::: {.memo-reviewer}
+***Reviewer 3***:  Please expand the abbreviation “ROSES” in the main text.
+:::
+
+---
+
+::: {.memo-reviewer}
+***Reviewer 3***:  Change “Standard deviation of control measreuments” to “… measurements” in Table 2.
+:::
+
+---
+
+
+::: {.memo-reviewer}
+***Reviewer 3***:  Change “and outlier” to “an” in Figure S9 to S14.
+:::
+
+---
+
+
+::: {.memo-reviewer}
+***Reviewer 3***:  In the sentence "Any study values outside of the full model confidence intervals would be considered an outlier.", by “study values”, do you mean the intercept estimate of a study?
+:::
+
+---
+
+::: {.memo-reviewer}
+***Reviewer 3***:  Explain the abbreviated parameters in Figure 1 – 5 (e.g. TS, TP, TN, etc.)
+:::
+
+Added definitions to all the figure captions.
+
+---
+
+::: {.memo-reviewer}
+***Reviewer 3***:   Delete one of the “the” at line 277.
+:::
+
+Fixed.
+
+# Reviewer 5
+
+::: {.memo-reviewer}
+***Reviewer 5***:   Add spatial extent covered in abstract
+:::
+
+---
+
+::: {.memo-reviewer}
+***Reviewer 5***:   Add sediments or suspended sediments to keywords if there is space
+:::
+
+---
+
+::: {.memo-reviewer}
+***Reviewer 5***:   1st Paragraph of introduction (Line 28), add a sentence about sediment impairments to waters similar to the ones discussing FIBs and nutrients impairments
+:::
+
+---
+
+::: {.memo-reviewer}
+***Reviewer 5***:   Include small paragraph in discussion about how search terms of “BMPs” or “best management practices” and inclusion criteria (concentrations) may have not captured some studies. For example, if the study used the name of the practice instead of BMP. Also, there are a suite of agricultural drainage practices but studies generally focus on load reduction (from flow reduction) compared to concentration reduction (see Frankenberger et al., 2023 https://elibrary.asabe.org/abstract.asp?aid=54314 who’s review has a cluster of those studies in the Midwest, which is blank on this map). 
+:::
+
+---
+
+::: {.memo-reviewer}
+***Reviewer 5***:   Lines 61 – 64 consider adding an example BMP for instances where effluent is and is not related to influent concentration
+:::
+
+---
+
+
+::: {.memo-reviewer}
+***Reviewer 5***:   Line 136 – specify version of R used
+:::
+
+Added.
+
+---
+
+
+::: {.memo-reviewer}
+***Reviewer 5***:   Line 149 – check for consistency in defining equation terms (CV v. CV2) 
+:::
+
+Fixed. Now reads as below:
+
+::: {.memo-excerpt}
+$$
+v(ROM) = \frac{\sum_{i=1}^{K}{(CV^2_{control,i})/K}}{n_{control}} + \frac{\sum_{i=1}^{K}{(CV^2_{experiment,i})/K}}{n_{experiment}},
+$$
+
+where *v* represents the sampling variance, $CV^2_{control,i}$ and $CV^2_{experiment,i}$ are the squared coefficients of variation from the *i*th study for studies 1, 2, ..., *K*.
+:::
+
+---
+
+
+::: {.memo-reviewer}
+***Reviewer 5***:   Line 160 – mean annual potential (or reference) evapotranspiration
+:::
+
+Fixed.
+
+---
+
+
+::: {.memo-reviewer}
+***Reviewer 5***:   Line 191 – “published after between 1999 and 2023” confusing wording, 2000-2022?
+:::
+
+Fixed.
+
+---
+
+
+::: {.memo-reviewer}
+***Reviewer 5***:   Line 194 – PO~4
+:::
+
+Fixed.
+
+---
+
+
+::: {.memo-reviewer}
+***Reviewer 5***:   Lines 213 – 214 – clarify “may not be reliable” in general, or just for lower aridity?
+:::
+
+---
+
+
+::: {.memo-reviewer}
+***Reviewer 5***:   Lines 61 – 64 consider adding an example BMP for instances where effluent is and is not related to influent concentration
+:::
+
+---
+
+
+::: {.memo-reviewer}
+***Reviewer 5***:   Lines 242-254: Nice discussion on spatial coverage with the caveat that we are not aware of the actual distribution of BMPs. However, I am curious, are BMPs over-represented or just predominately located in humid regions? Could it be related to larger population concentrations along the humid east coast than the arid west? Are detention practices common in locations with little rainfall and high potential loss of water to evaporation? See my recommendation for Figure 7 to potentially add a 3rd distribution of aridity index of urban & agricultural land covers across the US. 
+:::
+
+---
+
+
+::: {.memo-reviewer}
+***Reviewer 5***:  Lines 349 – 351: Based on your experience trying to synthesis information across studies in this review process, do you have recommendations for minimum reporting requirements or standards for future studies on BMP concentration reductions? If so, please list in text or perhaps in a box. 
+:::
+
+---
+
+
+::: {.memo-reviewer}
+***Reviewer 5***:   Consider defining abbreviated terms in the figure caption for clarity (e.g, DIN, FIB)
+:::
+
+We have added terms to all the figure captions.
+
+---
+
+
+::: {.memo-reviewer}
+***Reviewer 5***:  Table 1
+- Excluision Criteria → Exclusion Criteria
+- Under Inclusion Criteria/Outcomes include sediments in addition for FIB and nutrients
+- Under Exclusion criteria/Outcomes “Studies not explicitly linking reductions to a specific BMP…” it may be more clear if you say linking “concentration reductions”
+:::
+
+---
+
+::: {.memo-reviewer}
+***Reviewer 5***:  Figure 1
+- While the color palette may be appropriate for normal, trichromatic, and dichromatic conditions there is very little contrast in the monochromatic or grey-scale view. If article is laser printed or photocopied, it is difficult to distinguish between the stacked elements of the bar graphs. Maybe white or black outline separating stacked sections could help.
+- Please increase the length of the y-axis for panel C to for larger font size/less crowding
+:::
+
+---
+
+::: {.memo-reviewer}
+***Reviewer 5***:  Figure 3
+- Consider adjusting the background grey value for no-data in maps. In grey-scale/monochromatic view the mid-tone greens are indistinguishable from the no-value grey. Labeling the states with the number of studies does help.
+:::
+
+We changed to a transparent background for states with no data.
+
+---
+
+
+::: {.memo-reviewer}
+***Reviewer 5***:  Figure 4, 5, 6
+- Consider adding including the range in sampling variance in the caption or provide a visual key to demonstrate the values represented by differently sized points. 
+:::
+
+---
+
+
+::: {.memo-reviewer}
+***Reviewer 5***:  Figure 5
+- Add panel letters to figure caption to improve clarity.
+- Consider adding note for aridity index (annual precipitation/potential evapotranspiration) in the x-label or in the figure caption that higher values indicate more humid conditions.
+:::
+
+Thank you for the suggestions. We have incorporated all the suggestions to the 
+figure. 
+
+
+---
+
+
+::: {.memo-reviewer}
+***Reviewer 5***:  Figure 7
+- It is difficult to see the tail of the US. Aridity Index values, consider having a slight offset from zero above the x-axis/y-axis intercept.
+- Consider having a 3rd distribution shown – U.S. Aridity Index Values for urban and agricultural lands, with other land-covers filtered out, if these are the land-cover types that are associated with the placement of BMPs you analyzed. You could use a product with the same resolution as your Aridity Index values such as the 30m National Land Cover Database (https://www.usgs.gov/centers/eros/science/national-land-cover-database#overview )
+- Consider adding note for aridity index (annual precipitation/potential evapotranspiration) in the x-label or in the figure caption that higher values indicate more humid conditions.
+:::
+
+Thank you for the suggestions. We have incorporated all the suggestions to the 
+figure. 
+We switched from overlapping densities to a ridge plot with each category labeled
+on the y-axis since it gets difficult to discern densities with three overlapping
+plots.

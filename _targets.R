@@ -8,6 +8,7 @@ tar_option_set(packages = c("broom",
                             "ggforce",
                             "ggtext",
                             "ggrepel",
+                            "ggridges",
                             "grid",
                             "gridtext",
                             "httr",
@@ -69,6 +70,18 @@ list(
       ai_file_names
     },
     pattern = map(ai_file_names),
+    format = "file"
+  ),
+  
+  tar_target(nlcd, download_nlcd("https://s3-us-west-2.amazonaws.com/mrlc/nlcd_2021_land_cover_l48_20230630.zip"),
+             format = "file"),
+  tar_target(nlcd_file_names, nlcd), # not a format = "file" target
+  tar_target(
+    nlcd_files, {
+      nlcd # Re-hash all the files separately if any file changes.
+      nlcd_file_names
+    },
+    pattern = map(nlcd_file_names),
     format = "file"
   ),
   
@@ -271,10 +284,19 @@ list(
                                     plot = bmp_summary,
                                     device = cairo_pdf,
                                     width = 6,
-                                    height = 6.5,
+                                    height = 3,
                                     units = "in"),
              format = "file"),
   
+  tar_target(bmp_summary_param, plot_bmp_param_summary(bacteria_df, nutrient_df)),
+  tar_target(bmp_summary_param_file, ggsave("figures/bmp_summary_param.pdf",
+                                      plot = bmp_summary_param,
+                                      device = cairo_pdf,
+                                      width = 6,
+                                      height = 6,
+                                      units = "in"),
+             format = "file"),
+
   tar_target(bmp_temporal, plot_bmp_temporal(bacteria_df, nutrient_df)),
   tar_target(bmp_temporal_file, ggsave("figures/bmp_temporal_summary.pdf",
                                       plot = bmp_temporal$p1,
@@ -322,8 +344,11 @@ list(
                                              units = "in"),
              format = "file"),
   
+  tar_target(aridity_landuse, crop_aridity_to_land_use()),
+  
   tar_target(aridity_density, plot_ai_summary(bac_model_df,
-                                              nut_model_df)),
+                                              nut_model_df,
+                                              aridity_landuse)),
   
   tar_target(aridity_file, ggsave("figures/aridity_density.pdf",
                                   plot = aridity_density,
