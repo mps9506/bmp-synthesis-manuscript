@@ -191,7 +191,6 @@ plot_bmp_param_summary <- function(bac_df, nut_df) {
           axis.title.x.top = element_blank(),
           axis.title.y = element_text(hjust = 1),
           axis.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.7)),
-          axis.text.x.bottom = element_blank(),
           axis.text.x.top = element_blank(),
           axis.text.y.left = element_text(hjust = 1),
           legend.position = "none",

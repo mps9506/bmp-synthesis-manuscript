@@ -18,10 +18,10 @@ bac_length_marginal_effect_efficency|stem|d32737161e8dee0e|188485666dcf69c6|addd
 bac_length_marginal_effect_llRR|stem||93e996448057c104|45f52ceec3a88890|2127535853||t19733.512829246s||0|rds|local|vector|||0||could not find function plot_marginal_effect
 bac_length_marginal_effect_lnRR|stem|e447706311adde52|0b92862344064c91|e857e6bb439c32dc|-1815273386||t19733.882038442s|1b23cccd91e2d648|346652|rds|local|vector|||0.45||
 bac_m2|stem|3a6922713d837e7c|d2c9f2d17deea0b9|2ecb3cfacd38adb3|-1837589352||t19712.7872192134s|6556730b296d7213|119|rds|local|vector|||0||
-bac_marginal_effect_ai|stem|844ad2201a6faf16|1454012b520a9012|0d6df01f7cf910be|-905707995||t19864.4753131222s|bbaeea223f3578a4|325159|rds|local|vector|||0.14||
-bac_marginal_effect_conc|stem|80d0e3f70823a130|86440455fa41aa1b|bab737f2e486f6ec|1146681575||t19864.4753102926s|9d75147b3c88a4f7|262554|rds|local|vector|||0.49||
-bac_marginal_means|stem|f02c15304c5f0ee3|a398b9e242a5454d|9a18feb0d81229da|-1569579115||t19864.4756634676s|e587c321f1a8fed5|412405|rds|local|vector|||0.01||
-bac_marginal_means_file|stem|d8c01e22bbe20d1f|71135b0aaa718eb6|8c55a40f2b2968fb|-1597200598|figures/bac_predicted.pdf|t19864.4756876101s|995721cbcdd25ca8|33338|file|local|vector|||0.52||
+bac_marginal_effect_ai|stem|47e7e9d04433d0f5|1454012b520a9012|75c319d42f5d392f|-905707995||t19867.701551291s|bf8bc0744295caac|332990|rds|local|vector|||0.22||
+bac_marginal_effect_conc|stem|df6e73ac95bb3e00|86440455fa41aa1b|280bab6d6d7d8894|1146681575||t19867.7015538755s|f4d59524f95352ab|266501|rds|local|vector|||0.11||
+bac_marginal_means|stem|5527fc8077ad04e3|a398b9e242a5454d|ce1f994581d31b32|-1569579115||t19867.7015563941s|3c7047277e41dffe|420491|rds|local|vector|||0.03||
+bac_marginal_means_file|stem|007f8cb0e0a3570c|71135b0aaa718eb6|3542d232880b6daa|-1597200598|figures/bac_predicted.pdf|t19867.7015677669s|cd1524039149a0e7|36010|file|local|vector|||0.94||
 bac_missing_sd|stem|7eac150cb1650f02|66a9c6e4a1932f98|a784006a07ac942c|-917052478||t19864.4754380659s|bf160f080fbf1dbb|99|rds|local|vector|||0||
 bac_model|stem|b3823d92d0c2f4e7|7fe30b6eabad2015|8e58fc8d2ffe82c9|-1106775276||t19864.4747013478s|3bb94ff1fcbcef4f|152694|rds|local|vector|||1.46||
 bac_model_df|stem|fd56ed35f3c47b96|6992153558450460|13e1bc93eae58913|-1286118943||t19864.4743490936s|3299557494aabee7|10012|rds|local|vector|||27.6||
@@ -33,8 +33,8 @@ bac_table|stem|28dcdf43e6df0f3b|67c2a12da849fd83|ea9496f6e035f5bc|1735694353||t1
 bacteria_df|stem|a1eeb7fec0ba81c7|78c229553dd21504|57d23e0e79410109|1044902306||t19740.8135496334s|ed687bde6fb1ad3f|9668|rds|local|vector|||6.24|package flextable was built under R version 4.3.2. package ggrepel was built under R version 4.3.2. package latex2exp was built under R version 4.3.2. package metafor was built under R version 4.3.2. package metadat was built under R version 4.3.2. package metagear was built under R version 4.3.2. package mice was built under R version 4.3.2. package officer was built under R version 4.3.2. package sf was built under R version 4.3.2. package units was built under R version 4.3.2. 1m22mThere was 1 warning in mutate.1m22m36mℹ39m In argument Longitude  as.numericLongitude.Caused by warning33m39m NAs introduced by coercion|
 bmp_summary|stem|13b2ab4d0b58956e|448802345c3d7293|238e67a892223390|-365978883||t19866.5982865278s|8c2a679b011e38aa|210934|rds|local|vector|||0.5||
 bmp_summary_file|stem|c79f2804660e72b5|88ebff5241373c0d|0125b7ae86bdf0ff|-1771856167|figures/bmp_summary.pdf|t19866.5982965997s|86fafd161a87f0c8|20197|file|local|vector|||0.83||
-bmp_summary_param|stem|a75b74dfbb043e6a|a8e0c8c23e2d3788|cb57d7904ce87904|-488553959||t19866.8275388572s|636df0e5c6c26b74|168452|rds|local|vector|||0.22||
-bmp_summary_param_file|stem|2807d2c0d9fe9fa1|160b28112cebdb72|bd83af5819c25701|-888094412|figures/bmp_summary_param.pdf|t19866.8288681299s|eb74f3c8e52e4a96|15448|file|local|vector|||0.58||
+bmp_summary_param|stem|ae6d6a1fa4a2eef4|a8e0c8c23e2d3788|73a794f62c2aede8|-488553959||t19867.4950578135s|d3a29f3a647a1188|168445|rds|local|vector|||0.21||
+bmp_summary_param_file|stem|0dc9a1df2407322e|160b28112cebdb72|a64aa9ee7b663620|-888094412|figures/bmp_summary_param.pdf|t19867.4950657289s|c82d61e486065650|16048|file|local|vector|||0.61||
 bmp_temporal|stem|861922177db74688|09861ff314cca0de|3c911367297aabb4|-1938396845||t19755.7585516347s|09966e2742c3011c|184131|rds|local|vector|||0.5||
 bmp_temporal_file|stem|9082c9db0536deb8|567b38be42533b74|d9e21bb2655aabd0|-1978626400|figures/bmp_temporal_summary.pdf|t19755.7591343454s|76302b83e09fcdea|12941|file|local|vector|||0.91||
 bubble_plot|function|8510a0c6ff343721|||||||||||||||
@@ -81,7 +81,7 @@ load_df|function|d28297703a323dc3|||||||||||||||
 makeArgs.rma|function|c3d1a00e018eee0d|||||||||||||||
 marginal_means|stem|66dd6cbe22058030|be81689d19892252|38ff396c9d2e7307|1594987119||t19730.7617930863s||1156081|rds|local|vector|||0||object tn_marginal_means not found
 marginal_means_file|stem|69ce76b575dafcb5|c9bcb4c37319f545|d24c626d5d872db9|1107981400|figures/marginal_means.pdf|t19730.7618283672s|b2b100eede5f1f44|77078|file|local|vector|||2.28||
-mult_orch_plot|function|0fc7230255ffd02e|||||||||||||||
+mult_orch_plot|function|d24c96a54fd7fd27|||||||||||||||
 nlcd|stem|04ab8ccad61db225|a9e90c9d3ad3d197|33db4a052004269a|-1948398114|data/nlcd/nlcd_2021_land_cover_l48_20230630.ige*data/nlcd/nlcd_2021_land_cover_l48_20230630.img*data/nlcd/nlcd_2021_land_cover_l48_20230630.xml|t19864.5642844082s|5fe6dec311e42eff|26786978921|file|local|vector|||189.64|package ggrepel was built under R version 4.3.2. package latex2exp was built under R version 4.3.2. package metafor was built under R version 4.3.2. package metadat was built under R version 4.3.2. package metagear was built under R version 4.3.2. package sf was built under R version 4.3.2. package terra was built under R version 4.3.2. package units was built under R version 4.3.2|
 nlcd_file_names|stem|07b217fba2db84ff|e44ad4bef29765eb|5fa6a28dd2a185b4|1090073376||t19864.5651265845s|f55bdaeb17afeaf9|102|rds|local|vector||nlcd_file_names_f7166933*nlcd_file_names_ceab09ee*nlcd_file_names_dee20ff5|0||
 nlcd_files|pattern|89a7338e77500336|6c190a8025caf7d1||-745304277||||26786978921|file|local|vector||nlcd_files_bacde074*nlcd_files_b0b66ca6*nlcd_files_0a142e57|0||
@@ -90,16 +90,16 @@ nlcd_files_b0b66ca6|branch|a554f9a4641ba0d6|6c190a8025caf7d1|5fa6a28dd2a185b4|76
 nlcd_files_bacde074|branch|1a50d36a045724d1|6c190a8025caf7d1|5fa6a28dd2a185b4|-1982145869|data/nlcd/nlcd_2021_land_cover_l48_20230630.ige|t19864.564254124s|a5ca07aa10734665|26350989969|file|local|vector|nlcd_files||0||
 nut_model_df|stem|f003f450d0d14f8e|0d97f3d1914f458e|6f53974c9dec9aba|795120415||t19864.4746738616s|bb97e9e950cf9248|13743|rds|local|vector|||28.05||
 nutrient_df|stem|141e6e2120f0094c|854bc5a48b86779d|57d23e0e79410109|-889250482||t19734.8723302949s|302ee8e72fa7af34|19430|rds|local|vector|||16.58|package flextable was built under R version 4.3.2. package metafor was built under R version 4.3.2. package metadat was built under R version 4.3.2. package metagear was built under R version 4.3.2. package mice was built under R version 4.3.2. package officer was built under R version 4.3.2. package units was built under R version 4.3.2|
-overall_effect|stem|f005e4e3217ed59d|dbf7b618385b44c5|55d4f750d74151b1|952458352||t19864.475570394s|722c0e2e5ad92c49|916895|rds|local|vector|||1.29||
-overall_effect_file|stem|63f0ca190d345fab|c0de6d3ac17b5f24|197b8130edb2dd15|754361718|figures/overall_effect.pdf|t19864.475680255s|f9bb941fb6a8d47a|43755|file|local|vector|||1.14||
+overall_effect|stem|4e27430bad6ca3a6|dbf7b618385b44c5|af016dd6aa4439d7|952458352||t19867.7163111823s|056eea369550257b|960747|rds|local|vector|||1.68||
+overall_effect_file|stem|a261f1546c863c2e|c0de6d3ac17b5f24|0dc715d331dd4b7f|754361718|figures/overall_effect.pdf|t19867.7163319677s|0d4f36c49c8673b6|45657|file|local|vector|||1.72||
 patch_bac_marginal_means|function|30da9390caa4c828|||||||||||||||
 patch_marginal_means|function|ccc6b827c7043815|||||||||||||||
 patch_phos_marginal_means|function|30da9390caa4c828|||||||||||||||
-phos_marginal_means|stem|1104de4838c33382|5dd8166d870c8215|b430316d4c57e1da|-350772456||t19864.4756656709s|d0ffb8087310dea4|330574|rds|local|vector|||0.01||
-phos_marginal_means_file|stem|d121c7c361bb741e|5cdbb45947ec4f14|459b6d40a28479c1|-449777706|figures/phos_predicted.pdf|t19864.4756910882s|886ca90baa2285bc|18508|file|local|vector|||0.28||
+phos_marginal_means|stem|dcc156048aa23828|5dd8166d870c8215|d321f8bfcde5e821|-350772456||t19867.697026799s|e7e43e9c72501702|334580|rds|local|vector|||0||
+phos_marginal_means_file|stem|1d8a2a2154d4d535|5cdbb45947ec4f14|12bb9a94f514af2c|-449777706|figures/phos_predicted.pdf|t19867.6970373229s|94e0d60d92a318c1|21645|file|local|vector|||0.7||
 plot_ai_summary|function|ab2aded7a09d7050|||||||||||||||
 plot_bac_marginal_effect|function|338a2c78147c4a22|||||||||||||||
-plot_bmp_param_summary|function|d448dd7266e10657|||||||||||||||
+plot_bmp_param_summary|function|f5fe0a443f1f9801|||||||||||||||
 plot_bmp_summary|function|c12e42c3ccf8b522|||||||||||||||
 plot_bmp_temporal|function|f176103ca0d8b374|||||||||||||||
 plot_conditional_effect|function|ef0c64311fc02e49|||||||||||||||
@@ -108,8 +108,8 @@ plot_map|function|e7d55fd29cfd637e|||||||||||||||
 plot_marginal_effect|function|be3288fa02f4044b|||||||||||||||
 plot_marginal_effect_eff|function|44ebfc72f6c2b0a6|||||||||||||||
 plot_marginal_effect_llRR|function|346b92c7bdb2daf7|||||||||||||||
-plot_marginal_effect_lnRR|function|ba29b27440d52a91|||||||||||||||
-po4_conc_marginal_means|stem|16149e5046c5926c|0778eccd0cf7242a|ef140838b12bd2dc|1889448365||t19864.4754867862s|a01ab2083178d958|199436|rds|local|vector|||0.06||
+plot_marginal_effect_lnRR|function|bf0bffc195cd7831|||||||||||||||
+po4_conc_marginal_means|stem|1a551a1379ebf553|0778eccd0cf7242a|3dfd948e98ad2fac|1889448365||t19867.7015466842s|132359f465169416|203505|rds|local|vector|||0.09||
 po4_forest_plot|stem|05b419e69864ca84|e8170af99c1a68e6|7a09af755be1298d|-407762248||t19864.4754903739s|b1483d44dd24a939|196964|rds|local|vector|||0.01||
 po4_i2|stem|97dd594ba6661f8d|02fa13e4618b24f9|e537f2f2046a2ab2|1484786310||t19864.4754749973s|f02b269bc80ae470|129|rds|local|vector|||0.02||
 po4_i2_null|stem|4ee26670af58f7ca|18e295066a564567|e537f2f2046a2ab2|-1556883159||t19864.4754908981s|f02b269bc80ae470|129|rds|local|vector|||0||
@@ -154,7 +154,7 @@ tn_r2|stem|78627efd819dffc5|44192d35357a3bf5|73ae983ec53410ce|-2022349084||t1986
 tn_sens|stem|c7912c4f11539101|ba4274f6000544b4|2201261e846a0e5a|-1402311578||t19864.4755922974s|9f2255875e0b0dda|152313|rds|local|vector|||1.44||
 tn_sse|stem|f51a410ba6afe0f5|7694dafc141296d8|5f31353e2879eb27|-1512847906||t19864.475573185s|59567d4da779b6df|173833|rds|local|vector|||0.19|font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database. font family Manrope Regular not found in PostScript font database|
 tn_table|stem|6668fdf2d2531dda|ef0166c84705cec7|656a74e03ff098e5|2104643872||t19864.4756813832s|8bdba1c2c514760d|775|rds|local|vector|||0.03||
-tp_conc_marginal_means|stem|48a1bcc79da39696|f719d5aa225cae8d|9d142505eb353986|-353756878||t19864.475519271s|9003e43da1a41ad1|226849|rds|local|vector|||0.06||
+tp_conc_marginal_means|stem|72169344810688e8|f719d5aa225cae8d|2f564498928bc8fa|-353756878||t19867.7015441217s|af7b137e316d8840|230876|rds|local|vector|||0.32||
 tp_forest_plot|stem|4b8d76b33edb60c8|8375e6b137a62362|1fd507148ad1c20b|-421241197||t19864.4755206928s|5eb76b6c45875f83|221570|rds|local|vector|||0.01||
 tp_i2|stem|7c7ce384aa120896|809cd255079ad15a|fc2ea8b2f8079360|-756958170||t19864.4755196379s|7dead8e41ac4f62d|130|rds|local|vector|||0||
 tp_i2_null|stem|f8ed9b59610e6b92|a2c6d154372e928a|fc2ea8b2f8079360|357617684||t19864.4755148557s|7dead8e41ac4f62d|130|rds|local|vector|||0||

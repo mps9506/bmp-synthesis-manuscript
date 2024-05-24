@@ -137,7 +137,10 @@ plot_marginal_effect_lnRR <- function(model,
                                            name = "Efficiency (%)",
                                            breaks = sec_y_breaks,
                                            labels = sec_y_labels)) +
-    scale_radius(trans = "sqrt") +
+    scale_radius(name = "Precision (1/SE):",
+                 trans = "sqrt") +
+    
+    guides(size = guide_legend(title.position = "top")) +
     labs(x = xlab,
          y = ylab) +
     theme_mps_noto(base_family = "Manrope Regular") +
@@ -148,7 +151,8 @@ plot_marginal_effect_lnRR <- function(model,
           axis.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.8)),
           axis.text.y.left = element_text(hjust = 1),
           axis.text.y.right = element_text(hjust = 0),
-          legend.position = "none",
+          legend.text = element_text(size = rel(0.8)),
+          legend.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(0.8)),
           panel.grid.major.y = element_blank(),
           strip.background = element_rect(fill = "grey90",
                                           color = "grey90"),
@@ -166,9 +170,14 @@ plot_marginal_effect_lnRR <- function(model,
     if(by == "BMP_SubCat") {
       p1 <- p1 +
         scale_fill_manual(values = pal_vals) +
-        scale_color_manual(values = pal_vals)
-    }    
-  }
+        scale_color_manual(values = pal_vals) +
+        guides(color = "none", fill = "none") +
+        theme(legend.position = c(0.2,0.06))
+    }
+  } else {
+    p1 <- p1 +
+      theme(legend.position = c(0.75,0.15))
+  }   
   if(!is.null(ylim)) {
     p1 <- p1 +
       coord_cartesian(ylim = ylim)
@@ -581,13 +590,16 @@ mult_orch_plot <- function(bac, tn, tin, tp, po4, tss) {
                                            labels = sec_y_labels)) +
     scale_color_manual(values = "#66C2A5") +
     scale_fill_manual(values = "#66C2A5") +
+    guides(size = guide_legend(title.position = "top")) +
     theme_mps_noto(base_family = "Manrope Regular") +
     theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
           axis.title.x = element_text(hjust = 0),
           axis.title.y = element_text(hjust = 1),
           axis.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.7)),
           axis.text.x.bottom = element_blank(),
-          legend.position = "none",
+          legend.position = c(0.8,0.5),
+          legend.text = element_text(size = rel(0.8)),
+          legend.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(0.8)),
           panel.grid.major.y = element_blank(),
           strip.background = element_rect(fill = "grey90", 
                                           color = "grey90"),
@@ -605,6 +617,7 @@ mult_orch_plot <- function(bac, tn, tin, tp, po4, tss) {
                                            labels = sec_y_labels)) +
     scale_color_manual(values = "#FC8D62") +
     scale_fill_manual(values = "#FC8D62") +
+    guides(size = guide_legend(title.position = "top")) +
     theme_mps_noto(base_family = "Manrope Regular") +
     theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
           axis.title.x = element_text(hjust = 0),
@@ -613,7 +626,9 @@ mult_orch_plot <- function(bac, tn, tin, tp, po4, tss) {
           axis.text.x.bottom = element_blank(),
           axis.text.x.top = element_blank(),
           axis.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.7)),
-          legend.position = "none",
+          legend.position = c(0.8,0.5),
+          legend.text = element_text(size = rel(0.8)),
+          legend.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(0.8)),
           panel.grid.major.y = element_blank(),
           strip.background = element_rect(fill = "grey90", 
                                           color = "grey90"),
@@ -632,6 +647,7 @@ mult_orch_plot <- function(bac, tn, tin, tp, po4, tss) {
                                            labels = sec_y_labels)) +
     scale_color_manual(values = "#8DA0CB") +
     scale_fill_manual(values = "#8DA0CB") +
+    guides(size = guide_legend(title.position = "top")) +
     theme_mps_noto(base_family = "Manrope Regular") +
     theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
           axis.title.x = element_text(hjust = 0),
@@ -640,7 +656,9 @@ mult_orch_plot <- function(bac, tn, tin, tp, po4, tss) {
           axis.text.x.bottom = element_blank(),
           axis.text.x.top = element_blank(),
           axis.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.7)),
-          legend.position = "none",
+          legend.position = c(0.8,0.5),
+          legend.text = element_text(size = rel(0.8)),
+          legend.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(0.8)),
           panel.grid.major.y = element_blank(),
           strip.background = element_rect(fill = "grey90", 
                                           color = "grey90"),
@@ -659,6 +677,7 @@ mult_orch_plot <- function(bac, tn, tin, tp, po4, tss) {
                                            labels = sec_y_labels)) +
     scale_color_manual(values = "#E78AC3") +
     scale_fill_manual(values = "#E78AC3") +
+    guides(size = guide_legend(title.position = "top")) +
     theme_mps_noto(base_family = "Manrope Regular") +
     theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
           axis.title.x = element_text(hjust = 0),
@@ -667,7 +686,9 @@ mult_orch_plot <- function(bac, tn, tin, tp, po4, tss) {
           axis.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.7)),
           axis.text.x.bottom = element_blank(),
           axis.text.x.top = element_blank(),
-          legend.position = "none",
+          legend.position = c(0.8,0.5),
+          legend.text = element_text(size = rel(0.8)),
+          legend.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(0.8)),
           panel.grid.major.y = element_blank(),
           strip.background = element_rect(fill = "grey90", 
                                           color = "grey90"),
@@ -686,6 +707,7 @@ mult_orch_plot <- function(bac, tn, tin, tp, po4, tss) {
                                            labels = sec_y_labels)) +
     scale_color_manual(values = "#A6D854") +
     scale_fill_manual(values = "#A6D854") +
+    guides(size = guide_legend(title.position = "top")) +
     theme_mps_noto(base_family = "Manrope Regular") +
     theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
           axis.title.x = element_text(hjust = 0),
@@ -694,7 +716,9 @@ mult_orch_plot <- function(bac, tn, tin, tp, po4, tss) {
           axis.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.7)),
           axis.text.x.bottom = element_blank(),
           axis.text.x.top = element_blank(),
-          legend.position = "none",
+          legend.position = c(0.8,0.5),
+          legend.text = element_text(size = rel(0.8)),
+          legend.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(0.8)),
           panel.grid.major.y = element_blank(),
           strip.background = element_rect(fill = "grey90", 
                                           color = "grey90"),
@@ -713,6 +737,7 @@ mult_orch_plot <- function(bac, tn, tin, tp, po4, tss) {
                                            labels = sec_y_labels)) +
     scale_color_manual(values = "#FFD92F") +
     scale_fill_manual(values = "#FFD92F") +
+    guides(size = guide_legend(title.position = "top")) +
     theme_mps_noto(base_family = "Manrope Regular") +
     theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
           axis.title.x = element_text(hjust = 0),
@@ -720,7 +745,9 @@ mult_orch_plot <- function(bac, tn, tin, tp, po4, tss) {
           axis.title.y = element_text(hjust = 1),
           axis.text = element_text(family = "Manrope Light", face = "plain", size = rel(0.7)),
           axis.text.x.top = element_blank(),
-          legend.position = "none",
+          legend.position = c(0.8,0.5),
+          legend.text = element_text(size = rel(0.8)),
+          legend.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(0.8)),
           panel.grid.major.y = element_blank(),
           strip.background = element_rect(fill = "grey90", 
                                           color = "grey90"),

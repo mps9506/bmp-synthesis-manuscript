@@ -262,6 +262,11 @@ We have added terms to all the figure captions.
 - Please increase the length of the y-axis for panel C to for larger font size/less crowding
 :::
 
+We moved panel c to a new figure (now figure 2). The parameters are not plotted on 
+individual facets with the overall distribution in light grey in the background
+to reduce reliance on color for parameter identification. We also improved
+legibility of the y-axis.
+
 ---
 
 ::: {.memo-reviewer}
@@ -278,6 +283,8 @@ We changed to a transparent background for states with no data.
 ***Reviewer 5***:  Figure 4, 5, 6
 - Consider adding including the range in sampling variance in the caption or provide a visual key to demonstrate the values represented by differently sized points. 
 :::
+
+Legends indicating sampling variance have been added to figures.
 
 ---
 
