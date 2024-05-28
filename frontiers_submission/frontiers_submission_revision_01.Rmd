@@ -32,7 +32,7 @@ affiliation:
 
 # Abstract can also be provided at the 
 abstract: |
-  We conducted a systematic review of published nonpoint source water quality best management practice (BMP) studies and used a meta-analysis approach to describe variance in pollutant removal performance. Despite high variance, we found the BMPs on average were effective at reducing fecal indicator bacteria (FIB), total nitrogen (TN), total phosphorus (TP), and total suspended sediment (TSS) concentrations. We explored how much BMP pollutant removal process, influent pollutant concentration, and aridity effected BMP performance. We found that influent concentration and interaction effect between the BMP pollutant removal process and aridity explained a substantial amount of variance in BMP performance in FIB removal. Influent concentration explained a small amount of variability in BMP removal of TP and orthophosphate (PO~4~). We did not find evidence that any of our chosen variables moderated BMP performance in nitrogen or TSS removal. Through our systematic review, we found inadequate spatial representation of BMP studies to capture the underlying variability in climate, soil, and other conditions that could impact BMP performance.
+  We conducted a systematic review of published nonpoint source water quality best management practice (BMP) studies conducted in the United States and used a meta-analysis approach to describe variance in pollutant removal performance. Despite high variance, we found the BMPs on average were effective at reducing fecal indicator bacteria (FIB), total nitrogen (TN), total phosphorus (TP), and total suspended sediment (TSS) concentrations. We explored how much BMP pollutant removal process, influent pollutant concentration, and aridity effected BMP performance. We found that influent concentration and interaction effect between the BMP pollutant removal process and aridity explained a substantial amount of variance in BMP performance in FIB removal. Influent concentration explained a small amount of variability in BMP removal of TP and orthophosphate (PO~4~). We did not find evidence that any of our chosen variables moderated BMP performance in nitrogen or TSS removal. Through our systematic review, we found inadequate spatial representation of BMP studies to capture the underlying variability in climate, soil, and other conditions that could impact BMP performance.
 keywords:
   - best management practice
   - water quality
@@ -236,7 +236,9 @@ Fecal indicator bacteria study searches included the following query: “fecal i
 Results from each database were first filtered to remove duplicates.
 After removal of duplicates, each member of the research team (*n* = 4) was assigned a subset of studies to evaluate if they should be included (Table \@ref(tab:criteria)).
 Each study was reviewed by two team members and differences in opinion were collectively discussed and agreed upon before progressing.
-The remaining studies were split among team members for data extraction (Table \@ref(tab:datvars)), again with at least two team members reviewing each study. 
+The remaining studies were split among team members for data extraction (Table \@ref(tab:datvars)), again with at least two team members reviewing each study.
+Study locations were recrorded as latitude and longitude coordinates as described in studies.
+If coordinates were not provided, the study team used Google Maps to locate approximate study location using site descriptions (county, city, municipal buildings, etc.) from the study and recorded the coordinates.
 If data was provided in figures, the data was extracted with the WebPlotDigitizer tool [@rohatgiWebPlotDigitizer2022]. 
 Searches, review, and data extractions were conducted separately for FIB and nutrient related parameters.
 See Figure S1 and S2 for RepOrting standards for Systematic Evidence Syntheses 
@@ -252,7 +254,7 @@ tibble(
                            "Studies conducted within the United States.",
                            "Studies published from 2000 through 2022."),
   "Excluision Criteria" = c("Synopsis or review studies, reports with reductions based on modeled or other estimated reductions (e.g. TMDLs, watershed plans, or modelling studies.",
-                            "Studies not explicitly linking reductions to a specific BMP or insufficient information to quantify reductions.",
+                            "Studies not explicitly linking concentration reductions to a specific BMP or insufficient information to quantify reductions.",
                             "Studies outside of the United States.",
                             "Studies published prior to 2000 or after 2022.")
 ) |> 
@@ -339,7 +341,7 @@ where *v* represents the sampling variance, $CV^2_{control,i}$ and $CV^2_{experi
 
 Our initial models included log transformed influent concentration, BMP subcategory (drainage modification, crop field management, livestock management, filtration, treatment, detention, or infiltration), aridity index (mean-centered), influent concentration\texttimes BMP subcategory interactions, and aridity index\texttimes BMP subcategory interactions were included as fixed effect terms.
 Aridity index was the only moderator not obtained directly in the systematic review (Table \@ref(tab:datvars)).
-We mapped study location coordinates to aridity index values published in the "Global Aridity Index and Potential Evapotranspiration Database - Version 3" (Global-AI_PET_v3) which provides gridded 30 arc-second annual average precipitation and potential evapotranspiration estimates [@zomerVersionGlobalAridity2022].
+We mapped study location coordinates to aridity index values published in the "Global Aridity Index and Potential Evapotranspiration Database - Version 3" (Global-AI_PET_v3) which provides gridded 30 arc-second annual average (annual averaged from 1970-2000) precipitation and potential evapotranspiration estimates [@zomerVersionGlobalAridity2022].
 The aridity index is calculated as the ratio of mean annual precipitation to mean annual potential (or reference) evapotranspiration with values between 0 and 0.5 considered hyper to semi-arid, and values above 0.65 as humid.   
 
 
@@ -568,7 +570,7 @@ Similar spatial disparities have been identified and discussed in @kochNitrogenR
 Inconsistent spatial coverage presents a challenge for disentangling confounding spatially correlated predictors such as climate and soil due to poor representation within the dataset.
 @horvathEffectsRegionalClimate2023 found overlapping BMP type and climate groups within their dataset that reduce the ability to distinguish effects due to either BMP type or climate.
 Similarly, we found detention type BMPs clustered only in humid climates (high aridity index) which reduces our confidence in extrapolating the interaction between BMP types and aridity index for FIB (Figure \@ref(fig:fibeffect)).
-Not only were there spatially disparities, but we observed that the relative distribution of aridity index values does not resemble the distribution of aridity values across the U.S. (Figure \@ref(fig:aiindex)).
+Not only were there spatially disparities, but we observed that the relative distribution of aridity index values does not resemble the distribution of aridity values across the U.S. or the distribution of aridity values for agricultural and developed land uses across the U.S. (Figure \@ref(fig:aiindex)).
 Our review indicates that BMP studies are over represented in the generally humid regions of the country and underrepresented the more arid regions.
 Study scale, runoff sources and BMP types appeared well distributed, with the caveat that we are not aware of the actual distribution of these values in BMPs deployed across the country. 
 
@@ -631,10 +633,24 @@ By comparison, @horvathEffectsRegionalClimate2023 found three types of BMPs resu
 Again, site-specific factors not captured in our broad categorizations of BMP type and aridity index play a role in differential phosphorus removal rates.
 Soil physical characteristics and media amendments (iron for example) can play an critical role in sorption capacity and are dependent on covariates such as contact time and pH [@hoganBestManagementPractices2007; @lefevreReviewDissolvedPollutants2015].
 
+## Study Limitations
+
 A few reviews have noted a common trend of insufficient methodological and site specific data among peer-reviewed BMP performance studies [@grudzinskiDoesRiparianFencing2020; @eagleMetaAnalysisConstrained2017; @liuReviewEffectivenessBest2017].
 We confirm that inconsistent reporting among studies complicates data extraction, effect size calculations, and attributing important sources of variance.
+Our desire to evaluate the effects of specific BMP parameters was hinderd by the overall lack of reporting of relevant parameters such as drainage area, infiltration media/soil, infiltration volume, riparian/buffer width and area, and other relevant factors.
+The lack of BMP specific parameters certainly contributes to our relatively high model variance.
 The International Stormwater BMP Database addresses some of these concerns through a standardized reporting format.
 Our future efforts will incorporate data from the International Stormwater BMP Database with data retrieved through a systematic review.
+Additionally, this study was a broad scale look across BMP types which limits factors that cannot be compared across different types of BMPs.
+For example, livestock management BMPs may not rely on or report parameters such as vegetative buffer width or infiltration area. 
+Inclusion of such factors in our meta-regression approach would necessarily exclude certain types of BMPs.
+Future BMP-specific meta-analysis might be more useful and informative for practitioners by providing effect sizes of parameters that were necessarily excluded from our study.
+
+
+
+
+
+# Conclusion
 
 Scaling BMP pollutant reductions to basin wide water quality improvement remains a substantial challenge [@tomerChallengeDocumentingWater2011; @mellandEffectsAgriculturalLand2018; @mealsLagTimeWater2010].
 The major identified challenges include the lack of long term studies, inadequate data collected on BMP management, and incomplete understanding of BMP function [@linternBestManagementPractices2020; @liuReviewEffectivenessBest2017].

@@ -26,10 +26,10 @@ infiltration size were a regression moderator.
 This is certainly a limitation of the study, but the purpose of the project
 is a broad scale look at BMPs. Further studies investigating specific BMP types
 with common removal mechanisms are certainly appropriate. 
-To address the Reviewer's concerns, we have added the following to the Discussion:
+To address the Reviewer's concerns, we have incorporated a Study Limitation section to the Discussion:
 
 ::: {.memo-excerpt}
-Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+A few reviews have noted a common trend of insufficient methodological and site specific data among peer-reviewed BMP performance studies (Grudzinski et al., 2020; Eagle et al., 2017; Liu et al., 2017). We confirm that inconsistent reporting among studies complicates data extraction, effect size calculations, and attributing important sources of variance. Our desire to evaluate the effects of specific BMP parameters was hinderd by the overall lack of reporting of relevant parameters such as drainage area, infiltration media/soil, infiltration volume, riparian/buffer width and area, and other relevant factors. The lack of BMP specific parameters certainly contributes to our relatively high model variance. The International Stormwater BMP Database addresses some of these concerns through a standardized reporting format. Our future efforts will incorporate data from the International Stormwater BMP Database with data retrieved through a systematic review. Additionally, this study was a broad scale look across BMP types which limits factors that cannot be compared across different types of BMPs. For example, livestock management BMPs may not rely on or report parameters such as vegetative buffer width or infiltration area. Inclusion of such factors in our meta-regression approach would necessarily exclude certain types of BMPs. Future BMP-specific meta-analysis might be more useful and informative for practitioners by providing effect sizes of parameters that were necessarily excluded from our study.
 :::
 
 ---
@@ -63,11 +63,25 @@ Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed 
 ***Reviewer 3***:  What is the temporal coverage of the aridity index? Does it reflect long-term climate patterns or only a single year? Using a snapshot of the climate variable would be less optimal.
 :::
 
+It is annually averaged from 1970-2000 which should suffice as representative for climate patterns in this study. We have added clarification in the text which now reads:
+
+::: {.memo-excerpt}
+We mapped study location coordinates to aridity index values published in the "Global Aridity Index and Potential Evapotranspiration Database - Version 3" (Global-AI_PET_v3) which provides gridded 30 arc-second annual average (annual averaged from 1970-2000) precipitation and potential evapotranspiration estimates.
+:::
+
 ---
 
 ::: {.memo-reviewer}
 ***Reviewer 3***:  Since the locations of the studies are not precisely defined in many cases, please provide more details on how to spatially link studies to the aridity index map to obtain aridity values.
 :::
+
+We added the following text to describe how spatial locations were derived if they were not provided in the study:
+
+::: {.memo-excerpt}
+Study locations were recrorded as latitude and longitude coordinates as described in studies.
+If coordinates were not provided, the study team used Google Maps to locate approximate study location using site descriptions (county, city, municipal buildings, etc.) from the study and recorded the coordinates.
+:::
+
 
 ---
 
@@ -88,11 +102,15 @@ Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed 
 ***Reviewer 3***:  Please expand the abbreviation “ROSES” in the main text.
 :::
 
+Added.
+
 ---
 
 ::: {.memo-reviewer}
 ***Reviewer 3***:  Change “Standard deviation of control measreuments” to “… measurements” in Table 2.
 :::
+
+Fixed.
 
 ---
 
@@ -101,11 +119,19 @@ Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed 
 ***Reviewer 3***:  Change “and outlier” to “an” in Figure S9 to S14.
 :::
 
+Fixed.
+
 ---
 
 
 ::: {.memo-reviewer}
 ***Reviewer 3***:  In the sentence "Any study values outside of the full model confidence intervals would be considered an outlier.", by “study values”, do you mean the intercept estimate of a study?
+:::
+
+I worded this poorly and have updated the figure captions with the following:
+
+::: {.memo-excerpt}
+Any intercept estimates outside of the full model confidence intervals implies the excluded study is a potential outlier.
 :::
 
 ---
@@ -124,11 +150,25 @@ Added definitions to all the figure captions.
 
 Fixed.
 
+# Reviewer 4
+
+::: {.memo-reviewer}
+The statistical analysis was rigorous and thorough. That, alone, warrants a recommendation for acceptance of this manuscript. My primary concern is that the models were fitted using only one of the four BMP variables – BMP Subcategory. Were models with the other three BMP variables evaluated? In the mid-Atlantic US region, critically important BMPs for rural and agricultural lands are vegetative buffer strips, and for urban areas constructed wetlands are quite important. For example, much work has been done by researchers in North Carolina on metrics of vegetative buffer strips related to their effectiveness. Evaluation of models with specific practice characterization would have been informative. 
+:::
+
+---
+
+::: {.memo-reviewer}
+That leads me to my second concern. Only the last paragraph of the manuscript is presented as a summary. I recommend that this paragraph be reconstituted as a separate “Conclusion” section and that it be more thorough than this simple summary paragraph. For example, it would be useful to know what the authors expected to find in their modeling studies versus what actually was found. 
+:::
+
 # Reviewer 5
 
 ::: {.memo-reviewer}
 ***Reviewer 5***:   Add spatial extent covered in abstract
 :::
+
+Added the spatial extent.
 
 ---
 
@@ -253,6 +293,8 @@ We have added terms to all the figure captions.
 - Under Inclusion Criteria/Outcomes include sediments in addition for FIB and nutrients
 - Under Exclusion criteria/Outcomes “Studies not explicitly linking reductions to a specific BMP…” it may be more clear if you say linking “concentration reductions”
 :::
+
+The table has been updated with the suggested langauge.
 
 ---
 

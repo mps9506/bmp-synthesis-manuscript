@@ -43,6 +43,7 @@ source("R/02_fit_models.R")
 source("R/03_plot_models.R")
 source("R/04_tables.R")
 source("R/05_literature_statistics.R")
+source("R/post-hoc.R")
 
 ## prep fancy figure font
 font_hoist("Manrope")
@@ -268,6 +269,26 @@ list(
                                     i2 = tss_i2,
                                     r2 = tss_r2,
                                     caption = "Summary table of multilevel random effect model for effect of BMPs on TSS removal.")),
+  
+  
+  # Some post-hoc analysis for reviewers ---------------------------------------
+  ## Sensitivity analysis to the runoff type (ag or urban)
+  tar_target(bac_source, source_sensitvity(bac_model)),
+  tar_target(tn_source, source_sensitvity(tn_model)),
+  tar_target(tin_source, source_sensitvity(tin_model)),
+  tar_target(tp_source, source_sensitvity(tp_model)),
+  tar_target(po4_source, source_sensitvity(po4_model)),
+  tar_target(tss_source, source_sensitvity(tss_model)),
+  
+  ## Sensitivity to scale
+  tar_target(bac_scale, scale_sensitvity(bac_model)),
+  tar_target(tn_scale, scale_sensitvity(tn_model)),
+  tar_target(tin_scale, scale_sensitvity(tin_model)),
+  tar_target(tp_scale, scale_sensitvity(tp_model)),
+  tar_target(po4_scale, scale_sensitvity(po4_model)),
+  tar_target(tss_scale, scale_sensitvity(tss_model)),
+  
+  
 
   # Figures for Manuscript -----------------------------------------------------
   tar_target(study_map, plot_map(bacteria_df, nutrient_df)),

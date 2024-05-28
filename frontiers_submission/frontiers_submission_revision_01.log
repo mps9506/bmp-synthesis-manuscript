@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.23)  24 MAY 2024 13:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.23)  28 MAY 2024 10:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -692,7 +692,7 @@ Package epstopdf Info: Source file: <./logo1.eps>
 (epstopdf)             Command: <repstopdf --outfile=./logo1-eps-converted-to.pdf ./logo1.eps>
 (epstopdf)             \includegraphics on input line 136.
 Package epstopdf Info: Output file is already uptodate.
-<./logo1-eps-converted-to.pdf, id=72, 284.06125pt x 80.3pt>
+<./logo1-eps-converted-to.pdf, id=80, 284.06125pt x 80.3pt>
 File: ./logo1-eps-converted-to.pdf Graphic file (type pdf)
 <use ./logo1-eps-converted-to.pdf>
 Package pdftex.def Info: ./logo1-eps-converted-to.pdf  used on input line 136.
@@ -756,7 +756,7 @@ LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <12> not available
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
 [3]
-Overfull \hbox (3.35056pt too wide) in paragraph at lines 254--254
+Overfull \hbox (3.35056pt too wide) in paragraph at lines 256--256
 []|\OT1/ptm/m/n/12 (-20) Geographical 
  []
 
@@ -767,7 +767,7 @@ Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
 [5]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 325.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 327.
 (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
@@ -801,45 +801,45 @@ Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
 [15])
-<../figures/bmp_summary.pdf, id=581, 433.62pt x 216.81pt>
+<../figures/bmp_summary.pdf, id=591, 433.62pt x 216.81pt>
 File: ../figures/bmp_summary.pdf Graphic file (type pdf)
 <use ../figures/bmp_summary.pdf>
-Package pdftex.def Info: ../figures/bmp_summary.pdf  used on input line 568.
+Package pdftex.def Info: ../figures/bmp_summary.pdf  used on input line 582.
 (pdftex.def)             Requested size: 504.0pt x 252.01254pt.
-<../figures/bmp_summary_param.pdf, id=582, 433.62pt x 433.62pt>
+<../figures/bmp_summary_param.pdf, id=592, 433.62pt x 433.62pt>
 File: ../figures/bmp_summary_param.pdf Graphic file (type pdf)
 <use ../figures/bmp_summary_param.pdf>
-Package pdftex.def Info: ../figures/bmp_summary_param.pdf  used on input line 572.
+Package pdftex.def Info: ../figures/bmp_summary_param.pdf  used on input line 586.
 (pdftex.def)             Requested size: 504.0pt x 504.02512pt.
-<../figures/bmp_temporal_summary.pdf, id=583, 433.62pt x 469.755pt>
+<../figures/bmp_temporal_summary.pdf, id=593, 433.62pt x 469.755pt>
 File: ../figures/bmp_temporal_summary.pdf Graphic file (type pdf)
 <use ../figures/bmp_temporal_summary.pdf>
-Package pdftex.def Info: ../figures/bmp_temporal_summary.pdf  used on input line 576.
+Package pdftex.def Info: ../figures/bmp_temporal_summary.pdf  used on input line 590.
 (pdftex.def)             Requested size: 504.0pt x 546.0272pt.
-<../figures/study_map.pdf, id=584, 433.62pt x 469.755pt>
+<../figures/study_map.pdf, id=594, 433.62pt x 469.755pt>
 File: ../figures/study_map.pdf Graphic file (type pdf)
 <use ../figures/study_map.pdf>
-Package pdftex.def Info: ../figures/study_map.pdf  used on input line 580.
+Package pdftex.def Info: ../figures/study_map.pdf  used on input line 594.
 (pdftex.def)             Requested size: 504.0pt x 546.0272pt.
-<../figures/overall_effect.pdf, id=585, 469.755pt x 469.755pt>
+<../figures/overall_effect.pdf, id=595, 469.755pt x 469.755pt>
 File: ../figures/overall_effect.pdf Graphic file (type pdf)
 <use ../figures/overall_effect.pdf>
-Package pdftex.def Info: ../figures/overall_effect.pdf  used on input line 584.
+Package pdftex.def Info: ../figures/overall_effect.pdf  used on input line 598.
 (pdftex.def)             Requested size: 504.0pt x 504.00195pt.
-<../figures/bac_predicted.pdf, id=586, 614.295pt x 361.35pt>
+<../figures/bac_predicted.pdf, id=596, 614.295pt x 361.35pt>
 File: ../figures/bac_predicted.pdf Graphic file (type pdf)
 <use ../figures/bac_predicted.pdf>
-Package pdftex.def Info: ../figures/bac_predicted.pdf  used on input line 588.
+Package pdftex.def Info: ../figures/bac_predicted.pdf  used on input line 602.
 (pdftex.def)             Requested size: 504.0pt x 296.47433pt.
-<../figures/phos_predicted.pdf, id=587, 614.295pt x 252.945pt>
+<../figures/phos_predicted.pdf, id=597, 614.295pt x 252.945pt>
 File: ../figures/phos_predicted.pdf Graphic file (type pdf)
 <use ../figures/phos_predicted.pdf>
-Package pdftex.def Info: ../figures/phos_predicted.pdf  used on input line 592.
+Package pdftex.def Info: ../figures/phos_predicted.pdf  used on input line 606.
 (pdftex.def)             Requested size: 504.0pt x 207.53203pt.
-<../figures/aridity_density.pdf, id=588, 325.215pt x 252.945pt>
+<../figures/aridity_density.pdf, id=598, 325.215pt x 252.945pt>
 File: ../figures/aridity_density.pdf Graphic file (type pdf)
 <use ../figures/aridity_density.pdf>
-Package pdftex.def Info: ../figures/aridity_density.pdf  used on input line 596.
+Package pdftex.def Info: ../figures/aridity_density.pdf  used on input line 610.
 (pdftex.def)             Requested size: 252.0pt x 196.00333pt.
 
 Package caption Warning: Unused \captionsetup[sub] on input line 18.
@@ -896,21 +896,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-05-08>
  ***********
 Package rerunfilecheck Info: File `frontiers_submission_revision_01.out' has not changed.
-(rerunfilecheck)             Checksum: AF7938AD76CD04A25660F67C28391642;2328.
+(rerunfilecheck)             Checksum: F3F87FFED4C5DC134A2EAAC16B734220;2568.
  ) 
 Here is how much of TeX's memory you used:
- 19054 strings out of 475892
- 323902 string characters out of 5785538
+ 19062 strings out of 475892
+ 324013 string characters out of 5785538
  1952907 words of memory out of 5000000
- 40424 multiletter control sequences out of 15000+600000
+ 40428 multiletter control sequences out of 15000+600000
  610737 words of font info for 323 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 87i,13n,131p,1249b,778s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,13n,131p,1280b,766s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on frontiers_submission_revision_01.pdf (23 pages, 1115884 bytes).
+Output written on frontiers_submission_revision_01.pdf (23 pages, 1117172 bytes).
 PDF statistics:
- 894 PDF objects out of 1000 (max. 8388607)
- 769 compressed objects within 8 object streams
- 141 named destinations out of 1000 (max. 500000)
- 86198 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 906 PDF objects out of 1000 (max. 8388607)
+ 781 compressed objects within 8 object streams
+ 145 named destinations out of 1000 (max. 500000)
+ 86214 words of extra memory for PDF output out of 89155 (max. 10000000)
 

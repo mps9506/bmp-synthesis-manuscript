@@ -189,7 +189,7 @@ tar_read(tn_sse, store = store)$plot
 ```
 
 ```{r bacsens}
-#| fig.cap: "Plot of intercept estimates from sensitivity analysis for the FIB regression model. Individual points are the intercept estimates with 95% confince intervals for the regression model fit leaving out the study value indicated on the y-axis. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any study values outside of the full model confidence intervals would be considered and outlier."
+#| fig.cap: "Plot of intercept estimates from sensitivity analysis for the FIB regression model. Individual points are the intercept estimates with 95% confince intervals for the regression model fit leaving out the study value indicated on the y-axis. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any intercept estimates outside of the full model confidence intervals implies the excluded study is a potential outlier."
 #| fig.height: 8
 #| fig.width: 8
 #| out.width: "100%"
@@ -197,7 +197,7 @@ tar_read(bac_sens, store = store)$p1
 ```
 
 ```{r tnsens}
-#| fig.cap: "Plot of intercept estimates from sensitivity analysis for the TN regression model. Individual points are the intercept estimates with 95% confince intervals for the regression model fit leaving out the study value indicated on the y-axis. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any study values outside of the full model confidence intervals would be considered and outlier."
+#| fig.cap: "Plot of intercept estimates from sensitivity analysis for the TN regression model. Individual points are the intercept estimates with 95% confince intervals for the regression model fit leaving out the study value indicated on the y-axis. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any intercept estimates outside of the full model confidence intervals implies the excluded study is a potential outlier."
 #| fig.height: 5.5
 #| fig.width: 8
 #| out.width: "100%"
@@ -205,7 +205,7 @@ tar_read(tn_sens, store = store)$p1
 ```
 
 ```{r dinsens}
-#| fig.cap: "Plot of intercept estimates from sensitivity analysis for the DIN regression model. Individual points are the intercept estimates with 95% confince intervals for the regression model fit leaving out the study value indicated on the y-axis. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any study values outside of the full model confidence intervals would be considered and outlier."
+#| fig.cap: "Plot of intercept estimates from sensitivity analysis for the DIN regression model. Individual points are the intercept estimates with 95% confince intervals for the regression model fit leaving out the study value indicated on the y-axis. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any intercept estimates outside of the full model confidence intervals implies the excluded study is a potential outlier."
 #| fig.height: 7
 #| fig.width: 8
 #| out.width: "100%"
@@ -213,7 +213,7 @@ tar_read(tin_sens, store = store)$p1
 ```
 
 ```{r tpsens}
-#| fig.cap: "Plot of intercept estimates from sensitivity analysis for the TP regression model. Individual points are the intercept estimates with 95% confince intervals for the regression model fit leaving out the study value indicated on the y-axis. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any study values outside of the full model confidence intervals would be considered and outlier."
+#| fig.cap: "Plot of intercept estimates from sensitivity analysis for the TP regression model. Individual points are the intercept estimates with 95% confince intervals for the regression model fit leaving out the study value indicated on the y-axis. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any intercept estimates outside of the full model confidence intervals implies the excluded study is a potential outlier."
 #| fig.height: 5.5
 #| fig.width: 8
 #| out.width: "100%"
@@ -221,7 +221,7 @@ tar_read(tp_sens, store = store)$p1
 ```
 
 ```{r po4sens}
-#| fig.cap: "Plot of intercept estimates from sensitivity analysis for the PO\\textsubscript{4} regression model. Individual points are the intercept estimates with 95% confince intervals for the regression model fit leaving out the study value indicated on the y-axis. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any study values outside of the full model confidence intervals would be considered and outlier."
+#| fig.cap: "Plot of intercept estimates from sensitivity analysis for the PO\\textsubscript{4} regression model. Individual points are the intercept estimates with 95% confince intervals for the regression model fit leaving out the study value indicated on the y-axis. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any intercept estimates outside of the full model confidence intervals implies the excluded study is a potential outlier."
 #| fig.height: 4
 #| fig.width: 8
 #| out.width: "100%"
@@ -229,7 +229,7 @@ tar_read(po4_sens, store = store)$p1
 ```
 
 ```{r tsssens}
-#| fig.cap: "Plot of intercept estimates from sensitivity analysis for the TSS regression model. Individual points are the intercept estimates with 95% confince intervals for the regression model fit leaving out the study value indicated on the y-axis. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any study values outside of the full model confidence intervals would be considered and outlier."
+#| fig.cap: "Plot of intercept estimates from sensitivity analysis for the TSS regression model. Individual points are the intercept estimates with 95% confince intervals for the regression model fit leaving out the study value indicated on the y-axis. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any intercept estimates outside of the full model confidence intervals implies the excluded study is a potential outlier."
 #| fig.height: 4.5
 #| fig.width: 8
 #| out.width: "100%"
@@ -284,4 +284,107 @@ tar_read(bac_forest_plot, store = store)
 #| fig.width: 8
 #| out.width: "100%"
 tar_read(tss_forest_plot, store = store)
+```
+
+
+```{r bacsource}
+#| fig.cap: "Post-hoc sensitivty analysis of fecal indicator bacteria models to exclusion of agriculture or urban runoff sources. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any intercept estimates outside of the full model confidence intervals implies the excluded sources are overly influential."
+#| fig.height: 3
+#| fig.width: 8 
+#| out.width: "100%"
+ tar_read(bac_source, store = store)$p1
+```
+
+
+```{r tnsource}
+#| fig.cap: "Post-hoc sensitivty analysis of total nitrogen models to exclusion of agriculture or urban runoff sources. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any intercept estimates outside of the full model confidence intervals implies the excluded sources are overly influential."
+#| fig.height: 3
+#| fig.width: 8
+#| out.width: "100%"
+ tar_read(tn_source, store = store)$p1
+```
+
+
+```{r dinsource}
+#| fig.cap: "Post-hoc sensitivty analysis of dissolved inorganic nitrogen models to exclusion of agriculture or urban runoff sources. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any intercept estimates outside of the full model confidence intervals implies the excluded sources are overly influential."
+#| fig.height: 3
+#| fig.width: 8
+#| out.width: "100%"
+ tar_read(tin_source, store = store)$p1
+```
+
+```{r tpsource}
+#| fig.cap: "Post-hoc sensitivty analysis of total phosphorus models to exclusion of agriculture or urban runoff sources. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any intercept estimates outside of the full model confidence intervals implies the excluded sources are overly influential."
+#| fig.height: 3
+#| fig.width: 8 
+#| out.width: "100%"
+ tar_read(tp_source, store = store)$p1
+```
+
+
+```{r po4source}
+#| fig.cap: "Post-hoc sensitivty analysis of orthophosphate models to exclusion of agriculture or urban runoff sources. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any intercept estimates outside of the full model confidence intervals implies the excluded sources are overly influential."
+#| fig.height: 3
+#| fig.width: 8
+#| out.width: "100%"
+ tar_read(po4_source, store = store)$p1
+```
+
+
+```{r tsssource}
+#| fig.cap: "Post-hoc sensitivty analysis of total suspended sediment models to exclusion of agriculture or urban runoff sources. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any intercept estimates outside of the full model confidence intervals implies the excluded sources are overly influential."
+#| fig.height: 3
+#| fig.width: 8
+#| out.width: "100%"
+ tar_read(tss_source, store = store)$p1
+```
+
+
+```{r bacscale}
+#| fig.cap: "Post-hoc sensitivty analysis of fecal indicator bacteria models to study scale. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any intercept estimates outside of the full model confidence intervals implies the excluded sources are overly influential."
+#| fig.height: 3
+#| fig.width: 8 
+#| out.width: "100%"
+ tar_read(bac_scale, store = store)$p1
+```
+
+```{r tnscale}
+#| fig.cap: "Post-hoc sensitivty analysis of total nitrogen models to study scale. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any intercept estimates outside of the full model confidence intervals implies the excluded sources are overly influential."
+#| fig.height: 3
+#| fig.width: 8 
+#| out.width: "100%"
+ tar_read(tn_scale, store = store)$p1
+```
+
+```{r dinscale}
+#| fig.cap: "Post-hoc sensitivty analysis of dissolved inorganic nitrogen models to study scale. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any intercept estimates outside of the full model confidence intervals implies the excluded sources are overly influential."
+#| fig.height: 3
+#| fig.width: 8 
+#| out.width: "100%"
+ tar_read(tin_scale, store = store)$p1
+```
+
+```{r tpscale}
+#| fig.cap: "Post-hoc sensitivty analysis of total phosphorus models to study scale. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any intercept estimates outside of the full model confidence intervals implies the excluded sources are overly influential."
+#| fig.height: 3
+#| fig.width: 8 
+#| out.width: "100%"
+ tar_read(tp_scale, store = store)$p1
+```
+
+```{r po4scale}
+#| fig.cap: "Post-hoc sensitivty analysis of orthophosphate models to study scale. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any intercept estimates outside of the full model confidence intervals implies the excluded sources are overly influential."
+#| fig.height: 3
+#| fig.width: 8 
+#| out.width: "100%"
+ tar_read(po4_scale, store = store)$p1
+```
+
+
+```{r tssscale}
+#| fig.cap: "Post-hoc sensitivty analysis of total suspended sediment models to study scale. The vertical solid line and dotted lines indicate the intercept and 95% confidence intervals for the model that includes all values. Any intercept estimates outside of the full model confidence intervals implies the excluded sources are overly influential."
+#| fig.height: 3
+#| fig.width: 8 
+#| out.width: "100%"
+ tar_read(tss_scale, store = store)$p1
 ```
