@@ -2,6 +2,8 @@
 title: "Response to reviewer comments"
 format:
   hikmah-response-typst: default
+  
+bibliography: biblio.bib
 ---
 
 Thank you for giving us the opportunity to revise our manuscript. Reviewer comments were especially constructive and have improved the manuscript. The Reviewers' comments are cited or summarized in [red italicized text]{.memo-reviewer-inline}, and our responses are in black Roman text. We include excerpts from our revised manuscript in [blue]{.memo-excerpt-inline}.
@@ -45,17 +47,20 @@ the primary purpose of the meta-regression models are to investigate how much
 of the variance that a set of pre-determined moderators explain. Meta-regression
 were conducted in lieu of traditional subgroup analysis. While additional 
 subgroup analysis could be conducted based on additional moderators, we risk 
-conducting a "data-dredging" study. 
+conducting a "data-dredging" study [@thompsonHowShouldMeta2002]. However, we did add post-hoc sensitivity analysis for runoff source and catchment scale to the paper based on this suggestion. 
+We did not find strong evidence indicating these factors are highly
+influential to the results we found. This is likely, as you correctly point out,
+do to the lack of BMP specific parameters that better explain performance than our chosen moderators.
 
-::: {.memo-excerpt}
-Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-:::
+
 
 # Reviewer 3
 
 ::: {.memo-reviewer}
 ***Reviewer 3***: Is there any moderating effects of study area size or scale (i.e., field, farm, and watershed) and urban versus agricultural source on the performance of BMPs?
 :::
+
+We added an additional post-hoc sensitivity analysis for both these factors to the study. While this is not the same as fully incorporating the moderators into the original model, the sensitivity analysis indicates that we don't have strong evidence that these terms are highly influential to our results. This is confounded in part by the fact some of our BMP types are only applied to urban or agricultural BMPs and highlights a need for future meta-analysis to be applied for specific BMP types instead of across multiple BMP types.
 
 ---
 
@@ -89,12 +94,17 @@ If coordinates were not provided, the study team used Google Maps to locate appr
 ***Reviewer 3***:  Have you examined the effects of soil biophysical properties in addition to aridity? Can you obtain more detailed spatial locations of the various studies so to link these studies to local soil conditions in addition to climate?
 :::
 
+We did not include soil properties with the assumption that many infiltration based BMP modify soil as part of BMP construction. It is certainly possible that native soil conditions provide some additional moderating effect, but we did not obtain this data based on our assumptions.
+
 ---
 
 
 ::: {.memo-reviewer}
 ***Reviewer 3***:  Could you please elaborate more on the topic “scaling BMP pollutant reductions to basin wide water quality improvement remains a substantial challenge”. This is a very interesting point, what modeling or mixed approaches exist to achieve this goal?
 :::
+
+We have expanded on this slightly in the conclusion. Essentially it is difficult to empirically link water quality improvements to BMP implementation in many studies due to short study lengths, underlying measurement and analytic uncertainty, and difficulty establishing adequate controls. Many watershed scale studies therefore rely on numeric watershed models to demonstrate BMP performance (see the USDA CEAP program for example). 
+
 
 ---
 
@@ -156,11 +166,15 @@ Fixed.
 The statistical analysis was rigorous and thorough. That, alone, warrants a recommendation for acceptance of this manuscript. My primary concern is that the models were fitted using only one of the four BMP variables – BMP Subcategory. Were models with the other three BMP variables evaluated? In the mid-Atlantic US region, critically important BMPs for rural and agricultural lands are vegetative buffer strips, and for urban areas constructed wetlands are quite important. For example, much work has been done by researchers in North Carolina on metrics of vegetative buffer strips related to their effectiveness. Evaluation of models with specific practice characterization would have been informative. 
 :::
 
+We agree with the overall comment here. This paper was our first cut analysis across a broad range of BMPs. Our approach requires somewhat broad variables used in the regression models so we do not eliminate studies that do not include specific BMP data, such as buffer strip width. Further meta-analysis should focus on specific practices where relevant specific BMP parameters can be properly evaluated. We've added additional context in the Study Limitations section.
+
 ---
 
 ::: {.memo-reviewer}
 That leads me to my second concern. Only the last paragraph of the manuscript is presented as a summary. I recommend that this paragraph be reconstituted as a separate “Conclusion” section and that it be more thorough than this simple summary paragraph. For example, it would be useful to know what the authors expected to find in their modeling studies versus what actually was found. 
 :::
+
+We have incorporated a conclusions section and expanded a bit more on our expectations as well as incorporated suggestions from other reviewers.
 
 # Reviewer 5
 
@@ -176,10 +190,18 @@ Added the spatial extent.
 ***Reviewer 5***:   Add sediments or suspended sediments to keywords if there is space
 :::
 
+Added.
+
 ---
 
 ::: {.memo-reviewer}
 ***Reviewer 5***:   1st Paragraph of introduction (Line 28), add a sentence about sediment impairments to waters similar to the ones discussing FIBs and nutrients impairments
+:::
+
+Added the following:
+
+::: {.memo-excerpt}
+Approximately 15% of river and streams have excessive sedimentation, which leads to twice the likelihood of a stream to have poor biological condition (EPA, 2017).
 :::
 
 ---
@@ -188,11 +210,30 @@ Added the spatial extent.
 ***Reviewer 5***:   Include small paragraph in discussion about how search terms of “BMPs” or “best management practices” and inclusion criteria (concentrations) may have not captured some studies. For example, if the study used the name of the practice instead of BMP. Also, there are a suite of agricultural drainage practices but studies generally focus on load reduction (from flow reduction) compared to concentration reduction (see Frankenberger et al., 2023 https://elibrary.asabe.org/abstract.asp?aid=54314 who’s review has a cluster of those studies in the Midwest, which is blank on this map). 
 :::
 
+This escaped our notice, thanks for raising this relevant shortcoming. We added the following to the Study Limitations section within the discussion:
+
+::: {.memo-excerpt}
+One reviewer also noted some examples of missing studies, attributable to our selection of search terms and inclusion criteria (Table 1). In particular, our search query did not include specifc practice names, instead using “BMP” or “best management practice” as a keyword search. This choice may have led us to miss studies that only included the practice name. Or inclusion criteria of concentration based studies may have also lead to the exclusion of studies that focused on load reductions (through flow reductions) but may have included data on relevant concentration effects.
+:::
+
 ---
 
 ::: {.memo-reviewer}
 ***Reviewer 5***:   Lines 61 – 64 consider adding an example BMP for instances where effluent is and is not related to influent concentration
 :::
+
+We modified the lines to include the following:
+
+::: {.memo-excerpt}
+Barrett (2005) demonstrated
+that percent pollutant reduction is often a function of influent quality. Specifically, for certain types of BMPs
+percent removal is low at low influent concentrations, and increases with increasing influent concentrations.
+Horvath et al. (2023) found that influent phosphorus concentrations had some explanatory ability for
+BMP performance among grass strips, bioretnetion, and grass swale BMPs. However, for some types
+of BMPs, such as media filters and permanently pooled retention basins (Barrett, 2005) and pollutant
+parameters, effluent concentration is unrelated to influent concentration. 
+:::
+
 
 ---
 
@@ -254,12 +295,16 @@ Fixed.
 ***Reviewer 5***:   Lines 213 – 214 – clarify “may not be reliable” in general, or just for lower aridity?
 :::
 
+It would not be reliable when extrapolated to lower aridity regions due to lack of model coverage. Clarified this in text. 
+
 ---
 
 
 ::: {.memo-reviewer}
 ***Reviewer 5***:   Lines 61 – 64 consider adding an example BMP for instances where effluent is and is not related to influent concentration
 :::
+
+Added.
 
 ---
 
@@ -268,6 +313,8 @@ Fixed.
 ***Reviewer 5***:   Lines 242-254: Nice discussion on spatial coverage with the caveat that we are not aware of the actual distribution of BMPs. However, I am curious, are BMPs over-represented or just predominately located in humid regions? Could it be related to larger population concentrations along the humid east coast than the arid west? Are detention practices common in locations with little rainfall and high potential loss of water to evaporation? See my recommendation for Figure 7 to potentially add a 3rd distribution of aridity index of urban & agricultural land covers across the US. 
 :::
 
+We have added a third distribution, based on your suggestion below, looking at just urban and agricultural land and still find some discrepancies in the distribution of aridity values. 
+
 ---
 
 
@@ -275,6 +322,20 @@ Fixed.
 ***Reviewer 5***:  Lines 349 – 351: Based on your experience trying to synthesis information across studies in this review process, do you have recommendations for minimum reporting requirements or standards for future studies on BMP concentration reductions? If so, please list in text or perhaps in a box. 
 :::
 
+We added the following text to the conclusions:
+
+
+::: {.memo-excerpt}
+To improve future data synthesis efforts, we highly reccomend future BMP studies
+follow the reporting guidelines provided in Eagle et al. (2017). In particular provide clearly defined water
+quality parameters, tabular data (either in the manuscript, as supplemental material, or in an open data
+repository), and error estimation at minimum. Control and treatment means should be made available in
+reports, not just the transformed efficiency or percent change values. Furthermore clearly defined controls
+and treatments are fundamental for comparing across studies. Finally, a major shortcoming in our synthesis
+was driven by the lack of reported covariate data. Although data such as soil type may not be an within
+study experimental covariate, documenting of these types of study variables is useful for data synthesis
+efforts.
+:::
 ---
 
 

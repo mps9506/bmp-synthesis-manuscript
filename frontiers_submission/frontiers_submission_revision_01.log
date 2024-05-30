@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.23)  28 MAY 2024 10:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.29)  29 MAY 2024 15:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -322,13 +322,11 @@ LaTeX Info: Redefining \cite on input line 694.
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ) (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+Package: hyperref 2024-05-23 v7.01i Hypertext links for LaTeX
 (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 ) (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.sty
-Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 ) (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
 (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
@@ -337,12 +335,14 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count313
+) (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
 \@linkdim=\dimen168
 \Hy@linkcounter=\count314
 \Hy@pagecounter=\count315
 (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2024-05-23 v7.01i Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 ) (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
@@ -350,20 +350,20 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count316
 (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2024-05-23 v7.01i Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Hyper figures OFF on input line 4179.
-Package hyperref Info: Link nesting OFF on input line 4184.
-Package hyperref Info: Hyper index ON on input line 4187.
-Package hyperref Info: Plain pages OFF on input line 4194.
-Package hyperref Info: Backreferencing OFF on input line 4199.
+Package hyperref Info: Hyper figures OFF on input line 4157.
+Package hyperref Info: Link nesting OFF on input line 4162.
+Package hyperref Info: Hyper index ON on input line 4165.
+Package hyperref Info: Plain pages OFF on input line 4172.
+Package hyperref Info: Backreferencing OFF on input line 4177.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4446.
-LaTeX Info: Redefining \href on input line 4695.
+Package hyperref Info: Bookmarks ON on input line 4424.
+LaTeX Info: Redefining \href on input line 4674.
 \c@Hy@tempcnt=\count317
-LaTeX Info: Redefining \url on input line 4784.
+LaTeX Info: Redefining \url on input line 4763.
 \XeTeXLinkMargin=\dimen169
 (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -373,13 +373,13 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 \Fld@menulength=\count318
 \Field@Width=\dimen170
 \Fld@charsize=\dimen171
-Package hyperref Info: Hyper figures OFF on input line 6063.
-Package hyperref Info: Link nesting OFF on input line 6068.
-Package hyperref Info: Hyper index ON on input line 6071.
-Package hyperref Info: backreferencing OFF on input line 6078.
-Package hyperref Info: Link coloring OFF on input line 6083.
-Package hyperref Info: Link coloring with OCG OFF on input line 6088.
-Package hyperref Info: PDF/A mode OFF on input line 6093.
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
 (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
@@ -390,7 +390,7 @@ package with kernel methods
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
+File: hpdftex.def 2024-05-23 v7.01i Hyperref driver for pdfTeX
 (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
@@ -533,7 +533,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks44
 \@floatcapt=\box75
 ) (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
-Package: colortbl 2024/02/20 v1.0g Color table columns (DPC)
+Package: colortbl 2024/05/26 v1.0h Color table columns (DPC)
 \everycr=\toks45
 \minrowclearance=\skip76
 \rownum=\count352
@@ -741,22 +741,22 @@ Underfull \hbox (badness 10000) detected at line 136
 
 {c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc} <./logo1-eps-converted-to.pdf>]
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <11> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 186.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 188.
 
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
 [2]
-LaTeX Font Info:    Trying to load font information for OML+ptm on input line 208.
+LaTeX Font Info:    Trying to load font information for OML+ptm on input line 210.
 (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/omlptm.fd
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 208.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 210.
 
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
 [3]
-Overfull \hbox (3.35056pt too wide) in paragraph at lines 256--256
+Overfull \hbox (3.35056pt too wide) in paragraph at lines 258--258
 []|\OT1/ptm/m/n/12 (-20) Geographical 
  []
 
@@ -767,7 +767,7 @@ Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
 [5]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 327.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 329.
 (c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
@@ -788,10 +788,10 @@ Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 [10]
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[11] (./frontiers_submission_revision_01.bbl
+[11]
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[12]
+[12] (./frontiers_submission_revision_01.bbl
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
 [13]
@@ -800,46 +800,49 @@ Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 [14]
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[15])
-<../figures/bmp_summary.pdf, id=591, 433.62pt x 216.81pt>
-File: ../figures/bmp_summary.pdf Graphic file (type pdf)
-<use ../figures/bmp_summary.pdf>
-Package pdftex.def Info: ../figures/bmp_summary.pdf  used on input line 582.
+[15]
+Overfull \vbox (3.49998pt too high) has occurred while \output is active []
+
+[16])
+<frontiers_submission_revision_01_files/figure-latex/fig1.pdf, id=607, 433.62pt x 216.81pt>
+File: frontiers_submission_revision_01_files/figure-latex/fig1.pdf Graphic file (type pdf)
+<use frontiers_submission_revision_01_files/figure-latex/fig1.pdf>
+Package pdftex.def Info: frontiers_submission_revision_01_files/figure-latex/fig1.pdf  used on input line 599.
 (pdftex.def)             Requested size: 504.0pt x 252.01254pt.
-<../figures/bmp_summary_param.pdf, id=592, 433.62pt x 433.62pt>
-File: ../figures/bmp_summary_param.pdf Graphic file (type pdf)
-<use ../figures/bmp_summary_param.pdf>
-Package pdftex.def Info: ../figures/bmp_summary_param.pdf  used on input line 586.
+<frontiers_submission_revision_01_files/figure-latex/fig2.pdf, id=608, 433.62pt x 433.62pt>
+File: frontiers_submission_revision_01_files/figure-latex/fig2.pdf Graphic file (type pdf)
+<use frontiers_submission_revision_01_files/figure-latex/fig2.pdf>
+Package pdftex.def Info: frontiers_submission_revision_01_files/figure-latex/fig2.pdf  used on input line 603.
 (pdftex.def)             Requested size: 504.0pt x 504.02512pt.
-<../figures/bmp_temporal_summary.pdf, id=593, 433.62pt x 469.755pt>
-File: ../figures/bmp_temporal_summary.pdf Graphic file (type pdf)
-<use ../figures/bmp_temporal_summary.pdf>
-Package pdftex.def Info: ../figures/bmp_temporal_summary.pdf  used on input line 590.
+<frontiers_submission_revision_01_files/figure-latex/fig3.pdf, id=609, 433.62pt x 469.755pt>
+File: frontiers_submission_revision_01_files/figure-latex/fig3.pdf Graphic file (type pdf)
+<use frontiers_submission_revision_01_files/figure-latex/fig3.pdf>
+Package pdftex.def Info: frontiers_submission_revision_01_files/figure-latex/fig3.pdf  used on input line 607.
 (pdftex.def)             Requested size: 504.0pt x 546.0272pt.
-<../figures/study_map.pdf, id=594, 433.62pt x 469.755pt>
-File: ../figures/study_map.pdf Graphic file (type pdf)
-<use ../figures/study_map.pdf>
-Package pdftex.def Info: ../figures/study_map.pdf  used on input line 594.
+<frontiers_submission_revision_01_files/figure-latex/fig4.pdf, id=610, 433.62pt x 469.755pt>
+File: frontiers_submission_revision_01_files/figure-latex/fig4.pdf Graphic file (type pdf)
+<use frontiers_submission_revision_01_files/figure-latex/fig4.pdf>
+Package pdftex.def Info: frontiers_submission_revision_01_files/figure-latex/fig4.pdf  used on input line 611.
 (pdftex.def)             Requested size: 504.0pt x 546.0272pt.
-<../figures/overall_effect.pdf, id=595, 469.755pt x 469.755pt>
-File: ../figures/overall_effect.pdf Graphic file (type pdf)
-<use ../figures/overall_effect.pdf>
-Package pdftex.def Info: ../figures/overall_effect.pdf  used on input line 598.
+<frontiers_submission_revision_01_files/figure-latex/fig5.pdf, id=611, 469.755pt x 469.755pt>
+File: frontiers_submission_revision_01_files/figure-latex/fig5.pdf Graphic file (type pdf)
+<use frontiers_submission_revision_01_files/figure-latex/fig5.pdf>
+Package pdftex.def Info: frontiers_submission_revision_01_files/figure-latex/fig5.pdf  used on input line 615.
 (pdftex.def)             Requested size: 504.0pt x 504.00195pt.
-<../figures/bac_predicted.pdf, id=596, 614.295pt x 361.35pt>
-File: ../figures/bac_predicted.pdf Graphic file (type pdf)
-<use ../figures/bac_predicted.pdf>
-Package pdftex.def Info: ../figures/bac_predicted.pdf  used on input line 602.
+<frontiers_submission_revision_01_files/figure-latex/fig6.pdf, id=612, 614.295pt x 361.35pt>
+File: frontiers_submission_revision_01_files/figure-latex/fig6.pdf Graphic file (type pdf)
+<use frontiers_submission_revision_01_files/figure-latex/fig6.pdf>
+Package pdftex.def Info: frontiers_submission_revision_01_files/figure-latex/fig6.pdf  used on input line 619.
 (pdftex.def)             Requested size: 504.0pt x 296.47433pt.
-<../figures/phos_predicted.pdf, id=597, 614.295pt x 252.945pt>
-File: ../figures/phos_predicted.pdf Graphic file (type pdf)
-<use ../figures/phos_predicted.pdf>
-Package pdftex.def Info: ../figures/phos_predicted.pdf  used on input line 606.
+<frontiers_submission_revision_01_files/figure-latex/fig7.pdf, id=613, 614.295pt x 252.945pt>
+File: frontiers_submission_revision_01_files/figure-latex/fig7.pdf Graphic file (type pdf)
+<use frontiers_submission_revision_01_files/figure-latex/fig7.pdf>
+Package pdftex.def Info: frontiers_submission_revision_01_files/figure-latex/fig7.pdf  used on input line 623.
 (pdftex.def)             Requested size: 504.0pt x 207.53203pt.
-<../figures/aridity_density.pdf, id=598, 325.215pt x 252.945pt>
-File: ../figures/aridity_density.pdf Graphic file (type pdf)
-<use ../figures/aridity_density.pdf>
-Package pdftex.def Info: ../figures/aridity_density.pdf  used on input line 610.
+<frontiers_submission_revision_01_files/figure-latex/fig8.pdf, id=614, 325.215pt x 252.945pt>
+File: frontiers_submission_revision_01_files/figure-latex/fig8.pdf Graphic file (type pdf)
+<use frontiers_submission_revision_01_files/figure-latex/fig8.pdf>
+Package pdftex.def Info: frontiers_submission_revision_01_files/figure-latex/fig8.pdf  used on input line 627.
 (pdftex.def)             Requested size: 252.0pt x 196.00333pt.
 
 Package caption Warning: Unused \captionsetup[sub] on input line 18.
@@ -848,49 +851,49 @@ See the caption package documentation for explanation.
 
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[16]
+[17]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[17 <../figures/bmp_summary.pdf>]
+[18 <./frontiers_submission_revision_01_files/figure-latex/fig1.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[18 <../figures/bmp_summary_param.pdf>]
+[19 <./frontiers_submission_revision_01_files/figure-latex/fig2.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[19 <../figures/bmp_temporal_summary.pdf>]
+[20 <./frontiers_submission_revision_01_files/figure-latex/fig3.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[20 <../figures/study_map.pdf>]
+[21 <./frontiers_submission_revision_01_files/figure-latex/fig4.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[21 <../figures/overall_effect.pdf>]
+[22 <./frontiers_submission_revision_01_files/figure-latex/fig5.pdf>]
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[22 <../figures/bac_predicted.pdf> <../figures/phos_predicted.pdf
+[23 <./frontiers_submission_revision_01_files/figure-latex/fig6.pdf> <./frontiers_submission_revision_01_files/figure-latex/fig7.pdf
 
-pdfTeX warning: pdflatex.exe (file ../figures/phos_predicted.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+pdfTeX warning: pdflatex.exe (file ./frontiers_submission_revision_01_files/figure-latex/fig7.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \vbox (3.49998pt too high) has occurred while \output is active []
 
-[23 <../figures/aridity_density.pdf>] (./frontiers_submission_revision_01.aux)
+[24 <./frontiers_submission_revision_01_files/figure-latex/fig8.pdf>] (./frontiers_submission_revision_01.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-05-08>
@@ -899,18 +902,18 @@ Package rerunfilecheck Info: File `frontiers_submission_revision_01.out' has not
 (rerunfilecheck)             Checksum: F3F87FFED4C5DC134A2EAAC16B734220;2568.
  ) 
 Here is how much of TeX's memory you used:
- 19062 strings out of 475892
- 324013 string characters out of 5785538
+ 19189 strings out of 475892
+ 328256 string characters out of 5785538
  1952907 words of memory out of 5000000
- 40428 multiletter control sequences out of 15000+600000
- 610737 words of font info for 323 fonts, out of 8000000 for 9000
+ 40554 multiletter control sequences out of 15000+600000
+ 610722 words of font info for 323 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 87i,13n,131p,1280b,766s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,13n,131p,1280b,778s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/Users/michael.schramm/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on frontiers_submission_revision_01.pdf (23 pages, 1117172 bytes).
+Output written on frontiers_submission_revision_01.pdf (24 pages, 1121506 bytes).
 PDF statistics:
- 906 PDF objects out of 1000 (max. 8388607)
- 781 compressed objects within 8 object streams
- 145 named destinations out of 1000 (max. 500000)
+ 921 PDF objects out of 1000 (max. 8388607)
+ 795 compressed objects within 8 object streams
+ 146 named destinations out of 1000 (max. 500000)
  86214 words of extra memory for PDF output out of 89155 (max. 10000000)
 

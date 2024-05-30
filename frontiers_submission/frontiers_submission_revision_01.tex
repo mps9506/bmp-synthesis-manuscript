@@ -138,7 +138,7 @@
 We conducted a systematic review of published nonpoint source water quality best management practice (BMP) studies conducted in the United States and used a meta-analysis approach to describe variance in pollutant removal performance. Despite high variance, we found the BMPs on average were effective at reducing fecal indicator bacteria (FIB), total nitrogen (TN), total phosphorus (TP), and total suspended sediment (TSS) concentrations. We explored how much BMP pollutant removal process, influent pollutant concentration, and aridity effected BMP performance. We found that influent concentration and interaction effect between the BMP pollutant removal process and aridity explained a substantial amount of variance in BMP performance in FIB removal. Influent concentration explained a small amount of variability in BMP removal of TP and orthophosphate (PO\textsubscript{4}). We did not find evidence that any of our chosen variables moderated BMP performance in nitrogen or TSS removal. Through our systematic review, we found inadequate spatial representation of BMP studies to capture the underlying variability in climate, soil, and other conditions that could impact BMP performance.
 
 \tiny
- \keyFont{ \section{Keywords:} best management practice, water quality, nonpoint source pollution, fecal indicator bacteria, nutrients} %All article types: you may provide up to 8 keywords; at least 5 are mandatory.
+ \keyFont{ \section{Keywords:} best management practice, water quality, nonpoint source pollution, fecal indicator bacteria, nutrients, suspended sediment} %All article types: you may provide up to 8 keywords; at least 5 are mandatory.
 \end{abstract}
 
 \hypertarget{introduction}{%
@@ -151,6 +151,7 @@ The impacts of land use change on hydrology and water quality are well establish
 Nonpoint source driven fecal indicator bacteria (FIB), nitrogen, phosphorus, and suspended sediment remain major causes of water quality impairments in U.S. rivers and streams despite decades of work.
 In 2017, the Environmental Protection Agency (EPA) estimated 41\% or more of the nation's rivers and streams rated poorly for biological condition due to excess nitrogen or phosphorus \citep{epaNationalWaterQuality2017}.
 FIB remains the leading cause of water body impairment on the Clean Water Act 303(d) list in the United States \citep{epaNationalWaterQuality2017}.
+Approximately 15\% of river and streams have excessive sedimentation, which leads to twice the likelihood of a stream to have poor biological condition \citep{epaNationalWaterQuality2017}.
 
 Best management practices (BMPs) have been the primary suite of tools for addressing nonpoint source pollution.
 BMPs are structural or non-structural controls used to mitigate the effects of increased runoff volume, pollutant loads, or pollutant concentrations emanating from diffuse nonpoint sources.
@@ -173,7 +174,8 @@ While it is assumed that site specific conditions are responsible for some of th
 Influent concentration is likely to have some effect on certain types of structural BMPs.
 \citet{barrettPerformanceComparisonStructural2005} demonstrated that percent pollutant reduction is often a function of influent quality.
 Specifically, for certain types of BMPs percent removal is low at low influent concentrations, and increases with increasing influent concentrations.
-However, for some types of BMPs and pollutant parameters, effluent concentration is unrelated to influent concentration.
+\citet{horvathEffectsRegionalClimate2023} found that influent phosphorus concentrations had some explanatory ability for BMP performance among grass strips, bioretnetion, and grass swale BMPs.
+However, for some types of BMPs, such as media filters and permanently pooled retention basins \citep{barrettPerformanceComparisonStructural2005}, effluent concentration is unrelated to influent concentration.
 Second, local climatic conditions can be expected to influence BMP performance.
 BMPs in dry climates have been shown to be more likely to leach phosphorus than those in wetter climates \citep{horvathEffectsRegionalClimate2023}.
 However, elucidating possible confounders such as climate and soil condition has been constrained by the lack of reported local condition data included in most BMP studies \citep{horvathEffectsRegionalClimate2023, kochNitrogenRemovalStormwater2014, eagleMetaAnalysisConstrained2017}.
@@ -235,7 +237,7 @@ Results from each database were first filtered to remove duplicates.
 After removal of duplicates, each member of the research team (\emph{n} = 4) was assigned a subset of studies to evaluate if they should be included (Table \ref{tab:criteria}).
 Each study was reviewed by two team members and differences in opinion were collectively discussed and agreed upon before progressing.
 The remaining studies were split among team members for data extraction (Table \ref{tab:datvars}), again with at least two team members reviewing each study.
-Study locations were recrorded as latitude and longitude coordinates as described in studies.
+Study locations were recorded as latitude and longitude coordinates as described in studies.
 If coordinates were not provided, the study team used Google Maps to locate approximate study location using site descriptions (county, city, municipal buildings, etc.) from the study and recorded the coordinates.
 If data was provided in figures, the data was extracted with the WebPlotDigitizer tool \citep{rohatgiWebPlotDigitizer2022}.
 Searches, review, and data extractions were conducted separately for FIB and nutrient related parameters.
@@ -326,7 +328,7 @@ where \emph{v} represents the sampling variance, \(CV^2_{control,i}\) and \(CV^2
 
 Our initial models included log transformed influent concentration, BMP subcategory (drainage modification, crop field management, livestock management, filtration, treatment, detention, or infiltration), aridity index (mean-centered), influent concentration\texttimes BMP subcategory interactions, and aridity index\texttimes BMP subcategory interactions were included as fixed effect terms.
 Aridity index was the only moderator not obtained directly in the systematic review (Table \ref{tab:datvars}).
-We mapped study location coordinates to aridity index values published in the ``Global Aridity Index and Potential Evapotranspiration Database - Version 3'' (Global-AI\_PET\_v3) which provides gridded 30 arc-second annual average (annual averaged from 1970-2000) precipitation and potential evapotranspiration estimates \citep{zomerVersionGlobalAridity2022}.
+We mapped study location coordinates to aridity index values published in the ``Global Aridity Index and Potential Evapotranspiration Database - Version 3'' (Global-AI\_PET\_v3) which provides gridded 30 arc-second annual average (annually averaged from 1970-2000) precipitation and potential evapotranspiration estimates \citep{zomerVersionGlobalAridity2022}.
 The aridity index is calculated as the ratio of mean annual precipitation to mean annual potential (or reference) evapotranspiration with values between 0 and 0.5 considered hyper to semi-arid, and values above 0.65 as humid.
 
 We used an information-theoretic approach to select the most parsimonious model from the subset of candidate models based on corrected Akaike information criterion (AIC\textsubscript{c}) estimated with maximum likelihood \citep{cinarUsingInformationTheoretic2021}.
@@ -342,6 +344,7 @@ We conducted a sensitivity analysis of the robustness of overall effect sizes to
 This approach repeatedly fits the selected model leaving out an individual value each time.
 The overall effect and 95\% CI from each refit model is compared to the overall effect and 95\% CI of the model fit to the full dataset.
 We did not identify evidence of outliers or overly influential studies for any of our models (Figure S9-S14).
+We also applied a sensitivity analysis to runoff source (agriculture and urban) and study catchment scale (community, lot, and watershed) and did not find evidence that these factors were especially influential to our results (Figure S21-S32).
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -350,14 +353,14 @@ We did not identify evidence of outliers or overly influential studies for any o
 \subsection{Summary of BMP literature}\label{summary-of-bmp-literature}}
 
 Our systematic review identified a total of 33 studies and 125 effect sizes on FIB, 24 studies and 50 effect sizes on TN, 31 studies and 88 effect sizes for DIN, 31 studies and 61 effect sizes for TP, 17 studies and 36 effect sizes for PO\textsubscript{4}, and 33 studies with 125 effect sizes for TSS.
-The majority of studies were identified as smaller scaled lot or field studies (Figure \ref{fig:bmpsummary} A).
+The majority of studies were identified as smaller scaled lot or field studies (Figure \ref{fig:fig1} A).
 FIB studies had a roughly equal proportion of large watershed/catchment studies and studies conducted at the community/farm scale or smaller.
-We also identified that the majority of studies (all parameters) were conducted on urban or non-agricultural runoff (Figure \ref{fig:bmpsummary} B).
-We did identify a wide variety of BMPs in the review, but it did not appear that any particular type of BMP was responsible for the majority of studies for any given parameter (Figure \ref{fig:bmpsummary} C).
+We also identified that the majority of studies (all parameters) were conducted on urban or non-agricultural runoff (Figure \ref{fig:fig1} B).
+We did identify a wide variety of BMPs in the review, but it did not appear that any particular type of BMP was responsible for the majority of studies for any given parameter (Figure \ref{fig:fig2}).
 Our review was restricted to studies published from 2000 through 2022.
-The number of studies published for each parameter were roughly uniformly distributed over time (Figure \ref{fig:bmptemporal} A) and are not indicative of increases or decreases in the number of published studies.
-Study length was strongly skewed for all parameters (Figure \ref{fig:bmptemporal} B). Median study lengths were 3 (DIN), 2 (FIB), 2.5 (PO\textsubscript{4}), 2.5 (TN), 2.5 (TP), and 2 (TSS) years.
-There appears to be a strong clustering of BMP studies in the mid-Atlantic region (North Carolina, Virginia, Maryland) with other states sparsely represented or completely absent from the review (Figure \ref{fig:studymap}).
+The number of studies published for each parameter were roughly uniformly distributed over time (Figure \ref{fig:fig3} A) and are not indicative of increases or decreases in the number of published studies.
+Study length was strongly skewed for all parameters (Figure \ref{fig:fig3} B). Median study lengths were 3 (DIN), 2 (FIB), 2.5 (PO\textsubscript{4}), 2.5 (TN), 2.5 (TP), and 2 (TSS) years.
+There appears to be a strong clustering of BMP studies in the mid-Atlantic region (North Carolina, Virginia, Maryland) with other states sparsely represented or completely absent from the review (Figure \ref{fig:fig4}).
 
 \hypertarget{regression-models}{%
 \subsection{Regression models}\label{regression-models}}
@@ -396,21 +399,21 @@ $\sim$ Int+AI\texttimes BMP+BMP\texttimes Influent & 201.9 & 116.8 & 156.2 & 142
 \subsubsection{Fecal Indicator Bacteria}\label{fecal-indicator-bacteria}}
 
 There were only 19 studies and 63 FIB effect sizes available to model after removal of studies and effects that only reported BMP\textsubscript{eff}.
-The overall mean effect (estimated with the intercept only multilevel random effects model) showed significant mean reductions in FIB (ROM = 0.85, 95\% CI {[}0.36, 1.34{]}; BMP\textsubscript{eff} = 57.4\%, 95\% CI {[}30.4\%, 73.9\%{]}; Figure \ref{fig:overalleffect}) resulting from BMPs.
+The overall mean effect (estimated with the intercept only multilevel random effects model) showed significant mean reductions in FIB (ROM = 0.85, 95\% CI {[}0.36, 1.34{]}; BMP\textsubscript{eff} = 57.4\%, 95\% CI {[}30.4\%, 73.9\%{]}; Figure \ref{fig:fig5}) resulting from BMPs.
 Total heterogeneity was moderate with a relatively large amount of heterogeneity observed due to differences within studies (\textit{I\textsuperscript{2}\textsubscript{total}} = 53.54, \textit{I\textsuperscript{2}\textsubscript{study}} = 10.03, \textit{I\textsuperscript{2}\textsubscript{effect}} = 43.51).
 
 AICc scores included log transformed influent concentration and the aridity index\texttimes BMP subcategory interaction as moderators for the FIB model (Table \ref{tab:modelaic}).
 Moderator terms and interactions explained a high proportion of effect size variance (\textit{R\textsuperscript{2}\textsubscript{marginal}} =0.89) in the FIB model.
-Increased influent concentrations (\(\beta\) = 0.25, 95\% CI {[}0.14, 0.37{]}) resulted in significantly larger ROM effect for FIB (Figure \ref{fig:fibeffect}).
+Increased influent concentrations (\(\beta\) = 0.25, 95\% CI {[}0.14, 0.37{]}) resulted in significantly larger ROM effect for FIB (Figure \ref{fig:fig6}).
 Compared to the baseline aridity index\texttimes detention BMP subcategory interaction, infiltration (\(\beta\) = -29.90, 95\% CI {[}-50.34, -9.47{]}), livestock management (\(\beta\) = -30.37, 95\% CI {[}-50.93, -9.81{]}), and treatment (\(\beta\) = -30.33, 95\% CI {[}-49.62, -11.03{]}) interactions had significantly smaller slopes.
 However, the data had uneven coverage of BMP subcategories across the aridity index.
-Effects for detention BMPs were clustered in humid climates (aridity index \textgreater{} 0.65) and the resulting estimate for the baseline interaction (\(\beta\) = 32.63, 95\% CI {[}12.57, 52.69{]}) may not be reliable.
+Effects for detention BMPs were clustered in humid climates (aridity index \textgreater{} 0.65) and the resulting estimate for the baseline interaction (\(\beta\) = 32.63, 95\% CI {[}12.57, 52.69{]}) may not be reliable when extrapolated to low-humidity regions.
 
 \hypertarget{nitrogen}{%
 \subsubsection{Nitrogen}\label{nitrogen}}
 
 We identified 13 eligible TN studies and 14 DIN studies and 31 and 44 effect sizes respectively that could be included in the regression model.
-Overall effects showed that BMPs resulted in significant mean reductions in TN (ROM = 0.42, 95\% CI {[}0.21, 0.62{]}; BMP\textsubscript{eff} = 34.0\%, 95\% CI {[}18.7\%, 46.4\%{]}; Figure \ref{fig:overalleffect}) but not in DIN (ROM = 0.64, 95\% CI {[}-0.08, 1.35{]}; BMP\textsubscript{eff} = 47.1\%, 95\% CI {[}-8.1\%, 74.1\%{]}; Figure \ref{fig:overalleffect}).
+Overall effects showed that BMPs resulted in significant mean reductions in TN (ROM = 0.42, 95\% CI {[}0.21, 0.62{]}; BMP\textsubscript{eff} = 34.0\%, 95\% CI {[}18.7\%, 46.4\%{]}; Figure \ref{fig:fig5}) but not in DIN (ROM = 0.64, 95\% CI {[}-0.08, 1.35{]}; BMP\textsubscript{eff} = 47.1\%, 95\% CI {[}-8.1\%, 74.1\%{]}; Figure \ref{fig:fig5}).
 Heterogeneity was high for TN with a large proportion of heterogeneity attributed to within study effect (\textit{I\textsuperscript{2}\textsubscript{total}} = 77.12, \textit{I\textsuperscript{2}\textsubscript{study}} = 23.2, \textit{I\textsuperscript{2}\textsubscript{effect}} = 53.92).
 The DIN model had even higher heterogeneity with a larger proportion attributed between studies (\textit{I\textsuperscript{2}\textsubscript{total}} = 99.51, \textit{I\textsuperscript{2}\textsubscript{study}} = 83.53, \textit{I\textsuperscript{2}\textsubscript{effect}} = 15.97).
 AICc scores indicated that none of the moderators resulted in substantial improvement over the intercept only model (Table \ref{tab:modelaic}).
@@ -423,8 +426,8 @@ There was a significant overall reduction found for TP (ROM = 0.40, 95\% CI {[}0
 For both the TP and PO\textsubscript{4} models, heterogenity was high, with moderate to high within study variance and low to moderate between study variance (TP: \textit{I\textsuperscript{2}\textsubscript{total}} = 96.13, \textit{I\textsuperscript{2}\textsubscript{study}} = 32.15, \textit{I\textsuperscript{2}\textsubscript{effect}} = 63.99; PO\textsubscript{4}: \textit{I\textsuperscript{2}\textsubscript{total}} = 97.28, \textit{I\textsuperscript{2}\textsubscript{study}} = 33.36, \textit{I\textsuperscript{2}\textsubscript{effect}} = 63.92).
 The best model for both parameters only included influent as a moderator (Table \ref{tab:modelaic}).
 Moderators explained a relatively small amount of variance for both models (TP: \textit{R\textsuperscript{2}\textsubscript{marginal}} =0.12, PO\textsubscript{4}: \textit{R\textsuperscript{2}\textsubscript{marginal}} =0.35).
-Influent concentration (\(\beta\) = 0.23, 95\% CI {[}-0.035, 0.49{]}) was not significant at the 95\% confidence level for the TP model (Figure \ref{fig:phoseffect}; Table S4).
-Influent concentration (\(\beta\) = 0.27, 95\% CI {[}0.085, 0.44{]}) was significant for the PO\textsubscript{4} model (Figure \ref{fig:phoseffect}; Table S5).
+Influent concentration (\(\beta\) = 0.23, 95\% CI {[}-0.035, 0.49{]}) was not significant at the 95\% confidence level for the TP model (Figure \ref{fig:fig7}; Table S4).
+Influent concentration (\(\beta\) = 0.27, 95\% CI {[}0.085, 0.44{]}) was significant for the PO\textsubscript{4} model (Figure \ref{fig:fig7}; Table S5).
 
 \hypertarget{sediment}{%
 \subsubsection{Sediment}\label{sediment}}
@@ -437,12 +440,12 @@ Similar to nitrogen, we did not find strong evidence linking any of the tested m
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
 
-Our systematic review revealed strong spatial disparities in published BMP studies (Figure \ref{fig:studymap}).
+Our systematic review revealed strong spatial disparities in published BMP studies (Figure \ref{fig:fig4}).
 Similar spatial disparities have been identified and discussed in \citet{kochNitrogenRemovalStormwater2014}, \citet{grudzinskiDoesRiparianFencing2020} and can be problematic for extrapolating results to other regions of interest.
 Inconsistent spatial coverage presents a challenge for disentangling confounding spatially correlated predictors such as climate and soil due to poor representation within the dataset.
 \citet{horvathEffectsRegionalClimate2023} found overlapping BMP type and climate groups within their dataset that reduce the ability to distinguish effects due to either BMP type or climate.
-Similarly, we found detention type BMPs clustered only in humid climates (high aridity index) which reduces our confidence in extrapolating the interaction between BMP types and aridity index for FIB (Figure \ref{fig:fibeffect}).
-Not only were there spatially disparities, but we observed that the relative distribution of aridity index values does not resemble the distribution of aridity values across the U.S. or the distribution of aridity values for agricultural and developed land uses across the U.S. (Figure \ref{fig:aiindex}).
+Similarly, we found detention type BMPs clustered only in humid climates (high aridity index) which reduces our confidence in extrapolating the interaction between BMP types and aridity index for FIB (Figure \ref{fig:fig6}).
+Not only were there spatially disparities, but we observed that the relative distribution of aridity index values does not resemble the distribution of aridity values across the U.S. or the distribution of aridity values for agricultural and developed land uses across the U.S. (Figure \ref{fig:fig8}).
 Our review indicates that BMP studies are over represented in the generally humid regions of the country and underrepresented the more arid regions.
 Study scale, runoff sources and BMP types appeared well distributed, with the caveat that we are not aware of the actual distribution of these values in BMPs deployed across the country.
 
@@ -508,7 +511,7 @@ Soil physical characteristics and media amendments (iron for example) can play a
 
 A few reviews have noted a common trend of insufficient methodological and site specific data among peer-reviewed BMP performance studies \citep{grudzinskiDoesRiparianFencing2020, eagleMetaAnalysisConstrained2017, liuReviewEffectivenessBest2017}.
 We confirm that inconsistent reporting among studies complicates data extraction, effect size calculations, and attributing important sources of variance.
-Our desire to evaluate the effects of specific BMP parameters was hinderd by the overall lack of reporting of relevant parameters such as drainage area, infiltration media/soil, infiltration volume, riparian/buffer width and area, and other relevant factors.
+Our desire to evaluate the effects of specific BMP parameters was hindered by the overall lack of reporting of relevant parameters such as drainage area, infiltration media/soil, infiltration volume, riparian/buffer width and area, and other relevant factors.
 The lack of BMP specific parameters certainly contributes to our relatively high model variance.
 The International Stormwater BMP Database addresses some of these concerns through a standardized reporting format.
 Our future efforts will incorporate data from the International Stormwater BMP Database with data retrieved through a systematic review.
@@ -517,18 +520,32 @@ For example, livestock management BMPs may not rely on or report parameters such
 Inclusion of such factors in our meta-regression approach would necessarily exclude certain types of BMPs.
 Future BMP-specific meta-analysis might be more useful and informative for practitioners by providing effect sizes of parameters that were necessarily excluded from our study.
 
+One reviewer also noted some examples of missing studies, attributable to our selection of search terms and inclusion criteria (Table \ref{tab:criteria}).
+In particular, our search query did not include specifc practice names, instead using ``BMP'' or ``best management practice'' as a keyword search.
+This choice may have led us to miss studies that only included the practice name.
+Our inclusion criteria of concentration based studies may have also lead to the exclusion of studies that focused on load reductions (through flow reductions) but may have included data on relevant concentration effects.
+
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
 
-Scaling BMP pollutant reductions to basin wide water quality improvement remains a substantial challenge \citep{tomerChallengeDocumentingWater2011, mellandEffectsAgriculturalLand2018, mealsLagTimeWater2010}.
+Scaling BMP pollutant reductions to basin wide water quality improvement remains a substantial challenge.
+While there are numerous studies of field scale practices, linking BMPs with large scale watershed improvements is hindered by lack of adequate controls, scaling of measurement and analytic uncertainty, and substantial lags in downstream water quality improvement \citep{tomerChallengeDocumentingWater2011, mellandEffectsAgriculturalLand2018, mealsLagTimeWater2010}.
 The major identified challenges include the lack of long term studies, inadequate data collected on BMP management, and incomplete understanding of BMP function \citep{linternBestManagementPractices2020, liuReviewEffectivenessBest2017}.
+As a result there is strong reliance on numeric watershed models to assess performance of BMPs at watershed scales, but \citet{liuReviewEffectivenessBest2017} notes there is discrepancy between rates of water quality improvements found in modelling studies and empirical studies.
 There is a clear need to fill knowledge gaps through additional long-term spatially relevant BMP studies.
 However, we emphasize the need for convergent research approaches that better align study design and reporting that produces data aligned with data synthesis and modeling approaches.
 
+Improved reporting and data availability provides opportunity to improve decision-making through applied numeric modeling approaches that better represent BMP systems, or to advance new modelling methods for decision-making with statistical based approaches such as machine-learning.
+To improve future data synthesis efforts, we highly recommend future BMP studies follow the reporting guidelines provided in \citet{eagleMetaAnalysisConstrained2017}. In particular, authors should provide clearly defined water quality parameters, tabular data (either in the manuscript, as supplemental material, or in an open data repository), and error estimation at minimum.
+Control and treatment means should be made available in reports, not just the transformed efficiency or percent change values.
+Furthermore clearly defined controls and treatments are fundamental for comparing across studies. Finally, a major shortcoming in our synthesis was driven by the lack of reported covariate data. Although data such as soil type may not be an within study experimental covariate, documenting of these types of study variables is useful for data synthesis efforts.
+
 In summary, we used multi-level random effects meta-regression models to estimate overall BMP effectiveness from systematically reviewed studies.
 Although there was relatively high variance between studies, we found strong evidence that BMPs reduce overall mean FIB, TN, TP, and TSS concentrations.
+These results are generally consistent with results from prior reviews that used different approaches to synthesize results.
 Influent concentrations moderated BMP efficiency for both FIB and PO\textsubscript{4}, with larger removal rates at high influent concentrations.
 We found that aridity and BMP subcategory moderated BMP performance for only FIB.
+We anticipated stronger interaction effects between inflow concentrations and BMP subcategory due to differences in influent based performance demonstrated in prior studies.
 Most likely, site specific design and climate variables not captured in our review or by our choice in BMP classification approach play a more important role in explaining BMP performance variability.
 Future efforts should seek to retrieve more detailed study information.
 Furthermore, our systematic review highlights the poor spatial coverage of BMP studies.
@@ -579,35 +596,35 @@ Supplementary Material for this article has been uploaded with the submission.
 \addcontentsline{toc}{section}{Figure captions}
 
 \begin{figure}
-\includegraphics[width=1\linewidth,]{../figures/bmp_summary} \caption{Summary of (A) study scale and (B) dominant runoff source. Water quality parameters include total suspended sediment (TSS), total phosphorus (TP), total nitrogen (TN), orthophosphate (PO\textsubscript{4}), fecal indicator bacteria (FIB), and dissolved inorganic nitrogen (DIN).}\label{fig:bmpsummary}
+\includegraphics[width=1\linewidth,]{frontiers_submission_revision_01_files/figure-latex/fig1} \caption{Summary of (A) study scale and (B) dominant runoff source. Water quality parameters include total suspended sediment (TSS), total phosphorus (TP), total nitrogen (TN), orthophosphate (PO\textsubscript{4}), fecal indicator bacteria (FIB), and dissolved inorganic nitrogen (DIN).}\label{fig:fig1}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=1\linewidth,]{../figures/bmp_summary_param} \caption{Summary BMPs identified in the systematic review by tested parameter. Water quality parameters include total suspended sediment (TSS), total phosphorus (TP), total nitrogen (TN), orthophosphate (PO\textsubscript{4}), fecal indicator bacteria (FIB), and dissolved inorganic nitrogen (DIN).}\label{fig:bmpsummaryparam}
+\includegraphics[width=1\linewidth,]{frontiers_submission_revision_01_files/figure-latex/fig2} \caption{Summary of BMPs identified in the systematic review by tested parameter. Water quality parameters include total suspended sediment (TSS), total phosphorus (TP), total nitrogen (TN), orthophosphate (PO\textsubscript{4}), fecal indicator bacteria (FIB), and dissolved inorganic nitrogen (DIN).}\label{fig:fig2}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=1\linewidth,]{../figures/bmp_temporal_summary} \caption{Number of studies identified in the systematic review summarized by (A) publication date and (B) study length. Water quality parameters include total suspended sediment (TSS), total phosphorus (TP), total nitrogen (TN), orthophosphate (PO\textsubscript{4}), fecal indicator bacteria (FIB), and dissolved inorganic nitrogen (DIN).}\label{fig:bmptemporal}
+\includegraphics[width=1\linewidth,]{frontiers_submission_revision_01_files/figure-latex/fig3} \caption{Number of studies identified in the systematic review summarized by (A) publication date and (B) study length. Water quality parameters include total suspended sediment (TSS), total phosphorus (TP), total nitrogen (TN), orthophosphate (PO\textsubscript{4}), fecal indicator bacteria (FIB), and dissolved inorganic nitrogen (DIN).}\label{fig:fig3}
 \end{figure}
 
 \begin{figure}[p]
-\includegraphics[width=1\linewidth,]{../figures/study_map} \caption{Distribution of studies identified in the systematic review by state and parameter. Water quality parameters include total suspended sediment (TSS), total phosphorus (TP), total nitrogen (TN), orthophosphate (PO\textsubscript{4}), fecal indicator bacteria (FIB), and dissolved inorganic nitrogen (DIN).}\label{fig:studymap}
+\includegraphics[width=1\linewidth,]{frontiers_submission_revision_01_files/figure-latex/fig4} \caption{Distribution of studies identified in the systematic review by state and parameter. Water quality parameters include total suspended sediment (TSS), total phosphorus (TP), total nitrogen (TN), orthophosphate (PO\textsubscript{4}), fecal indicator bacteria (FIB), and dissolved inorganic nitrogen (DIN).}\label{fig:fig4}
 \end{figure}
 
 \begin{figure}[p]
-\includegraphics[width=1\linewidth,]{../figures/overall_effect} \caption{Estimated effect sizes and intervals from the intercept only multilevel random effects model. Individual points represent studies, with size scaled by sampling variance. The point estimate with uncertaintity bars indicate the estimated overall effect, 95\% confidence intervals, and 95\% prediction intervals. Here, \textit{k} indicates the number of overall effects with the number of unique studies in parenthesis. Water quality parameters include total suspended sediment (TSS), total phosphorus (TP), total nitrogen (TN), orthophosphate (PO\textsubscript{4}), fecal indicator bacteria (FIB), and dissolved inorganic nitrogen (DIN).}\label{fig:overalleffect}
+\includegraphics[width=1\linewidth,]{frontiers_submission_revision_01_files/figure-latex/fig5} \caption{Estimated effect sizes and intervals from the intercept only multilevel random effects model. Individual points represent studies, with size scaled by sampling variance. The point estimate with uncertaintity bars indicate the estimated overall effect, 95\% confidence intervals, and 95\% prediction intervals. Here, \textit{k} indicates the number of overall effects with the number of unique studies in parenthesis. Water quality parameters include total suspended sediment (TSS), total phosphorus (TP), total nitrogen (TN), orthophosphate (PO\textsubscript{4}), fecal indicator bacteria (FIB), and dissolved inorganic nitrogen (DIN).}\label{fig:fig5}
 \end{figure}
 
 \begin{figure}[p]
-\includegraphics[width=1\linewidth,]{../figures/bac_predicted} \caption{Predicted marginal effect of influent fecal indicator bacteria (FIB; Panel A) and aridity index (conditioned on BMP subcategory; Panel B). Solid lines are the predicted mean effect, dashed lines are the 95\% confidence intervals, and the dotted lines are the 95\% prediction intervals. Individual dots represent each effect size identified in the literature with the size scaled by sampling variance. Higher aridity index (mean annual precipition/evapotranspiration) indicates more humid conditions.}\label{fig:fibeffect}
+\includegraphics[width=1\linewidth,]{frontiers_submission_revision_01_files/figure-latex/fig6} \caption{Predicted marginal effect of influent fecal indicator bacteria (FIB; Panel A) and aridity index (conditioned on BMP subcategory; Panel B). Solid lines are the predicted mean effect, dashed lines are the 95\% confidence intervals, and the dotted lines are the 95\% prediction intervals. Individual dots represent each effect size identified in the literature with the size scaled by sampling variance. Higher aridity index (mean annual precipition/evapotranspiration) indicates more humid conditions.}\label{fig:fig6}
 \end{figure}
 
 \begin{figure}[p]
-\includegraphics[width=1\linewidth,]{../figures/phos_predicted} \caption{Predicted marignal effect of influent pollutant concentration on total phosphorus (TP; Panel A) and orthophosphate (PO\textsubscript{4}; Panel B) reductions. Solid lines are the predicted mean effect, dashed lines are the 95\% confidence intervals, and the dotted lines are the 95\% prediction intervals. Individual dots represent each effect size identified in the literature with the size scaled by sampling variance.}\label{fig:phoseffect}
+\includegraphics[width=1\linewidth,]{frontiers_submission_revision_01_files/figure-latex/fig7} \caption{Predicted marignal effect of influent pollutant concentration on total phosphorus (TP; Panel A) and orthophosphate (PO\textsubscript{4}; Panel B) reductions. Solid lines are the predicted mean effect, dashed lines are the 95\% confidence intervals, and the dotted lines are the 95\% prediction intervals. Individual dots represent each effect size identified in the literature with the size scaled by sampling variance.}\label{fig:fig7}
 \end{figure}
 
 \begin{figure}[p]
-\includegraphics[width=0.5\linewidth,]{../figures/aridity_density} \caption{Comparison of the relative distributions (density) of aridity index values (mean annual precipition/evapotranspiration) across the U.S., across U.S. agricultural and developed land uses, and for BMP study locations. Higher aridity index values indicate more humid conditions.}\label{fig:aiindex}
+\includegraphics[width=0.5\linewidth,]{frontiers_submission_revision_01_files/figure-latex/fig8} \caption{Comparison of the relative distributions (density) of aridity index values (mean annual precipition/evapotranspiration) across the U.S., across U.S. agricultural and developed land uses, and for BMP study locations. Higher aridity index values indicate more humid conditions.}\label{fig:fig8}
 \end{figure}
 
 

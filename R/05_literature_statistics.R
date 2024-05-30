@@ -242,7 +242,7 @@ plot_bmp_summary <- function(bac_df, nut_df) {
     mutate(Scale = forcats::fct_relevel(Scale, "Lot/Field", "Community/Farm", "Catchment/Watershed"))
   
   p1 <- ggplot(scale_df) +
-    geom_col(aes(n, Parameter, fill = Scale)) +
+    geom_col(aes(n, Parameter, fill = Scale), color = "black", linewidth = 0.2) +
     geom_text_repel(aes(n, Parameter, label = n, group = Scale),
                     position = position_stack(vjust = 0.5, reverse = FALSE),
                     bg.color = "#FFFFFF33", bg.r = 0.15,
@@ -250,7 +250,11 @@ plot_bmp_summary <- function(bac_df, nut_df) {
                     force = 0, size = 3) +
     scale_x_continuous("Studies (n)", expand = expansion(mult = c(0, 0.65))) +
     scale_y_discrete("") +
-    scale_fill_manual("Study Scale:", values = c("#1B9E77","#D95F02","#7570B3"),
+    # scale_fill_manual("Study Scale:", values = c("#1B9E77","#D95F02","#7570B3"),
+    #                   guide = guide_legend(reverse = TRUE)) +
+    scale_fill_brewer("Study Scale:",
+                      type = "div",
+                      palette = "PuOr",
                       guide = guide_legend(reverse = TRUE)) +
     theme_mps_noto(base_family = "Manrope Regular") +
     theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
@@ -303,7 +307,7 @@ plot_bmp_summary <- function(bac_df, nut_df) {
     bind_rows(source_bac)
   
   p2 <- ggplot(source_df) +
-    geom_col(aes(n, Parameter, fill = Source_Type)) +
+    geom_col(aes(n, Parameter, fill = Source_Type), color = "black", linewidth = 0.2) +
     geom_text_repel(aes(n, Parameter, label = n, group = Source_Type),
                     position = position_stack(vjust = 0.5, reverse = FALSE),
                     bg.color = "#FFFFFF33", bg.r = 0.15,
@@ -311,7 +315,11 @@ plot_bmp_summary <- function(bac_df, nut_df) {
                     force = 0, size = 3) +
     scale_x_continuous("Studies (n)", expand = expansion(mult = c(0, 0.6))) +
     scale_y_discrete("") +
-    scale_fill_manual("Runoff Source:", values = c("#1B9E77","#D95F02"),
+    # scale_fill_manual("Runoff Source:", values = c("#1B9E77","#D95F02"),
+    #                   guide = guide_legend(reverse = TRUE)) +
+    scale_fill_brewer("Runoff Source:",
+                      type = "div",
+                      palette = "PuOr",
                       guide = guide_legend(reverse = TRUE)) +
     theme_mps_noto(base_family = "Manrope Regular") +
     theme(axis.title = element_text(family = "Manrope SemiBold", face = "plain", size = rel(1)),
