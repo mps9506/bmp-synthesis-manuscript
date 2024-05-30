@@ -2,6 +2,8 @@
 output: github_document
 ---
 
+# A  meta-analysis  of  the  impacts  of  best management  practices  on  nonpoint  source pollutant  concentration
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -25,5 +27,5 @@ This project was funded by a nonpoint source grant from the Texas State Soil and
 ## Working Environment Info
 
 ```{r}
-sessioninfo::session_info()
+renv::diagnostics()
 ```
