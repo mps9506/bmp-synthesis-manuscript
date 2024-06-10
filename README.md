@@ -1,6 +1,8 @@
 
 # A meta-analysis of the impacts of best management practices on nonpoint source pollutant concentration
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10795231.svg)](https://doi.org/10.5281/zenodo.10795231)
+
 This repository contains the data and analysis used in the draft
 manuscript *“A meta-analysis of the impacts of best management practices
 on nonpoint source pollutant concentration,”* by Schramm et al.
@@ -69,12 +71,7 @@ renv::diagnostics()
     ## Project path: "C:/Data-Analysis-Projects/bmp-synthesis-manuscript"
     ## 
     ## # Status ---------------------------------------------------------------------
-    ## The following package(s) are in an inconsistent state:
-    ## 
-    ##  package     installed recorded used
-    ##  sessioninfo y         y        n   
-    ## 
-    ## See ?renv::status() for advice on resolving these issues.
+    ## No issues found -- the project is in a consistent state.
     ## 
     ## # Packages -------------------------------------------------------------------
     ##                      Library                         Source   Lockfile                         Source Path Dependency
@@ -341,7 +338,7 @@ renv::diagnostics()
     ## scales                 1.3.0                           RSPM      1.3.0                           RSPM  [1]     direct
     ## see                    0.8.1                           CRAN       <NA>                           <NA>  [1]       <NA>
     ## selectr                0.4-2                           CRAN      0.4-2                           CRAN  [1]   indirect
-    ## sessioninfo            1.2.2                           CRAN      1.2.2                           CRAN  [1]       <NA>
+    ## sessioninfo            1.2.2                           CRAN       <NA>                           <NA>  [1]       <NA>
     ## sf                    1.0-15                           CRAN     1.0-15                           CRAN  [1]     direct
     ## shape                  1.4.6                           CRAN       <NA>                           <NA>  [1]       <NA>
     ## shiny                  1.8.0                           CRAN      1.8.0                           CRAN  [1]     direct
@@ -488,5 +485,5 @@ renv::diagnostics()
     ## - C:\Program Files\RStudio\resources\app\bin\postback
     ## 
     ## # Cache ----------------------------------------------------------------------
-    ## There are a total of 1000 packages installed in the renv cache.
+    ## There are a total of 1001 packages installed in the renv cache.
     ## Cache path: "C:/Users/michael.schramm/AppData/Local/R/cache/R/renv/cache/v5/R-4.3/x86_64-w64-mingw32"

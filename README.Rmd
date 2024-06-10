@@ -4,6 +4,8 @@ output: github_document
 
 # A  meta-analysis  of  the  impacts  of  best management  practices  on  nonpoint  source pollutant  concentration
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10795231.svg)](https://doi.org/10.5281/zenodo.10795231)
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
