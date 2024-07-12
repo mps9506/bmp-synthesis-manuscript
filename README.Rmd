@@ -10,7 +10,9 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This repository contains the data and analysis used in the draft manuscript *"A  meta-analysis  of  the  impacts  of  best management  practices  on  nonpoint  source pollutant  concentration,"* by Schramm et al.
+This repository contains the data and analysis used in:
+
+Schramm, M., Kikoyo, D., Wright, J., Jain, S. (2024) [*"A  meta-analysis  of  the  impacts  of  best management  practices  on  nonpoint  source pollutant  concentration,"*](https://doi.org/10.3389/frwa.2024.1397615). Frontiers in Water. doi:10.3389/frwa.2024.1397615.
 
 This project uses `{targets}` as the main organizing workflow. The `_targets.R` file defines the steps of the project workflow amd functions for those setps are stored in the `R/` directory. `renv` is used to manage package versions. To reproduce locally, clone or download this project to your computer. Open the project with RStudio or other IDE.
 

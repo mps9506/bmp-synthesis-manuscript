@@ -3,9 +3,12 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10795231.svg)](https://doi.org/10.5281/zenodo.10795231)
 
-This repository contains the data and analysis used in the draft
-manuscript *“A meta-analysis of the impacts of best management practices
-on nonpoint source pollutant concentration,”* by Schramm et al.
+This repository contains the data and analysis used in:
+
+Schramm, M., Kikoyo, D., Wright, J., Jain, S. (2024) [*“A meta-analysis
+of the impacts of best management practices on nonpoint source pollutant
+concentration,”*](https://doi.org/10.3389/frwa.2024.1397615). Frontiers
+in Water. <doi:10.3389/frwa.2024.1397615>.
 
 This project uses `{targets}` as the main organizing workflow. The
 `_targets.R` file defines the steps of the project workflow amd
@@ -485,5 +488,5 @@ renv::diagnostics()
     ## - C:\Program Files\RStudio\resources\app\bin\postback
     ## 
     ## # Cache ----------------------------------------------------------------------
-    ## There are a total of 1001 packages installed in the renv cache.
+    ## There are a total of 1061 packages installed in the renv cache.
     ## Cache path: "C:/Users/michael.schramm/AppData/Local/R/cache/R/renv/cache/v5/R-4.3/x86_64-w64-mingw32"
