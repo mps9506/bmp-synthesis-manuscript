@@ -1,0 +1,415 @@
+---
+title: "The Meta-Analysis of Nonpoint Source BMPs: Can We Improve the Empirical Knowledge Associated with BMP Water Quality Improvement?"
+author: "Michael Schramm, Duncan Kikoyo, Janelle Wright, Shubham Jain"
+institute: "Texas Water Resources Institute, Texas A&M AgriLife Research.\\hfill \\break Project funding provided by the Texas State Soil and Water Conservation Board. \\hfill \\break 2024 AWRA, UCOWR, & NIWR Joint Water Resources Conference"
+date: 8/30/2024
+format: 
+  beamer:
+    theme: moloch
+    themeoptions: progressbar=frametitle
+    aspectratio: 169
+    keep-tex: true
+    include-in-header: preamble.tex
+    bibliography: bibliography.bib
+    cite-method: biblatex
+    biblio-style: apa
+    include-before-body: before-body.tex
+    template-partials: 
+      - biblio.tex
+    
+
+---
+
+```{r setup}
+library(targets)
+library(ggtext)
+library(kableExtra)
+library(patchwork)
+library(ragg)
+library(targets)
+library(tidyverse)
+
+## flowchart
+library(ggdag)
+library(rsvg)
+
+## this sets our default code chunk options
+knitr::opts_chunk$set(dev = "ragg_png",
+                      echo = FALSE,
+                      ## figure chunk options
+                      fig.width = 6,
+                      dpi = 300)
+
+## make fonts available
+font_hoist <- function(family, silent = FALSE) {
+  font_specs <- systemfonts::system_fonts() |> 
+    filter(family == {{family}}) |> 
+    mutate(family = paste(family, style)) |> 
+    select(plain = path, name = family)
+  
+  purrr::pwalk(as.list(font_specs), systemfonts::register_font)
+
+  if (!silent)  message(paste0("Hoisted ", nrow(font_specs), " variants:\n",
+                               paste(font_specs$name, collapse = "\n")))
+}
+
+font_hoist("Manrope")
+
+## grab output from targets to use in manuscript
+store <- "../_targets"
+```
+
+
+## Introduction
+
+### Purpose
+
+ - Assess scope and scale of published water quality BMP field studies.
+ - Assess mean reductions in pollutant *concentrations* in BMP studies.
+ - Methods and results fully detailed in Frontiers article \footfullcite{schrammMetaanalysisImpactsBest2024}
+
+## Methods
+
+### Systematic Review
+ - Followed systematic review guidance in Collaboration for Environmental Evidence \footfullcite{collaborationforenvironmentalevidenceGuidelinesStandardsEvidence2018}
+  - Review identified **90 studies** and **642 effect sizes**
+ - Collected data included: *Publication date, measured parameters, runoff source, BMP type, study scale, location, study length, measurement units, control and treatment sample size, standard error, standard deviation, mean concentration, etc.*
+ 
+ - Raw data available on Zenodo \footfullcite{kikoyoTWRINonpointSource2023} 
+
+## Methods
+
+```{r}
+#| id: bmpstruct
+#| fig-width: 6
+#| fig-height: 3
+dag <- dagify(
+  manure_management ~ livestock,
+  prescribed_grazing ~ livestock,
+  livestock_exclusion ~ livestock,
+  alternate_water ~ livestock,
+  reduced_till ~ crop,
+  no_till ~ crop,
+  nutrient_management ~ crop,
+  cover_crop ~ crop,
+  crop ~ management,
+  livestock ~ management,
+  sand_filter ~ filtration,
+  swale ~ filtration,
+  filter_strip ~ filtration,
+  infil_trench ~ infiltration,
+  infil_chamber ~ infiltration,
+  infil_basin ~ infiltration,
+  retention_basin ~ detention,
+  sediment_trap ~ detention,
+  detention_basin ~ detention,
+  tree_filter ~ treatment,
+  bioreactor ~ treatment,
+  wetland ~ treatment,
+  bioret ~ treatment,
+  dtr ~ drainage,
+  proprietary ~ drainage,
+  green_roof ~ drainage,
+  gss ~ drainage,
+  controlled_drainage ~ drainage,
+  filtration ~ structural,
+  infiltration ~ structural,
+  detention ~ structural,
+  treatment ~ structural,
+  drainage ~ structural,
+  labels = c(
+    "manure_management" = "Manure Management",
+    "prescribed_grazing" = "Prescribed Grazing",
+    "livestock_exclusion" = "Livestock Exclusion",
+    "alternate_water" = "Alternate Water",
+    "reduced_till" = "Reduced Till",
+    "no_till" = "No Till",
+    "nutrient_management" = "Nutrient Management",
+    "cover_crop" = "Cover Crop",
+    "crop" = "Crop",
+    "livestock" = "Livestock",
+    "sand_filter" = "Sand Filter",
+    "swale" = "Swale",
+    "filter_strip" = "Filter Strip",
+    "infil_trench" = "Infiltration Trench",
+    "infil_chamber" = "Infiltration Chamber",
+    "infil_basin" = "Infiltration Basin",
+    "retention_basin" = "Retention Basin",
+    "sediment_trap" = "Sediment Trap",
+    "detention_basin" = "Detention Basin",
+    "tree_filter" = "Tree Filter",
+    "bioret" = "Bioretention",
+    "bioreactor" = "Bioreactor",
+    "wetland" = "Wetland",
+    "dtr" = "Drainage Tailwater Recovery",
+    "proprietary" = "Proprietary",
+    "green_roof" = "Green Roof",
+    "gss" = "Grade Stabilization Structure",
+    "controlled_drainage" = "Controlled Drainage",
+    "filtration" = "Filtration",
+    "infiltration" = "Infiltration",
+    "detention" = "Detention",
+    "treatment" = "Treatment",
+    "drainage" = "Drainage",
+    "management" = "Management\nBMPs",
+    "structural" = "Structural\nBMPs"
+  )
+) |> 
+  tidy_dagitty(layout = "tree", circular = FALSE) |>
+  mutate(rotate = case_when(
+    !(name %in% c("structural", "drainage", "treatment", "detention", "infiltration", "management", "crop", "livestock", "filtration")) ~ 90,
+    .default = 0
+  ),
+  node_size = case_when(
+    !(name %in% c("structural", "drainage", "treatment", "detention", "infiltration", "management", "crop", "livestock", "filtration")) ~ NA,
+    .default = 20
+  ),
+  hjust = case_when(
+    !(name %in% c("structural", "drainage", "treatment", "detention", "infiltration", "management", "crop", "livestock", "filtration")) ~ 0,
+    .default = 0.5
+  ),
+  nudge_y = case_when(
+    !(name %in% c("structural", "drainage", "treatment", "detention", "infiltration", "management", "crop", "livestock", "filtration")) ~ 1,
+    .default = 0
+  )) 
+  
+ggplot(dag, aes(x = -y, y = x, xend = -yend, yend = xend)) +
+  geom_dag_node(aes(size = node_size), color = "wheat") +
+  geom_dag_edges_link() +
+  geom_dag_text(data = dag |> 
+                  filter(nudge_y == 0),
+                aes(angle = rotate, hjust = hjust, label = label), size = 2, color = "black") +
+  geom_dag_text(data = dag |>
+                  filter(nudge_y == 1),
+                aes(#angle = rotate, 
+                    hjust = hjust, label = label), size = 2, color = "black",
+                nudge_x = -0.1) +
+  scale_size_area(max_size = 20) +
+  scale_y_continuous(limits = c(-11,17),
+                     expand = expansion(0,0)) +
+  scale_x_continuous(limits = c(-2.5, 1),
+                     expand = expansion(0,0)) +
+  theme_dag() +
+  theme(legend.position = "none")
+
+```
+
+## Methods
+
+### Meta-Analysis
+
+ - Describe overall effect and heterogeneity
+ - Weighted multilevel random effects models
+    - Weights individual effect sizes based on sampling variance
+ - Model terms:
+    - Influent pollutant concentration
+    - BMP category
+    - Aridity index: $\frac{\bar{P}}{\bar{PET}}$ \footfullcite{zomerVersionGlobalAridity2022}
+    - Fixed effect interactions
+    - Nested random effects $(Effect|Study)$
+
+## Methods
+
+### Meta-Analysis
+
+ - Dependent variable: log ratio of means
+ 
+$$
+ROM_i = ln(\frac{x_{i,control}}{x_{i,trmt}}) = ln(x_{i,control}) - ln(x_{i,trmt})
+$$
+ - Separate models for each parameter of interest: **fecal indicator bacteria** (FIB), **total nitrogen** (TN), **total phosphorus** (TP), **total suspended sediment** (TSS), **orthophosphate** (PO~4~), **dissolved inorganic nitrogen** (DIN).
+
+## Study Scale & Source
+
+```{r}
+#| label: p1
+#| fig-height: 3
+#| fig-width: 8
+#| out-width: "100%"
+#| fig-dpi: 300
+
+tar_read(bmp_summary, store = store) &
+  theme(legend.text = element_text(size = rel(0.65)),
+        legend.title = element_text(size = rel(0.65)),
+        legend.position = c(0.8, 0.65),)
+```
+
+- Most studies were lot/field scale and investigated urbanized runoff.
+- FIB studies tended toward larger catchments.
+
+## Publication Date and Study Length
+
+
+
+```{r}
+#| label: p2
+#| fig-dpi: 300
+#| fig-width: 6
+#| fig-height: 6
+#| out-width: "50%"
+#| 
+tar_read(bmp_temporal, store = store)$p1
+```
+
+
+## Spatial Distribution
+
+```{r}
+#| label: p3
+#| fig-dpi: 300
+#| fig-width: 6.5
+#| fig-height: 6.5
+#| out-width: "50%"
+#| 
+tar_read(study_map, store = store)
+```
+
+
+## Results
+
+
+::::: {.columns}
+
+:::: {.column width=60%}
+
+```{r}
+#| label: p4
+#| fig-height: 5.75
+#| fig-width: 6.5
+#| out-width: "100%"
+#| fig-dpi: 300
+tar_read(overall_effect, store = store)
+```
+::::
+
+
+:::: {.column width=40%}
+
+### Overall Effect
+
+* Strong evidence across studies for mean reductions in:
+  + **FIB (57%)** 
+  + **TN (34%)** 
+  + **TP (32%)** 
+  + **TSS (81%)**
+
+* Prediction intervals provide low certainty about the performance of future *individual* studies.
+
+
+::::
+
+:::::
+
+
+## Attempts to Explain Variation in BMP Performance
+
+::::: {.columns}
+
+:::: {.column width=40%}
+
+```{r}
+tibble::tibble("Parameter" = c("FIB", "TP", "PO\\textsubscript{4}"),
+               "Moderators" = kableExtra::linebreak(c("Influent Concentration,\nAridity × BMP Subcategory",
+                                "Influent Concentration",
+                                "Influent Concentration"))) |> 
+  kableExtra::kbl(escape = FALSE)
+```
+
+Influent concentration + Aridity×BMP Subcategory explained ~89% of effect size variance in FIB models.
+
+::::
+
+:::: {.column width=60%}
+
+```{r}
+#| label: p5
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: "100%"
+#| fig-dpi: 300
+tar_read(bac_marginal_means, store = store) &
+  theme(legend.position = "none")
+```
+
+::::
+
+:::::
+
+
+## Attempts to Explain Variation in BMP Performance
+
+::::: {.columns}
+
+:::: {.column width=50%}
+
+```{r}
+tibble::tibble("Parameter" = c("FIB", "TP", "PO\\textsubscript{4}"),
+               "Moderators" = kableExtra::linebreak(c("Influent Concentration,\nAridity × BMP Subcategory",
+                                "Influent Concentration",
+                                "Influent Concentration"))) |> 
+  kableExtra::kbl(escape = FALSE)
+```
+
+Influent concentration explained 12% and 35% of effect size variance in TP and PO~4~ models.
+
+::::
+
+:::: {.column width=50%}
+
+```{r}
+#| label: p6
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: "100%"
+#| fig-dpi: 300
+tar_read(phos_marginal_means, store = store) &
+  theme(legend.position = "none")
+```
+
+::::
+
+:::::
+
+## Overview
+
+* Few long-term studies (>4 year).
+* Studies clustered in the mid-Atlantic, low spatial variability.
+* Studies demonstrated mean reductions in FIB, TN, TP, and TSS.
+* Did not find evidence for mean reductions in DIN, PO~4~.
+* Influent concentration has strong influence on FIB, TP, and PO~4~ performance.
+* Failed to explain majority of variance in nutrient and TSS models. **(Why???)**
+
+## Lessons Learned
+
+**Issues in Published BMP Studies**
+
+* Very inconsistent reporting of non-manipulated study conditions.
+* Earlier studies tended to report BMP efficiency only.
+* Many studies fail to report sample size, variance, or uncertainty measures (59% of identified effect sizes).
+* There is an opportunity to develop reporting protocols for BMP studies. See Eagle et al. \footfullcite{eagleMetaAnalysisConstrained2017}
+  - Environmental variables, reported metrics, regression model reporting...
+
+
+## Lessons Learned
+
+**Study/Systematic Review Issues**
+
+* Broad study design (focus on specific BMP types).
+* Keyword comprehensiveness.
+* *metafor* R package facilitates meta-analysis.\footfullcite{viechtbauerConductingMetaanalysesMetafor2010} 
+* Developing and training students/staff on data extraction is difficult.
+* Data entry interfaces that reinforce data consistency.
+    
+
+## Thank You
+
+**Contact:** michael.schramm@ag.tamu.edu
+
+**Acknowledgements:** Texas State Soil and Water Conservation Board for funding.
+
+**Paper:** Schramm M, Kikoyo D, Wright J and Jain S (2024) A meta-analysis of the impacts of best management practices on nonpoint source pollutant concentration. Front. Water 6:1397615. doi: 10.3389/frwa.2024.1397615
+
+**Data:** Kikoyo D, Jain S, Wright J, and Schramm M. (2024). TWRI NPS-BMP-DB (v1.05). Zenodo. doi: 10.5281/zenodo.10451303
+
+
+
